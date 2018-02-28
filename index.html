@@ -297,6 +297,661 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liutianle.top/2018/02/28/Building-an-independent-blog-2-Hexo-Github/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tyler LIU">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Felictopia">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/28/Building-an-independent-blog-2-Hexo-Github/" itemprop="url">Building an independent blog 2 (Hexo + Github)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T12:53:59+08:00">
+                2018-02-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/" itemprop="url" rel="index">
+                    <span itemprop="name">Network</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/02/28/Building-an-independent-blog-2-Hexo-Github/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/02/28/Building-an-independent-blog-2-Hexo-Github/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>This article is about my experiences on building an independent blog using Hexo framework on Github. GitHub Pages is designed to host your personal, organization, or project pages directly from a GitHub repository. It is really convenient and appropriate for maintaining an academic or technical blog, which is precisely my case. The contents mainly include: </p>
+<blockquote>
+<ul>
+<li>how to install Hexo  </li>
+<li>how to configure its themes</li>
+<li>how to deploy it on Github and redirect your own website </li>
+<li>how to create pages and post articles</li>
+</ul>
+</blockquote>
+<p>Note that most pictures in this post come from Reference. Really appreciate their help.</p>
+<h2 id="0-First-things-first"><a href="#0-First-things-first" class="headerlink" title="0. First things first"></a>0. First things first</h2><p>Firstly, make sure node.js and npm are fully installed on your computer and their directories are added to the system path. To check this, a simple way is to type the following commands in the <strong>cmd</strong> or <strong>shell</strong>. Otherwise, go to <a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a> and install it.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">$ npm -v</span><br></pre></td></tr></table></figure>
+<p>Secondly, Git is needed to install Hexo. Most of Github users would be familiar with this tool. Otherwise, you might want to see the introduction and download it at <a href="https://git-scm.com/" target="_blank" rel="noopener">https://git-scm.com/</a> :</p>
+<blockquote>
+<p>Git is a <a href="https://git-scm.com/about/free-and-open-source" target="_blank" rel="noopener">free and open source</a> distributed version control system designed to handle everything from small to very large projects with speed and efficiency.</p>
+<p>Git is <a href="https://git-scm.com/doc" target="_blank" rel="noopener">easy to learn</a> and has a <a href="https://git-scm.com/about/small-and-fast" target="_blank" rel="noopener">tiny footprint with lightning fast performance</a>. It outclasses SCM tools like Subversion, CVS, Perforce, and ClearCase with features like <a href="https://git-scm.com/about/branching-and-merging" target="_blank" rel="noopener">cheap local branching</a>, convenient <a href="https://git-scm.com/about/staging-area" target="_blank" rel="noopener">staging areas</a>, and <a href="https://git-scm.com/about/distributed" target="_blank" rel="noopener">multiple workflows</a>.</p>
+</blockquote>
+<h2 id="1-Configure-Github"><a href="#1-Configure-Github" class="headerlink" title="1. Configure Github"></a>1. Configure Github</h2><h3 id="1-1-Create-a-new-repository"><a href="#1-1-Create-a-new-repository" class="headerlink" title="1.1 Create a new repository"></a>1.1 Create a new repository</h3><p>Github账号注册就不说了，登陆过后点击new repository，Repository name填写自己的名称 + .github.io，<br>例如（test.github.io，test就是你的github账号的名称）。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/594366-67df63114cbc9a70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="img"></p>
+<p>创建仓库截图</p>
+<p>然后直接点Create repository就可以了。</p>
+<h3 id="1-2-Configuring-Github-SSH-keys"><a href="#1-2-Configuring-Github-SSH-keys" class="headerlink" title="1.2 Configuring Github SSH keys"></a>1.2 Configuring Github SSH keys</h3><p>首先在桌面空白处鼠标右键选择Git Bash Here</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;your&apos;s emaill address&quot;</span><br></pre></td></tr></table></figure>
+<p>引号里面的内容输入你的邮箱地址，然后回车，会提示你文件保存的路径，这时候按回车键确认<br>然后会提示你输入密码，输入即可（输入密码是看不到的），然后会确认输入一次，就可以在刚刚的路径看到生成了两个文件，一个是id_rsa，另一个是id_rsa.pub，用notepadd++打开id_rsa.pub然后选中里面的全部内容，复制下来。</p>
+<p>登录github，点击头像可以看到setting选项，点击进入<br>然后可以看到左边有一个SSH and GPG keys选项<br>点击就可以看到以下界面，点击New SSH</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/594366-a871d25a8f778075.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="img"></p>
+<p>这里的Title随便填写，主要是为了方便管理密钥<br>然后把刚刚拷贝的内容粘贴到Key里面去<br>然后点击Add SSH key<br>到此，Github上面的SSH配置就算完成了</p>
+<h3 id="1-3-Create-a-local-repository-and-sychronize-with-Github"><a href="#1-3-Create-a-local-repository-and-sychronize-with-Github" class="headerlink" title="1.3 Create a local repository and sychronize with Github"></a>1.3 Create a local repository and sychronize with Github</h3><p>This step is a standard operation to create a project on Github. Some of the process may be skipped according to your personal preferences.</p>
+<p>首先是在本地的任意一个分区创建一个任意的文件夹，路径中最好不要用中文吧，反正你懂的<br>然后进入到刚刚创建的文件夹，右键，然后点击Git Bash Here</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/594366-87ac8a03c2a8b51e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/319" alt="img"></p>
+<p>打开Git Bash</p>
+<p>依次输入以下命令（前面的$符号就不要复制了哈）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line">$ git config --global user.name &quot;Your&apos;s name&quot;</span><br><span class="line">$ git config --global user.email &quot;Your&apos;s email address&quot;</span><br></pre></td></tr></table></figure>
+<p>其中的Your’s name替换成你的名称，Your’s email address替换成你的邮件地址即可<br>然后再当前的文件夹下面新建一个README.md文件，然后右键用notepad++打开，随便写入一点内容，做一次简单的提交，输入以下命令<br>其中的yourname是github账号的名称，每个人是不一样的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git add README.md</span><br><span class="line">$ git commit -m &quot;first commit&quot;</span><br><span class="line">$ git remote add origin git@github.com:yourname/yourname.github.io.git</span><br><span class="line">$ git push -u origin master</span><br></pre></td></tr></table></figure>
+<p>这时候进入到github应该就可以看到仓库下面有一个刚刚提交的README.md的文档了。</p>
+<h2 id="2-Install-Hexo"><a href="#2-Install-Hexo" class="headerlink" title="2. Install Hexo"></a>2. Install Hexo</h2><p>在桌面空白处右键打开Git Bash Here<br>输入以下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>敲完回车可能没有任何提示，请一定要耐心等待<br>安装成功后，可以输入以下命令测试以下Hexo是否安装成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo version</span><br></pre></td></tr></table></figure>
+<p>如果能看到hexo的版本号信息，就表示安装成功了</p>
+<p>新建完成后，指定文件夹的目录如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── .deploy         #需要部署的文件</span><br><span class="line">├── node_modules    #Hexo插件</span><br><span class="line">├── public          #生成的静态网页文件</span><br><span class="line">├── scaffolds       #模板</span><br><span class="line">├── source          #博客正文和其他源文件，404、favicon、CNAME 都应该放在这里</span><br><span class="line">| ├── _drafts       #草稿</span><br><span class="line">| └── _posts        #文章</span><br><span class="line">├── themes          #主题</span><br><span class="line">├── _config.yml     #全局配置文件</span><br><span class="line">└── package.json    #npm 依赖等</span><br></pre></td></tr></table></figure>
+<p>接下来，进入到我们刚刚创建的文件夹，右键打开Git Bash Here<br>然后依次输入以下命令:</p>
+<p>初始化hexo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
+<p>npm安装package.json中的依赖包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<p>生成博客文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+<p>启动本地博客</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+<p>这时候在浏览器输入<a href="https://link.jianshu.com?t=http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 就可以看到hexo已经成功生成了博客，当然这只是我们本地可以看到的</p>
+<p><a href="https://syd192.github.io/photo/3.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/3.png" alt="博客主页"></a></p>
+<h2 id="3-Deploy-your-blog-online"><a href="#3-Deploy-your-blog-online" class="headerlink" title="3. Deploy your blog online"></a>3. Deploy your blog online</h2><h3 id="3-1-Deploy-to-Github"><a href="#3-1-Deploy-to-Github" class="headerlink" title="3.1 Deploy to Github"></a>3.1 Deploy to Github</h3><p>找到我们刚刚创建的文件夹，在里面找到_config.yml文件，用notepad++打开，直接拖到最后，可以看到</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type:</span><br></pre></td></tr></table></figure>
+<p>改成以下，特别注意，在：的后面是有一个空格的，千万要小心，不然后出错的，其中yourname即在github上面的用户名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:  </span><br><span class="line">  type: git</span><br><span class="line">  repository: http://github.com/yourname/yourname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p>保存后，然后在当前文件夹打开Git Bash Here</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+<p>如果出现以下异常</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR Deployer not found: git</span><br></pre></td></tr></table></figure>
+<p>尝试输入以下命令，然后重新执行刚刚的两条命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>这时候如果弹出一个对话框，输入在guthub上面的用户名和密码即可<br>这时候我们就可以在浏览器输入<a href="https://link.jianshu.com?t=http://yourname.github.io" target="_blank" rel="noopener">http://yourname.github.io</a>（yourname替换成github上的名称）就可以看到博客已经搭建成功了。</p>
+<h3 id="3-2-Using-your-own-domain"><a href="#3-2-Using-your-own-domain" class="headerlink" title="3.2 Using your own domain"></a>3.2 Using your own domain</h3><p>See my last post on domain name and DNS configuration. Here we only talk about how to configure your Github to show your own domain name.</p>
+<p>One simple way is to change/add a CNAME file to your repository containing solely the domain name (no “http://“ or “https://“ ). Another way is to use Github settings of your blog project.</p>
+<p>However, there is still a minor but annoying problem. Every time you use the “hexo deploy” command, the CNAME file disappears even if you have saved it in your local directory. I believe it is a little bug. To solve this,  we can install a plugin.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-cname --save1</span><br></pre></td></tr></table></figure>
+<p>之后在_config.yml中添加一条</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plugins:</span><br><span class="line">- hexo-generator-cname12</span><br></pre></td></tr></table></figure>
+<p>并修改 _config.yml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">url: http://www.lovebxm.com</span><br><span class="line">root: /</span><br><span class="line">permalink: :year/:month/:day/:title/</span><br><span class="line">permalink_defaults:</span><br></pre></td></tr></table></figure>
+<p>需要注意的是：如果是在github上建立的CNAME文件，需要先clone到本地，然后安装插件，在deploy上去即可。CNAME只允许一个域名地址。</p>
+<h2 id="4-Configure-your-Hexo-blog"><a href="#4-Configure-your-Hexo-blog" class="headerlink" title="4. Configure your Hexo blog"></a>4. Configure your Hexo blog</h2><h3 id="4-1-Official-help"><a href="#4-1-Official-help" class="headerlink" title="4.1 Official help"></a>4.1 Official help</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo help</span><br></pre></td></tr></table></figure>
+<h3 id="4-2-Global-configuration"><a href="#4-2-Global-configuration" class="headerlink" title="4.2 Global configuration"></a>4.2 Global configuration</h3><p>对本地blog目录下的<code>_config.yml</code>进行修改配置即可。</p>
+<h4 id="Website"><a href="#Website" class="headerlink" title="Website"></a>Website</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>网站标题</td>
+</tr>
+<tr>
+<td><code>subtitle</code></td>
+<td>网站副标题</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>网站描述</td>
+</tr>
+<tr>
+<td><code>author</code></td>
+<td>您的名字</td>
+</tr>
+<tr>
+<td><code>language</code></td>
+<td>网站使用的语言</td>
+</tr>
+<tr>
+<td><code>timezone</code></td>
+<td>网站时区。Hexo 默认使用您电脑的时区。<a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="noopener">时区列表</a>。比如说：<code>America/New_York</code>,<code>Japan</code>, 和 <code>UTC</code> 。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="Address"><a href="#Address" class="headerlink" title="Address"></a>Address</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>url</code></td>
+<td>网址</td>
+<td></td>
+</tr>
+<tr>
+<td><code>root</code></td>
+<td>网站根目录</td>
+<td></td>
+</tr>
+<tr>
+<td><code>permalink</code></td>
+<td>文章的 <a href="https://xuanwo.org/2015/03/26/hexo-intor/permalinks.html" target="_blank" rel="noopener">永久链接</a> 格式</td>
+<td><code>:year/:month/:day/:title/</code></td>
+</tr>
+<tr>
+<td><code>permalink_default</code></td>
+<td>永久链接中各部分的默认值</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="Directory"><a href="#Directory" class="headerlink" title="Directory"></a>Directory</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>source_dir</code></td>
+<td>资源文件夹，这个文件夹用来存放内容。</td>
+<td><code>source</code></td>
+</tr>
+<tr>
+<td><code>public_dir</code></td>
+<td>公共文件夹，这个文件夹用于存放生成的站点文件。</td>
+<td><code>public</code></td>
+</tr>
+<tr>
+<td><code>tag_dir</code></td>
+<td>标签文件夹</td>
+<td><code>tags</code></td>
+</tr>
+<tr>
+<td><code>archive_dir</code></td>
+<td>归档文件夹</td>
+<td><code>archives</code></td>
+</tr>
+<tr>
+<td><code>category_dir</code></td>
+<td>分类文件夹</td>
+<td><code>categories</code></td>
+</tr>
+<tr>
+<td><code>code_dir</code></td>
+<td>Include code 文件夹</td>
+<td>`downloads/code</td>
+</tr>
+<tr>
+<td><code>i18n_dir</code></td>
+<td>国际化（i18n）文件夹</td>
+<td><code>:lang</code></td>
+</tr>
+<tr>
+<td><code>skip_render</code></td>
+<td>跳过指定文件的渲染，您可使用 <a href="https://github.com/isaacs/node-glob" target="_blank" rel="noopener">glob 表达式</a>来匹配路径。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="Posts"><a href="#Posts" class="headerlink" title="Posts"></a>Posts</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>new_post_name</code></td>
+<td>新文章的文件名称</td>
+<td>:title.md</td>
+</tr>
+<tr>
+<td><code>default_layout</code></td>
+<td>预设布局</td>
+<td>post</td>
+</tr>
+<tr>
+<td><code>auto_spacing</code></td>
+<td>在中文和英文之间加入空格</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>titlecase</code></td>
+<td>把标题转换为 title case</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>external_link</code></td>
+<td>在新标签中打开链接</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>filename_case</code></td>
+<td>把文件名称转换为 (1) 小写或 (2) 大写</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>render_drafts</code></td>
+<td>显示草稿</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>post_asset_folder</code></td>
+<td>启动 <a href="https://xuanwo.org/2015/03/26/hexo-intor/asset-folders.html" target="_blank" rel="noopener">Asset 文件夹</a></td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>relative_link</code></td>
+<td>把链接改为与根目录的相对位址</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>future</code></td>
+<td>显示未来的文章</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>highlight</code></td>
+<td>代码块的设置</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="Tags-amp-categories"><a href="#Tags-amp-categories" class="headerlink" title="Tags &amp; categories"></a>Tags &amp; categories</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>default_category</code></td>
+<td>默认分类</td>
+<td><code>uncategorized</code></td>
+</tr>
+<tr>
+<td><code>category_map</code></td>
+<td>分类别名</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tag_map</code></td>
+<td>标签别名</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="Date-and-time-format"><a href="#Date-and-time-format" class="headerlink" title="Date and time format"></a>Date and time format</h4><p>Hexo 使用 <a href="http://momentjs.com/" target="_blank" rel="noopener">Moment.js</a> 来解析和显示时间。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>date_format</code></td>
+<td>日期格式</td>
+<td><code>MMM D YYYY</code></td>
+</tr>
+<tr>
+<td><code>time_format</code></td>
+<td>时间格式</td>
+<td><code>H:mm:ss</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="Pages"><a href="#Pages" class="headerlink" title="Pages"></a>Pages</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>per_page</code></td>
+<td>每页显示的文章量 (0 = 关闭分页功能)</td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td><code>pagination_dir</code></td>
+<td>分页目录</td>
+<td><code>page</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="Additions"><a href="#Additions" class="headerlink" title="Additions"></a>Additions</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>theme</code></td>
+<td>当前主题名称。值为<code>false</code>时禁用主题</td>
+</tr>
+<tr>
+<td><code>deploy</code></td>
+<td>部署部分的设置</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="4-3-Theme-configuration-NexT"><a href="#4-3-Theme-configuration-NexT" class="headerlink" title="4.3 Theme configuration-NexT"></a>4.3 Theme configuration-NexT</h3><p>For convenience, I just copied and revised most of the contents from: <a href="https://syd192.github.io/2016/11/15/hexo-learn/" target="_blank" rel="noopener">https://syd192.github.io/2016/11/15/hexo-learn/</a> . Thanks a lot. Note that every one of the word “本站点” refers to the site mentioned above.</p>
+<p>本站点采用的Hexo主题是<a href="https://github.com/iissnan/hexo-theme-next/" target="_blank" rel="noopener">Next主题</a>，使用该主题的原因是：该博客整体布局效果个人很喜欢，而且配套的文档资料非常好，文档资料可直接参考<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">官网链接</a>。ps：建议下载主题的稳定版本，可以避免很多没必要的麻烦。</p>
+<p>本文主要介绍以下内容：</p>
+<blockquote>
+<ul>
+<li>使用next主题</li>
+<li>对next的主题风格、菜单、头像和代码主题设置</li>
+<li>添加标签、分类和关于我页面</li>
+<li>在next主题中引入第三方服务，如评论功能，分享功能，站点内容搜索功能和数据统计分析功能。</li>
+</ul>
+</blockquote>
+<h4 id="使用Next主题"><a href="#使用Next主题" class="headerlink" title="使用Next主题"></a>使用Next主题</h4><ul>
+<li>在<a href="https://github.com/iissnan/hexo-theme-next/releases" target="_blank" rel="noopener">这里</a>Downloads Next主题代码</li>
+<li>将下载的代码放在<code>myBlog/next</code>目录下</li>
+<li>设置站点<code>myBlog/_config.yml</code>的theme字段值为next</li>
+<li>生成新页面<code>hexo g</code></li>
+<li>开启服务<code>hexo s --debug</code></li>
+<li>发布代码<code>hexo d</code></li>
+</ul>
+<p>注：此时登录网站，发现是空白的，打开控制台，提示很多vendors目录下的文件404，解决办法是将next主题下即<code>myBlog/themes/next/source</code>下的vendors目录名改为lib，并修改<code>myBlog/themes/next/_config.yml</code>的<code>_internal: vendors</code>改为<code>_internal: lib</code>。</p>
+<p>另外，TKL主题也是不错的</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/SuperKieran/TKL.git theme/TKL</span><br></pre></td></tr></table></figure>
+<h4 id="主题风格设定"><a href="#主题风格设定" class="headerlink" title="主题风格设定"></a>主题风格设定</h4><p>通过修改next主题下的<code>_config.yml</code>的scheme字段，配置不同的风格。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Schemes</span><br><span class="line">scheme: Muse</span><br><span class="line">#scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br></pre></td></tr></table></figure>
+<h4 id="添加网页背景"><a href="#添加网页背景" class="headerlink" title="添加网页背景"></a>添加网页背景</h4><ol>
+<li><p>将背景图<code>background.jpg</code>放到<code>myBlog\themes\next\source\images</code>文件夹下</p>
+</li>
+<li><p>在<code>myBlog\themes\next\source\css\_custom\custom.syl</code>文件中添加下面代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body &#123; </span><br><span class="line">    background:url(/images/background.jpg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>注：</p>
+<p> 在上面代码中添加<code>background-repeat: no-repeat;</code>来避免图片浮动。</p>
+<h4 id="标题栏-header-inner添加背景"><a href="#标题栏-header-inner添加背景" class="headerlink" title="标题栏 .header-inner添加背景"></a>标题栏 .header-inner添加背景</h4><ol>
+<li><p>将背景图<code>header.jpg</code>放到<code>myBlog\themes\next\source\images</code>文件夹下</p>
+</li>
+<li><p>在<code>myBlog\themes\next\source\css\_common\components\header\header.syl</code>文件中添加下面代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.header &#123; </span><br><span class="line">    background-image: url(/images/header.jpg);</span><br><span class="line">    background-size: 100% 100%;</span><br><span class="line"> &#125;</span><br><span class="line"> .header-inner &#123; </span><br><span class="line">    position: relative; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="菜单设置"><a href="#菜单设置" class="headerlink" title="菜单设置"></a>菜单设置</h4><p>通过修改next主题下的<code>_config.yml</code>的menu字段，选定显示的菜单项。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /</span><br><span class="line">  categories: /categories</span><br><span class="line">  about: /about</span><br><span class="line">  archives: /archives</span><br><span class="line">  tags: /tags</span><br><span class="line">  #commonweal: /404.html</span><br></pre></td></tr></table></figure>
+<p>其中，home代表主页，categories代表分类页，about代表关于页面，archives代表归档页，commonweal代表404页面（page not found时候显示的页面）。<br>菜单项文本修改是在对next主题下的language文件夹下的文件进行修改，若当前语言是简体中文，直接修改<code>language/zh-Hans.yml</code>里的对应字段即可。<br>本站点显示主页，分类页，关于页面和归档页。</p>
+<h4 id="头像设置"><a href="#头像设置" class="headerlink" title="头像设置"></a>头像设置</h4><p>在主题下的<code>source/images/</code>下放置头像文件<code>avatar.gif</code>即可。</p>
+<h4 id="设置文章代码主题"><a href="#设置文章代码主题" class="headerlink" title="设置文章代码主题"></a>设置文章代码主题</h4><p>Next主题总共支持5种主题，默认主题是白色的normal。通过修改next主题下的<code>_config.yml</code>的highlight字段，来设置代码主题。<br>本站点使用的是night主题。即令highlight为night。</p>
+<h4 id="添加标签页面"><a href="#添加标签页面" class="headerlink" title="添加标签页面"></a>添加标签页面</h4><p>前面通过修改next主题下的<code>_config.yml</code>文件中的menu选项，可以在主页面的菜单栏添加标签选项，但是此时点击标签，跳转的页面会显示page not found。<br>添加标签页面的具体方法是：</p>
+<ul>
+<li><p>新建页面</p>
+<p>输入如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>输入命令后，在<code>myBlog/source</code>下会新生成一个新的文件夹<code>tags</code>，在该文件夹下会有一个<code>index.md</code>文件。</p>
+<ul>
+<li><p>设置页面类型<br>在上步新生成的<code>myBlog/source/tags/index.md</code>中添加<code>type: &quot;tags&quot;</code>，<code>index.md</code>文件内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2016-11-15 19:10:05</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置具体文章的tags<br>当要为某一篇文章添加标签，只需在<code>myBlog/source/_post</code>目录下的具体文章的tags中添加标签即可，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 基于Hexo和Github搭建博客</span><br><span class="line">date: 2016-11-09</span><br><span class="line">tags: [npm, hexo, github]</span><br><span class="line">categories: 搭建博客</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="添加分类页面"><a href="#添加分类页面" class="headerlink" title="添加分类页面"></a>添加分类页面</h4><p>步骤与添加标签页面类似，具体如下：</p>
+<ul>
+<li><p>新建页面</p>
+<p>输入如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>输入命令后，在<code>myBlog/source</code>下会新生成一个新的文件夹<code>categories</code>，在该文件夹下会有一个<code>index.md</code>文件。</p>
+<ul>
+<li><p>设置页面类型<br>在上步新生成的<code>myBlog/source/categories/index.md</code>中添加<code>type: &quot;categories&quot;</code>，<code>index.md</code>文件内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2016-11-15 19:11:13</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置具体文章的categories<br>当要为某一篇文章添加分类，只需在<code>myBlog/source/_post</code>目录下的具体文章的categories中添加分类即可，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 基于Hexo和Github搭建博客</span><br><span class="line">date: 2016-11-09</span><br><span class="line">tags: [npm, hexo, github]</span><br><span class="line">categories: 搭建博客</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="添加关于我页面"><a href="#添加关于我页面" class="headerlink" title="添加关于我页面"></a>添加关于我页面</h4><p>步骤与添加标签页面类似，具体如下：</p>
+<ul>
+<li><p>新建页面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page about</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>输入命令后，在<code>myBlog/source</code>下会新生成一个新的文件夹<code>about</code>，在该文件夹下会有一个<code>index.md</code>文件。</p>
+<ul>
+<li><p>修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">about/index.md</span><br></pre></td></tr></table></figure>
+<p>本站点index.md如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: about</span><br><span class="line">date: 2016-11-15 19:08:50</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">## 关于我</span><br><span class="line"></span><br><span class="line">一只学习前端的小菜鸟，欢迎分享知识。</span><br><span class="line"></span><br><span class="line">From XDU</span><br><span class="line"></span><br><span class="line">QQ：847909475</span><br><span class="line">Email: 847909475@qq.com</span><br></pre></td></tr></table></figure>
+<p>效果如下：<br><a href="https://syd192.github.io/photo/20161115/11.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/20161115/11.png" alt="img"></a></p>
+</li>
+</ul>
+<h4 id="加入评论功能"><a href="#加入评论功能" class="headerlink" title="加入评论功能"></a>加入评论功能</h4><p>Well, for comment function, I prefer <a href="https://valine.js.org/#/?id=valine" target="_blank" rel="noopener">Valine</a>. </p>
+<blockquote>
+<p>Valine 是一款基于<a href="http://leancloud.cn/" target="_blank" rel="noopener">Leancloud</a>的快速、简洁且高效的无后端评论系统。</p>
+</blockquote>
+<p>You can simply visit that website and follow the tutorials there.</p>
+<h4 id="加入站点内容搜索功能"><a href="#加入站点内容搜索功能" class="headerlink" title="加入站点内容搜索功能"></a>加入站点内容搜索功能</h4><p>本站点使用的是Local Search。加入站点内容搜索功能步骤如下：</p>
+<ul>
+<li><p>安装hexo-generator-searchdb</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>注意：安装时应在站点根目录下，即myBlog目录下</p>
+<ul>
+<li><p>添加search字段</p>
+<p>在站点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myBlog/_config.yml</span><br></pre></td></tr></table></figure>
+<p>中添加search字段，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>效果如下：<br><a href="https://syd192.github.io/photo/20161115/7.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/20161115/7.png" alt="img"></a></p>
+<h4 id="加入数据统计与分析功能"><a href="#加入数据统计与分析功能" class="headerlink" title="加入数据统计与分析功能"></a>加入数据统计与分析功能</h4><p>本站点使用的是<a href="http://tongji.baidu.com/" target="_blank" rel="noopener">百度统计</a>。加入数据统计与分析功能步骤如下：</p>
+<ul>
+<li>注册站长账号并登陆<br>在<a href="http://tongji.baidu.com/web/register" target="_blank" rel="noopener">这里</a>注册站长账号，并填写信息，网站域名和网站首页以下图为例来填写，注册完成后并登陆。<br><a href="https://syd192.github.io/photo/20161115/8.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/20161115/8.png" alt="img"></a></li>
+<li>在跳转的页面中会显示下图，复制hm.js后的id值<br><a href="https://syd192.github.io/photo/20161115/9.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/20161115/9.png" alt="img"></a></li>
+<li>添加baidu_analytics字段<br>在站点<code>myBlog/_config.yml</code>中添加search字段，值为上步复制的id值<br>至此，该功能已成功加入，大约过20min后在<a href="http://tongji.baidu.com/" target="_blank" rel="noopener">百度统计</a>上可以看到站点的访问情况，如下图：<br><a href="https://syd192.github.io/photo/20161115/10.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/20161115/10.png" alt="img"></a></li>
+</ul>
+<h2 id=""><a href="#" class="headerlink" title=" "></a> </h2><p>默认主题是landscape，如果不太喜欢，可以访问<a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="noopener">这里</a>获取更多的主题。本人选择主题是TKL，具体切换方法如下：</p>
+<ol>
+<li>配置根目录下的_config.yml文件<br><a href="https://syd192.github.io/photo/13.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/13.png" alt="img"></a><br>然后，<code>hexo g</code>，再<code>hexo d</code>，即可正常访问。<br>注：图片url填写，图片文件夹img应放在source文件目录下，url直接写为/img/图片.png即可。</li>
+</ol>
+<h2 id="5-Write-on-your-blog"><a href="#5-Write-on-your-blog" class="headerlink" title="5. Write on your blog"></a>5. Write on your blog</h2><h3 id="5-1-New-posts"><a href="#5-1-New-posts" class="headerlink" title="5.1 New posts"></a>5.1 New posts</h3><ol>
+<li><p>新建博客</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new post &quot;newBlog&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在根目录下source文件夹下找到对应的<code>newBlog.md</code>文件，按照markdown规则，编写博客。<br>在该<code>newBlog.md</code>文件的头部，可以对该博客进行配置，如博客标题title，博客创建时间date，所属分类categories，标签tags<br>然后，<code>hexo clean</code>，再<code>hexo g &amp;&amp; hexo d</code>，即可正常访问。</p>
+</li>
+</ol>
+<p>最后来张成果图，继续加油咯~~~~<br><a href="https://syd192.github.io/photo/14.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/14.png" alt="img"></a></p>
+<p>若要在多台电脑上写文章，参考文章<a href="http://mungo.space/2015/10/14/create-hexo-on-github-4/" target="_blank" rel="noopener">在Github上面搭建Hexo博客（四）:使用不同电脑维护 </a>中的步骤即可。</p>
+<h3 id="5-2-MathJax-supports"><a href="#5-2-MathJax-supports" class="headerlink" title="5.2 MathJax supports"></a>5.2 MathJax supports</h3><p>To fully support MathJax (LaTeX format) in your Hexo blog, you can simply use the following commands:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo-renderer-marked --save</span><br><span class="line">$ npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure>
+<p>The first command is used to uninstall Hexo’s default Markdown renderer, the second one, install new Markdown renderer which can support MathJax fully. After installation, you should regenerate your blog to see the changes.</p>
+<p>To see why this is needed and how it works, visit <a href="http://2wildkids.com/2016/10/06/%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86Hexo%E5%92%8CMathJax%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/" target="_blank" rel="noopener">http://2wildkids.com/2016/10/06/%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86Hexo%E5%92%8CMathJax%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/</a> for more information.</p>
+<h2 id="6-Summary"><a href="#6-Summary" class="headerlink" title="6. Summary"></a>6. Summary</h2><p>As usual, I don’t want to write a summary.</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="https://syd192.github.io/2016/11/09/%E6%90%AD%E5%BB%BAhexo/" target="_blank" rel="noopener">https://syd192.github.io/2016/11/09/%E6%90%AD%E5%BB%BAhexo/</a></p>
+<p><a href="https://syd192.github.io/2016/11/15/hexo-learn/" target="_blank" rel="noopener">https://syd192.github.io/2016/11/15/hexo-learn/</a></p>
+<p><a href="https://www.jianshu.com/p/956c44c87fb1" target="_blank" rel="noopener">https://www.jianshu.com/p/956c44c87fb1</a></p>
+<p><a href="http://blog.csdn.net/qq80583600/article/details/72828063" target="_blank" rel="noopener">http://blog.csdn.net/qq80583600/article/details/72828063</a></p>
+<p><a href="http://2wildkids.com/2016/10/06/%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86Hexo%E5%92%8CMathJax%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/" target="_blank" rel="noopener">http://2wildkids.com/2016/10/06/%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86Hexo%E5%92%8CMathJax%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/</a></p>
+<h2 id="See-also"><a href="#See-also" class="headerlink" title="See also"></a>See also</h2><p><a href="https://xuanwo.org/2015/03/26/hexo-intor/" target="_blank" rel="noopener">https://xuanwo.org/2015/03/26/hexo-intor/</a></p>
+<p><a href="http://www.cnblogs.com/liulangmao/p/4323064.html" target="_blank" rel="noopener">http://www.cnblogs.com/liulangmao/p/4323064.html</a></p>
+<p><a href="http://col.dog/2015/11/12/hello-world/" target="_blank" rel="noopener">http://col.dog/2015/11/12/hello-world/</a></p>
+<p><a href="http://aword.net/hexo+next-modify-record/" target="_blank" rel="noopener">http://aword.net/hexo+next-modify-record/</a></p>
+<p><a href="http://blog.shijinrong.cn/" target="_blank" rel="noopener">http://blog.shijinrong.cn/</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://liutianle.top/2018/02/27/Building-an-independent-blog-(WordPress-+-VPS)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -497,13 +1152,13 @@
 <p>当出现上图最后的画面时，你的虚拟主机已经创建成功了。</p>
 <p>当然，这里的各项配置是可以通过修改配置文件进行更正的。所以没必要太纠结。通过vi修改或者下载到本地修改都可以。虚拟主机配置文件在：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/nginx/conf/vhost/域名.conf</span><br></pre></td></tr></table></figure>
-<h2 id="2-Installing-LNMP"><a href="#2-Installing-LNMP" class="headerlink" title="2. Installing LNMP"></a>2. Installing LNMP</h2><p>See <a href="http://jwcyber.com/build-site/#21_WordPress_VPS" target="_blank" rel="noopener">http://jwcyber.com/build-site/#21_WordPress_VPS</a> :</p>
+<h2 id="2-LNMP"><a href="#2-LNMP" class="headerlink" title="2. LNMP"></a>2. LNMP</h2><p>See <a href="http://jwcyber.com/build-site/#21_WordPress_VPS" target="_blank" rel="noopener">http://jwcyber.com/build-site/#21_WordPress_VPS</a> :</p>
 <p>putty登录VPS后就可以安装网站的环境了，这里使用LNMP一键安装包，详细查看<a href="http://www.lnmp.org/" target="_blank" rel="noopener">LNMP官网</a>。</p>
 <p>LNMP一键安装包是一个用Linux Shell编写的可以为CentOS/RadHat/Fedora、Debian/Ubuntu/Raspbian VPS(VDS)或独立主机安装LNMP(Nginx/MySQL/PHP)生产环境的Shell程序。WordPress就依靠这些环境运行。下面的步骤我直接粘贴<a href="http://lnmp.org/install.html" target="_blank" rel="noopener">LNMP官网的教程</a>。</p>
 <p>安装步骤:</p>
-<h3 id="2-1-screen"><a href="#2-1-screen" class="headerlink" title="2.1 screen"></a>2.1 screen</h3><p>使用putty或类似的SSH工具登陆VPS或服务器；登陆后运行：screen -S lnmp</p>
+<h3 id="2-1-Installing-Screen"><a href="#2-1-Installing-Screen" class="headerlink" title="2.1 Installing Screen"></a>2.1 Installing Screen</h3><p>使用putty或类似的SSH工具登陆VPS或服务器；登陆后运行：screen -S lnmp</p>
 <p>如果提示screen: command not found 命令不存在可以执行：yum install screen 或 apt-get install screen安装，详细的<a href="http://www.vpser.net/manage/run-screen-lnmp.html" target="_blank" rel="noopener">screen教程</a>。</p>
-<h3 id="2-2-下载并安装LNMP一键安装包"><a href="#2-2-下载并安装LNMP一键安装包" class="headerlink" title="2.2 下载并安装LNMP一键安装包"></a>2.2 下载并安装LNMP一键安装包</h3><p>您可以选择使用下载版(推荐国外或者美国VPS使用)或者完整版(推荐国内VPS使用)，两者没什么区别，只是完整版把一些需要的源码文件预先放到安装包里。安装LNMP执行：</p>
+<h3 id="2-2-Installing-LNMP"><a href="#2-2-Installing-LNMP" class="headerlink" title="2.2 Installing LNMP"></a>2.2 Installing LNMP</h3><p>您可以选择使用下载版(推荐国外或者美国VPS使用)或者完整版(推荐国内VPS使用)，两者没什么区别，只是完整版把一些需要的源码文件预先放到安装包里。安装LNMP执行：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -c http://soft.vpser.net/lnmp/lnmp1.2-full.tar.gz &amp;&amp; tar zxf lnmp1.2-full.tar.gz &amp;&amp; cd lnmp1.2-full &amp;&amp; ./install.sh lnmp</span><br></pre></td></tr></table></figure>
 <p>按上述命令执行后，会出现如下提示：</p>
 <p><a href="http://jwcyber.com/wp-content/uploads/2017/10/1456998176878130.png" target="_blank" rel="noopener"><img src="http://jwcyber.com/wp-content/uploads/2017/10/1456998176878130.png" alt="11.png"></a></p>
@@ -518,12 +1173,12 @@
 <p>可以选择不安装、Jemalloc或TCmalloc，输入对应序号回车。</p>
 <p>提示”Press any key to install…or Press Ctrl c to cancel”后，按回车键确认开始安装。LNMP脚本就会自动安装编译Nginx、MySQL、PHP、phpMyAdmin、Zend Optimizer这几个软件。</p>
 <p>安装时间可能会几十分钟到几个小时不等，主要是机器的配置网速等原因会造成影响。</p>
-<h3 id="2-3-安装完成"><a href="#2-3-安装完成" class="headerlink" title="2.3 安装完成"></a>2.3 安装完成</h3><p>如果显示Nginx: OK，MySQL: OK，PHP: OK</p>
+<h3 id="2-3-Finish"><a href="#2-3-Finish" class="headerlink" title="2.3 Finish"></a>2.3 Finish</h3><p>如果显示Nginx: OK，MySQL: OK，PHP: OK</p>
 <p><a href="http://jwcyber.com/wp-content/uploads/2017/10/1456998386104931.png" target="_blank" rel="noopener"><img src="http://jwcyber.com/wp-content/uploads/2017/10/1456998386104931.png" alt="16.png"></a></p>
 <p>并且Nginx、MySQL、PHP都是running，80和3306端口都存在，并Install lnmp V1.2 completed! enjoy it.的话，说明已经安装成功。</p>
 <p>安装时间比较长，我花了刚好30分钟。最后的界面可能和上面教程不同，只要出现enjoy it就行。下面是我安装完成的截图：</p>
 <p><a href="http://jwcyber.com/wp-content/uploads/2017/10/1456998468383746.png" target="_blank" rel="noopener"><img src="http://jwcyber.com/wp-content/uploads/2017/10/1456998468383746.png" alt="17.png"></a></p>
-<h2 id="3-Installing-WordPress"><a href="#3-Installing-WordPress" class="headerlink" title="3. Installing WordPress"></a>3. Installing WordPress</h2><p>通过上面的步骤已经安装好了VPS搭建网站所需的环境并创建好了主机，接下来就是上传网站文件完成网站的安装。</p>
+<h2 id="3-Installing-WordPress-on-VPS"><a href="#3-Installing-WordPress-on-VPS" class="headerlink" title="3. Installing WordPress on VPS"></a>3. Installing WordPress on VPS</h2><p>通过上面的步骤已经安装好了VPS搭建网站所需的环境并创建好了主机，接下来就是上传网站文件完成网站的安装。</p>
 <h3 id="3-1-Uploading-WordPress-installation-contents"><a href="#3-1-Uploading-WordPress-installation-contents" class="headerlink" title="3.1 Uploading WordPress  installation contents"></a>3.1 Uploading WordPress  installation contents</h3><p>我们需要一款ftp软件，这里使用的是<a href="https://filezilla-project.org/" target="_blank" rel="noopener">Filezilla</a>。之前的环境搭建中，并没有安装ftp服务，所以使用sftp上传网站文件。</p>
 <p>在Filezilla主页中点击文件→站点管理器，具体设置如下图，注意端口要填正确，协议选择sftp。登录类型选择正常就好，用户名密码填好点击连接即可。</p>
 <p><a href="http://jwcyber.com/wp-content/uploads/2017/10/1456999357829592.png" target="_blank" rel="noopener"><img src="http://jwcyber.com/wp-content/uploads/2017/10/1456999357829592.png" alt="19.png"></a></p>
@@ -563,20 +1218,20 @@
 <p><a href="http://jwcyber.com/tips-for-wp/#9" target="_blank" rel="noopener">9 添加站点地图</a></p>
 <p><a href="http://jwcyber.com/tips-for-wp/#10" target="_blank" rel="noopener">10 文章内容分页</a></p>
 </blockquote>
-<h2 id="4-Beginning-with-WordPress"><a href="#4-Beginning-with-WordPress" class="headerlink" title="4. Beginning with WordPress"></a>4. Beginning with WordPress</h2><p>See <a href="http://www.paincker.com/website-primer-6" target="_blank" rel="noopener">http://www.paincker.com/website-primer-6</a></p>
-<h3 id="4-1-WordPress框架特点"><a href="#4-1-WordPress框架特点" class="headerlink" title="4.1 WordPress框架特点"></a>4.1 WordPress框架特点</h3><p>WordPress是一个被广泛使用的网站框架，主要用于博客类网站，但也被一些站点做成资讯类网站、购物网站等。</p>
+<h2 id="4-An-overview-of-WordPress"><a href="#4-An-overview-of-WordPress" class="headerlink" title="4. An overview of WordPress"></a>4. An overview of WordPress</h2><p>See <a href="http://www.paincker.com/website-primer-6" target="_blank" rel="noopener">http://www.paincker.com/website-primer-6</a></p>
+<h3 id="4-1-Features-of-WordPress"><a href="#4-1-Features-of-WordPress" class="headerlink" title="4.1 Features of WordPress"></a>4.1 Features of WordPress</h3><p>WordPress是一个被广泛使用的网站框架，主要用于博客类网站，但也被一些站点做成资讯类网站、购物网站等。</p>
 <p>类似WordPress，也有一些其他的网站框架，比如我们用很多论坛时，就发现论坛标题末尾有一句Powered by Discuz!。Discuz!也是一个使用很多的网站框架，一般用于论坛网站。</p>
 <p>我们可以感受到，使用了WordPress这一框架，很轻松的就搭建了一个功能完整的个人博客网站，完全不涉及任何代码。这一篇我们一起熟悉WordPress的基本应用。你会发现，WordPress用起来就和装扮QQ空间一样简答方便。</p>
 <p>由于我们的WordPress是安装在我们租用的远程服务器上的，在对网站进行管理的时候，一切操作都通过网络发送到服务器端处理，处理完在通过网络发送到我们的电脑上，整个过程都是在浏览器中进行，和QQ空间装扮一样。通过网络传输自然有延迟，尤其是国外的服务器，并且我们的服务器流量也有限。</p>
 <p>更好的办法是，让WordPress运行在自己的电脑上，并进行配置，配置好了，再转移到服务器上。</p>
-<h3 id="4-2-本地安装运行WordPress"><a href="#4-2-本地安装运行WordPress" class="headerlink" title="4.2 本地安装运行WordPress"></a>4.2 本地安装运行WordPress</h3><p>让本地计算机支持WordPress，需要安装PHP、MySQL等环境，但是这里已经有软件为我们全部做好了，例如USB WebServer。</p>
+<h3 id="4-2-Installing-local-WordPress"><a href="#4-2-Installing-local-WordPress" class="headerlink" title="4.2  Installing local WordPress"></a>4.2  Installing local WordPress</h3><p>让本地计算机支持WordPress，需要安装PHP、MySQL等环境，但是这里已经有软件为我们全部做好了，例如USB WebServer。</p>
 <p>下载解压运行USB WebServer（不用安装，放到U盘也能用），当Apache、MySQL环境启动后，默认情况下，软件的root子目录就成为网站 <code>http://localhost</code> 的根目录，当然你也可以在设置中修改。如果Apache启动不了，试试在设置里面改一下端口，我自己电脑上就是改了端口才能启动的。</p>
 <p>把WordPress文件解压到root子目录中，浏览器访问 <code>http://localhost</code> 就可以打开本地的WordPress页面了。当然还需要进行数据库的配置。</p>
 <p>如果你只是想学习WordPress相关知识而不打算实际建网站，也可以用这种方式来学习。</p>
 <blockquote>
 <p>参考《USBWebserver：快速搭建本地PHP环境的好工具》 <a href="http://www.paincker.com/usbwebserver" target="_blank" rel="noopener">http://www.paincker.com/usbwebserver</a></p>
 </blockquote>
-<h3 id="4-3-主题"><a href="#4-3-主题" class="headerlink" title="4.3 主题"></a>4.3 主题</h3><p>WordPress里面有很多主题和插件供选择。如果有兴趣，你也可以自己做插件（当然这就要写代码了），或者修改别人的主题和插件，做的好的也可以共享到网上。当然<strong>使用别人的劳动成果时，要注意是否侵权</strong>。比如有些主题的作者会声明，主题可免费使用和修改，包括商业用途，但需要注明主题的原作者。</p>
+<h3 id="4-3-Themes"><a href="#4-3-Themes" class="headerlink" title="4.3 Themes"></a>4.3 Themes</h3><p>WordPress里面有很多主题和插件供选择。如果有兴趣，你也可以自己做插件（当然这就要写代码了），或者修改别人的主题和插件，做的好的也可以共享到网上。当然<strong>使用别人的劳动成果时，要注意是否侵权</strong>。比如有些主题的作者会声明，主题可免费使用和修改，包括商业用途，但需要注明主题的原作者。</p>
 <p>我们用管理员身份登录进入安装在本地或远程服务器的WordPress后台。如果你找不到登录界面，可以在域名后面加一个wp-login.php，这是默认的登录地址。</p>
 <p><img src="http://www.paincker.com/wp-content/uploads/wpid-d037d814bdc2341880cd23645b0582c2_4eca28e6003e829f6ee6e513218b4b88.png" alt="快照1.png"></p>
 <p>在仪表盘中，我们选择外观-主题菜单，就会打开主题界面，显示所有已经安装的主题。</p>
@@ -591,33 +1246,33 @@
 <li>通过网页上传主题包。你在别的地方可以下载到做好的WordPress主题或者自己制作的主题，一般是zip压缩包。在主题商城的添加主题页面，点击上传主题按钮，上传压缩包即可。</li>
 <li>还可以直接复制主题文件到WordPress中的\wp-content\themes子文件夹，注意这里需要解压后的文件，不是压缩包。</li>
 </ol>
-<h3 id="4-4-插件"><a href="#4-4-插件" class="headerlink" title="4.4 插件"></a>4.4 插件</h3><p>WordPress还能安装很多插件。有点像QQ空间里面的各种挂件之类的东西，但是比那些更加强大。</p>
+<h3 id="4-4-Plugins"><a href="#4-4-Plugins" class="headerlink" title="4.4 Plugins"></a>4.4 Plugins</h3><p>WordPress还能安装很多插件。有点像QQ空间里面的各种挂件之类的东西，但是比那些更加强大。</p>
 <p>比如你可以安装文章浏览量统计插件WP-PostViews，然后可以查看到你的每一篇文章有多少人阅读过（当然初次建站安装这个插件后，发现自己写的东西访问量很低，相当心寒……劝你还是别安装了o(╯□╰)o）；安装WP Smush.it软件压缩网站中的图片，这样打开网页会更快，也节约了你的服务器流量消耗……</p>
 <p>插件的安装在插件菜单中。同样你也有三种方式来安装，在线安装，上传压缩包，和直接复制文件（插件在wp-content\plugins文件夹）。如果你有一些想要实现的功能但是不知道用什么插件，可以在网上找找。</p>
 <p>插件安装上之后，你可以根据需要启用或禁用插件。安装太多插件可能会减慢网页访问速度，这点要注意。插件安装并启用后，一般会在设置菜单里添加一个插件的设置页面，有的插件还会在主题菜单等位置添加一些选项。</p>
-<h3 id="4-5-小工具"><a href="#4-5-小工具" class="headerlink" title="4.5 小工具"></a>4.5 小工具</h3><p>WordPress里面还有小工具，小工具通常是显示在网页侧边栏的，例如最新文章、分类目录、搜索等，具体小工具的位置是根据主题设置好的，也有的主题不支持小工具，或者是在手机访问时不支持小工具。</p>
+<h3 id="4-5-Tools"><a href="#4-5-Tools" class="headerlink" title="4.5 Tools"></a>4.5 Tools</h3><p>WordPress里面还有小工具，小工具通常是显示在网页侧边栏的，例如最新文章、分类目录、搜索等，具体小工具的位置是根据主题设置好的，也有的主题不支持小工具，或者是在手机访问时不支持小工具。</p>
 <p>如果你的主题支持小工具，在外观-小工具菜单就能进行设置了。如果你安装了一些插件，例如前面说到WP-PostViews，他也会生成一个小工具供你使用。还有些主题也带有很多小工具。</p>
 <p><a href="http://www.paincker.com/wp-content/uploads/wpid-d037d814bdc2341880cd23645b0582c2_02ac72b642522b7a7247cfba9f6a60e5.png" target="_blank" rel="noopener"><img src="http://www.paincker.com/wp-content/uploads/wpid-d037d814bdc2341880cd23645b0582c2_02ac72b642522b7a7247cfba9f6a60e5.png" alt="快照4.png"></a></p>
-<h3 id="4-6-文章、分类、标签、评论、用户"><a href="#4-6-文章、分类、标签、评论、用户" class="headerlink" title="4.6 文章、分类、标签、评论、用户"></a>4.6 文章、分类、标签、评论、用户</h3><p>因为WordPress是博客网站的框架，自然少不了文章。你可以在文章菜单中管理、编辑、新建文章，并为文章选择分类、标签。如果你感觉WordPress自带的文章编辑器不好用，也可以安装一些插件对自带编辑器进行替换，例如CKEditor。</p>
+<h3 id="4-6-Posts-categories-tags-comments-amp-users"><a href="#4-6-Posts-categories-tags-comments-amp-users" class="headerlink" title="4.6 Posts, categories, tags, comments &amp; users"></a>4.6 Posts, categories, tags, comments &amp; users</h3><p>因为WordPress是博客网站的框架，自然少不了文章。你可以在文章菜单中管理、编辑、新建文章，并为文章选择分类、标签。如果你感觉WordPress自带的文章编辑器不好用，也可以安装一些插件对自带编辑器进行替换，例如CKEditor。</p>
 <p>文章发表后，别人看到了可以发表评论。在设置菜单中，你可以设置大家是直接匿名进行评论，还是必须填写昵称和邮件进行评论，或者在你的网站注册了才能发表评论。你的账号是管理员账号，可以在后台管理网站，而新注册用户的权限你可以进行设置，默认是订阅者。你也可以禁止用户注册，或者对某些文章设置禁止评论。</p>
 <p>WordPress还支持离线发布文章的功能。例如我一直用为知笔记编辑文章，然后很轻松就能上传图片，同时发表文章到我的网站。</p>
 <blockquote>
 <p>参考《为知笔记离线博客发布功能》 <a href="http://www.paincker.com/wiz-blog" target="_blank" rel="noopener">http://www.paincker.com/wiz-blog</a></p>
 </blockquote>
 <p><a href="http://www.paincker.com/wp-content/uploads/wpid-d037d814bdc2341880cd23645b0582c2_303a53cd-929c-468b-aafc-866c79f771a0.png" target="_blank" rel="noopener"><img src="http://www.paincker.com/wp-content/uploads/wpid-d037d814bdc2341880cd23645b0582c2_303a53cd-929c-468b-aafc-866c79f771a0.png" alt="img"></a></p>
-<h3 id="4-7-页面"><a href="#4-7-页面" class="headerlink" title="4.7 页面"></a>4.7 页面</h3><p>页面的编辑和文章相似，区别是，页面通常用户编写一些很少修改的信息，比如你可以编写一个留言板页面，对自己网站进行介绍，大家可以在留言板发言（也就是评论）。而留言板是一个固定页面，不会像文章一样，随着时间推移，慢慢就排到很后面的位置了。</p>
-<h3 id="4-8-菜单"><a href="#4-8-菜单" class="headerlink" title="4.8 菜单"></a>4.8 菜单</h3><p>WordPress还有菜单功能。通常大部分主题都支持菜单功能，例如显示在网页顶部的那部分就是菜单。</p>
+<h3 id="4-7-Pages"><a href="#4-7-Pages" class="headerlink" title="4.7 Pages"></a>4.7 Pages</h3><p>页面的编辑和文章相似，区别是，页面通常用户编写一些很少修改的信息，比如你可以编写一个留言板页面，对自己网站进行介绍，大家可以在留言板发言（也就是评论）。而留言板是一个固定页面，不会像文章一样，随着时间推移，慢慢就排到很后面的位置了。</p>
+<h3 id="4-8-Menus"><a href="#4-8-Menus" class="headerlink" title="4.8 Menus"></a>4.8 Menus</h3><p>WordPress还有菜单功能。通常大部分主题都支持菜单功能，例如显示在网页顶部的那部分就是菜单。</p>
 <p><a href="http://www.paincker.com/wp-content/uploads/wpid-d037d814bdc2341880cd23645b0582c2_ec34ab80-8e58-4102-80f2-35a6d2c0974f.png" target="_blank" rel="noopener"><img src="http://www.paincker.com/wp-content/uploads/wpid-d037d814bdc2341880cd23645b0582c2_ec34ab80-8e58-4102-80f2-35a6d2c0974f.png" alt="img"></a></p>
 <p>你可以设置首页、关于和留言板的页面在菜单上，然后把文章分类也放在菜单里。支持多级菜单，直接在页面中拖动位置就能进行设置。</p>
 <p><img src="http://www.paincker.com/wp-content/uploads/wpid-d037d814bdc2341880cd23645b0582c2_069149eb-9b07-48d9-a032-8ca02c22ce38.png" alt="img"></p>
-<h3 id="4-9-媒体库"><a href="#4-9-媒体库" class="headerlink" title="4.9 媒体库"></a>4.9 媒体库</h3><p>WordPress的媒体库相当于QQ空间相册，不过它不仅支持照片，还可以上传视频、音频、文档等，大家应该都比较熟悉，不再进行详细介绍。</p>
+<h3 id="4-9-Media"><a href="#4-9-Media" class="headerlink" title="4.9 Media"></a>4.9 Media</h3><p>WordPress的媒体库相当于QQ空间相册，不过它不仅支持照片，还可以上传视频、音频、文档等，大家应该都比较熟悉，不再进行详细介绍。</p>
 <p>WordPress后台的菜单选项基本上就是这些，如果你安装了一些主题、插件，可能会在菜单中添加一些选项，例如有的主题就有很多配置选项。不做一一介绍。</p>
 <p>你只要花上一些时间和耐心就能像装扮QQ空间一样，设置好自己的网站。</p>
-<h3 id="4-10-本地设置数据的迁移"><a href="#4-10-本地设置数据的迁移" class="headerlink" title="4.10 本地设置数据的迁移"></a>4.10 本地设置数据的迁移</h3><p>在本地设置好主题等配置后，需要上传到服务器端。WordPress的数据分两个地方保存，一个是WordPress文件夹，另一个是数据库。由于不同的插件数据保存的位置格式等可能不一样，<strong>如果直接把文件覆盖到服务器，并把本地数据库原封不动导进在线服务器的数据库，可能会出现一些问题</strong>。</p>
+<h3 id="4-10-Migration"><a href="#4-10-Migration" class="headerlink" title="4.10 Migration"></a>4.10 Migration</h3><p>在本地设置好主题等配置后，需要上传到服务器端。WordPress的数据分两个地方保存，一个是WordPress文件夹，另一个是数据库。由于不同的插件数据保存的位置格式等可能不一样，<strong>如果直接把文件覆盖到服务器，并把本地数据库原封不动导进在线服务器的数据库，可能会出现一些问题</strong>。</p>
 <p>后面还会讲到服务器的更换，域名的更换等，数据迁移都是必要的。网上有很多参考资料，但是实际使用时我还是遇到了一些问题，解决起来也有点麻烦，对于初学者不好理解。同时考虑到本篇主要讲基本配置，数据迁移就先不做介绍了。</p>
 <p>所以本地数据迁移到服务器，最保险的方法是：把安装的主题和所有插件打包起来上传到服务器（也就是themes和plugins文件夹中的文件，这两个文件夹中不会用来保存配置文件）；然后在服务器端，对照本地的设置再配置一遍。</p>
 <p>值得注意的是，如果你在本地WordPress中编辑页面和文章，数据会被保存在数据库中，需要通过数据库才能迁移。如果文中还有图片，图片的引用地址是 <code>http://localhost</code> ，不能直接迁移到服务器，还需要替换数据库中数据的网址字段，本篇暂不介绍。所以建议直接在服务器端进行编辑。</p>
-<h2 id="5-Working-with-WordPress"><a href="#5-Working-with-WordPress" class="headerlink" title="5. Working with WordPress"></a>5. Working with WordPress</h2><h3 id="5-1-Recommending-several-themes"><a href="#5-1-Recommending-several-themes" class="headerlink" title="5.1 Recommending several themes"></a>5.1 Recommending several themes</h3><blockquote>
+<h2 id="5-Working-with-WordPress"><a href="#5-Working-with-WordPress" class="headerlink" title="5. Working with WordPress"></a>5. Working with WordPress</h2><h3 id="5-1-Several-recommended-themes"><a href="#5-1-Several-recommended-themes" class="headerlink" title="5.1 Several recommended themes"></a>5.1 Several recommended themes</h3><blockquote>
 <ul>
 <li><p><a href="http://www.xgllseo.com/?p=1333" target="_blank" rel="noopener">little-cheese</a></p>
 </li>
@@ -662,11 +1317,11 @@
 <h4 id="试用过的云图床比较"><a href="#试用过的云图床比较" class="headerlink" title="试用过的云图床比较"></a>试用过的云图床比较</h4><p>又拍云、七牛云存储、百度BCS云存储和网易云相册以上这些图床的简单对比见下表所示：<br><img src="http://maie.qiniudn.com/table-clound-price.jpg" alt="云图床超级比一比"><br><em>（云图床超级比一比）</em></p>
 <p><a href="http://www.zmonster.me/2013/12/06/image-host-service.html" target="_blank" rel="noopener">http://www.zmonster.me/2013/12/06/image-host-service.html</a></p>
 <p>Well, I actually chose tencent cloud COS because it provides 50G for free.</p>
-<h3 id="5-3-Markdown-and-LaTex"><a href="#5-3-Markdown-and-LaTex" class="headerlink" title="5.3 Markdown and LaTex"></a>5.3 Markdown and LaTex</h3><p>There are many Markdown plugins for WordPress. As for LaTex, see here: <a href="https://www.codelast.com/%E5%8E%9F%E5%88%9B%E7%94%A8latex-for-wordpress%E6%8F%92%E4%BB%B6%E5%9C%A8wordpress%E4%B8%AD%E5%86%99%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" target="_blank" rel="noopener">https://www.codelast.com/%E5%8E%9F%E5%88%9B%E7%94%A8latex-for-wordpress%E6%8F%92%E4%BB%B6%E5%9C%A8wordpress%E4%B8%AD%E5%86%99%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</a></p>
-<h3 id="5-4-Set-up-WordPress-elsewhere"><a href="#5-4-Set-up-WordPress-elsewhere" class="headerlink" title="5.4 Set up WordPress elsewhere"></a>5.4 Set up WordPress elsewhere</h3><p>WordPress can also be set up in Dreamweaver/ on a local machine.</p>
+<h3 id="5-3-Markdown-and-LaTeX"><a href="#5-3-Markdown-and-LaTeX" class="headerlink" title="5.3 Markdown and LaTeX"></a>5.3 Markdown and LaTeX</h3><p>There are many Markdown plugins for WordPress. As for LaTeX, see here: <a href="https://www.codelast.com/%E5%8E%9F%E5%88%9B%E7%94%A8latex-for-wordpress%E6%8F%92%E4%BB%B6%E5%9C%A8wordpress%E4%B8%AD%E5%86%99%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" target="_blank" rel="noopener">https://www.codelast.com/%E5%8E%9F%E5%88%9B%E7%94%A8latex-for-wordpress%E6%8F%92%E4%BB%B6%E5%9C%A8wordpress%E4%B8%AD%E5%86%99%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</a></p>
+<h3 id="5-4-Setting-up-WordPress-elsewhere"><a href="#5-4-Setting-up-WordPress-elsewhere" class="headerlink" title="5.4 Setting up WordPress elsewhere"></a>5.4 Setting up WordPress elsewhere</h3><p>WordPress can also be set up in Dreamweaver/ on a local machine.</p>
 <p>See here: <a href="https://www.youtube.com/watch?v=T_y0Gmsfqro" target="_blank" rel="noopener">https://www.youtube.com/watch?v=T_y0Gmsfqro</a></p>
 <h3 id="5-5-Others"><a href="#5-5-Others" class="headerlink" title="5.5 Others"></a>5.5 Others</h3><p>See here: <a href="http://www.paincker.com/website-primer-7" target="_blank" rel="noopener">http://www.paincker.com/website-primer-7</a></p>
-<h2 id="6-Summary"><a href="#6-Summary" class="headerlink" title="6. Summary"></a>6. Summary</h2><p>I don’t want to wrote a summary. </p>
+<h2 id="6-Summary"><a href="#6-Summary" class="headerlink" title="6. Summary"></a>6. Summary</h2><p>I don’t want to write a summary. </p>
 <p>Just enjoy my WordPress blog!!!</p>
 <h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="http://www.paincker.com/website-primer-4" target="_blank" rel="noopener">http://www.paincker.com/website-primer-4</a> </p>
 <p><a href="http://www.paincker.com/website-primer-6" target="_blank" rel="noopener">http://www.paincker.com/website-primer-6</a></p>
@@ -1138,7 +1793,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1160,7 +1815,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
