@@ -297,6 +297,186 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liutianle.top/2018/03/04/Topological-group/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tyler LIU">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Felictopia">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/04/Topological-group/" itemprop="url">Topological group</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-04T21:59:48+08:00">
+                2018-03-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mathematics/" itemprop="url" rel="index">
+                    <span itemprop="name">Mathematics</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/04/Topological-group/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/04/Topological-group/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>文中的映射，路径和回路，如果没有特殊说明，均为连续的。</p>
+<p><strong>定义 1.1</strong>: 一个<strong>拓扑群</strong>是一个群 $G$，在这个群所在集合上有一个拓扑结构，使得映射 $f:G \times G \rightarrow G,(x,y) \mapsto x^{-1}y $ 连续.(逆和乘法是群中的运算)并且，我们要求这个拓扑空间满足 $T_1$（单点集是闭集）或 $T_2$(Hausdorff)（任意两个不同的点可以用不交的开集分开）分离性公理.(实际上拓扑群满足$T_1$ 就会满足 $T_3$)</p>
+<p>我们可以给出另外一个拓扑群的定义：要求群的乘法和逆两个运算连续。容易验证这两个定义是等价的。</p>
+<p>拓扑群的结构是很常见的，下面是几个基本的例子：<br>1.实数配上加法$(\mathbb{R} , +)$。<br>2.大于零的实数配上乘法$(\mathbb{R}^+,<em>)$<br>3.挖掉原点的平面配上复数乘法$(\mathbb{C} - { 0 },</em>)$<br>4.将$n<em>n$的非退化(行列式不为零的)实（复）矩阵全体看做是空间$\mathbb{R}^{n^2}(\mathbb{C}^{n^2})$的子空间（仅仅是将矩阵的第i行第j列的元素看做$\mathbb{R}^{i</em>j}$上的分量），那么矩阵的乘法和求逆是连续的（因为乘法是多项式函数，求逆是一个有理分式函数）。这个空间通常记为$GL(n,\mathbb{R}),GL(n,\mathbb{C})$，而矩阵的行列式函数$det(M):GL(n,\mathbb{R}) \rightarrow \mathbb{R}$ 是连续的（因为求行列式是一个多项式函数）。<br>5.所有行列式为1的$n*n$ 实（复）矩阵，记为$SL(n,\mathbb{R}),SL(n,\mathbb{C})$ (Special linear group)</p>
+<p>下面的性质是显然的，但是非常重要：<br><strong>性质 1.2</strong>:令$G$ 是一个拓扑群（下文中出现$G$ ，如果不加以说明，表示一个拓扑群），$\forall g \in G$   ，映射$L<em>g:G \rightarrow G,x \mapsto gx,R_g:G \rightarrow G,x \mapsto xg$是连续同胚，其逆分别为$L</em>{g^{-1}},R_{g^{-1}} \Box$ </p>
+<p>这两个映射就是由群中某个元素定义的左（右）作用。不严格地说，这个性质告诉了我们一个拓扑群有很多的自同胚，或者很科普地说，一个拓扑群几何上十分“对称”，我经常把作用想象成一个很对称的东西在转啊转，所以有时候会做噩梦- -而且这个性质还告诉我们一件很重要的事：一个拓扑群的拓扑结构是被其“局部”所决定的，因为任意两点之间存在同胚映射。所以当我们需要考察拓扑群的拓扑性质时，我们常常<strong>只需要</strong>通过考察包含群幺元$e$  的开集来获得信息。</p>
+<p>既然这是一个拓扑空间和群结构的混合，那么我们对它就有两方面的关怀：来自拓扑的和群的，下面的几个性质描述了在这两方面它的情况。</p>
+<p><strong>性质 1.3</strong>:$G$ 的一个子群配上子空间拓扑还是一个拓扑群。如果$H$  是$G$ 的一个正规子群，并且是拓扑空间中的闭集，那么商群$G/H$ 配以商空间拓扑是一个拓扑群。$\Box$   </p>
+<p>唯一要说明的是一个$T_1$  的空间商掉一个闭子集，商空间是$T_1$ 的，这在一般情况下不成立，所以我们要求要商掉闭的正规子群。</p>
+<p>有一个记号后面总是会出现，先提一下：设$A,B$ 是$G$  中的集合，定义$AB:= {ab | a \in A,b \in B },A^{-1}:={a^{-1}|a \in A }$  </p>
+<p><strong>性质 1.4</strong>:$G$  商掉一个正规闭子群$H$ 得到的商群$G/H$  由性质1.3是一个拓扑群，商映射$\pi :G \rightarrow G/H$  是开映射。<br>证明：设$U$  是$G$  中的开集，$\pi (U)$  是开集当且仅当$\pi^{-1} (\pi (U))$  是开集，而$\pi^{-1} (\pi (U)) = UH$ 注意到$UH = \bigcup_{u \in U} uH $ 是开集，故$\pi (U)$ 是开集。$\Box$ </p>
+<p><strong>性质 1.5</strong>:拓扑群子群的闭包是子群，正规子群的闭包是正规子群。<br>证明：唯一需要用到的拓扑性质是，闭包的连续象包含在连续相的闭包中。$\Box$   </p>
+<p><strong>定义 1.6</strong>:一个包含幺元$e$ 的邻域$V$  称为<strong>对称的</strong>，或者称为<strong>对称邻域</strong>，如果$V = V^{-1}$。</p>
+<p>对称邻域是很常见的邻域，任何一个包含幺元的邻域都包含对称邻域并且我们有如下性质，这使得我们在考虑问题时常常只需要关注对称邻域就可以了。</p>
+<p><strong>性质 1.7</strong>:对任意包含幺元$e$  的邻域$U$   ，存在包含幺元$e$  的对称邻域$V$ ，使得$VV \subset U$  </p>
+<p>证明：设$G$  中乘法映射为$\Phi :G \times G \rightarrow G$   ，令$\widetilde{V} = \pi_1 (\Phi^{-1} (U)) \cap \pi_2 (\Phi^{-1} (U)), V = \widetilde{V} \cap \widetilde{V}^{-1}$  ，验证$V$       开，对称，包含幺元。$\Box$  </p>
+<p><strong>定理 1.8</strong>:拓扑群满足$T_2$ 分离性公理。<br>证明：一个拓扑空间满足$T_2$   分离性公理当且仅当对角集${(a,a) \in G \times G|a \in G }$    是闭集，而对角集是在连续映射$f:G \times G \rightarrow G, (x,y) \mapsto x^{-1}y$  下的闭集${ e }$    （由定义$T_1$  分离性知这是闭集）的原象，故对角集闭，拓扑群满足$T_2$   。$\Box$   </p>
+<p><strong>定理 1.9</strong>:拓扑群满足$T_3$ 分离性公理。<br>证明：令$B$  是<strong>不</strong>包含幺元的闭集，则存在对称邻域$V$  使得$VV \cap B = \emptyset$   ，那么$V \cap BV^{-1} = \emptyset$  ，由对称性$V \cap BV = \emptyset$    而且$B \subset BV$    因为$e \in V$  $\Box$  </p>
+<p>我们继续拓扑性质的考察,接下来关注的是连通性。</p>
+<p><strong>性质 1.10</strong>:设$H$   是$G$  的一个开子群，$H$  是开的，则$H$  是闭的。<br>证明：$H^c$   是一些$H$   陪集的并，而陪集是开的。$\Box$  </p>
+<p><strong>性质 1.11</strong>:设$H$ 是$G$中包含幺元的连通分支，那么$H$ 是正规子群。<br>证明：因为求逆映射是同胚，故连通分支整个打到连通分支，又$e^{-1} = e$ ，故$H^{-1} = H$ ，故$H$ 对求逆封闭。对乘法封闭因为元素的左作用是个同胚。正规性是因为左作用和右作用都是同胚。$\Box$</p>
+<p>这些证明看起来都反映了拓扑群中非常强的对称性，而上述性质告诉我们拓扑群的连通分支之间是互相同胚的。</p>
+<p>我们来讲一点稍微有趣的东西作为这篇乱七八糟的介绍的结尾吧，关于路径连通性和基本群。</p>
+<p>考虑$(G,e)$中（取定幺元为基点的拓扑空间）的回路$f,g:(S^1,(1,0)) \rightarrow (G,e)$，我们在$f,g$之间有两种乘法：拓扑空间中路径的连接，记作$f \cdot g$，还有在群中的逐点相乘，记作$fg$。第一种乘法是我们比较熟悉的乘法，在同伦等价类中就是基本群的乘法。接下来说明实际上在同伦意义下，两种乘法是等价的。</p>
+<p><strong>性质 1.12</strong>:设$f,g$是$(G,e)$中的回路，则$fg$也是连续回路。<br>证明：因为$f  \times g:(S^1,(1,0)) \rightarrow (G\times G,(e,e))$是连续的。$\Box$</p>
+<p><strong>引理 1.13</strong>:设$f_1,f_2,g_1,g_2$是$(G,e)$中的回路，如果$f_1 \backsimeq f_2$，则$f_1g \backsimeq f_2g$，同样，如果$g_1 \backsimeq g_2$则$fg_1 \backsimeq fg_2$<br>证明：在性质1.11的证明中，$f_1 \times g \backsimeq f_2 \times g$，由此构造出$f_1g \backsimeq f_2g$。另一半同理。$\Box$ </p>
+<p><strong>引理 1.14</strong>:设$f,g$ 为$(G,e)$  中的回路，$f \cdot g \backsimeq fg$ 。<br>证明：$f\backsimeq f\cdot e\backsimeq e\cdot f , g\backsimeq e\cdot g\backsimeq g\cdot e$，由引理1.12，对这三个回路逐点相乘，我们得到$fg \backsimeq f\cdot g \backsimeq g\cdot f$  $\Box$  </p>
+<p>从上面证明的最后一步，我们可以直接看出下面这个在最开始并不显然的定理：<br><strong>定理 1.15</strong>: $\pi_1 (G,e)$是阿贝尔群。$\Box$</p>
+<p><em>转自   <a href="https://trow.cc" target="_blank" rel="noopener">https://trow.cc</a></em> </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://liutianle.top/2018/03/03/Recommended-softwares-or-applications/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2545,7 +2725,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2556,7 +2736,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">categories</span>
                 
               </div>
@@ -2567,7 +2747,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
