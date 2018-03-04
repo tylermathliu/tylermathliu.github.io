@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="blog,Internet,Hexo," />
+  <meta name="keywords" content="Internet,blog,Hexo," />
 
 
 
@@ -83,13 +83,13 @@
 
 
 
-<meta name="description" content="AbstractThis article is about my experiences on building an independent blog using Hexo framework on Github. GitHub Pages is designed to host your personal, organization, or project pages directly fro">
-<meta name="keywords" content="blog,Internet,Hexo">
+<meta name="description" content="Abstract This article is about my experiences on building an independent blog using Hexo framework on Github. GitHub Pages is designed to host your personal, organization, or project pages directly f">
+<meta name="keywords" content="Internet,blog,Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Building an independent blog 2 (Hexo + Github)">
 <meta property="og:url" content="http://liutianle.top/2018/02/28/Building-an-independent-blog-2-Hexo-Github/index.html">
 <meta property="og:site_name" content="Felictopia">
-<meta property="og:description" content="AbstractThis article is about my experiences on building an independent blog using Hexo framework on Github. GitHub Pages is designed to host your personal, organization, or project pages directly fro">
+<meta property="og:description" content="Abstract This article is about my experiences on building an independent blog using Hexo framework on Github. GitHub Pages is designed to host your personal, organization, or project pages directly f">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/594366-67df63114cbc9a70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/594366-a871d25a8f778075.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700">
@@ -105,7 +105,7 @@
 <meta property="og:updated_time" content="2018-03-01T05:38:32.506Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Building an independent blog 2 (Hexo + Github)">
-<meta name="twitter:description" content="AbstractThis article is about my experiences on building an independent blog using Hexo framework on Github. GitHub Pages is designed to host your personal, organization, or project pages directly fro">
+<meta name="twitter:description" content="Abstract This article is about my experiences on building an independent blog using Hexo framework on Github. GitHub Pages is designed to host your personal, organization, or project pages directly f">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/594366-67df63114cbc9a70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700">
 
 
@@ -412,50 +412,67 @@
       
 
       
-        <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>This article is about my experiences on building an independent blog using Hexo framework on Github. GitHub Pages is designed to host your personal, organization, or project pages directly from a GitHub repository. It is really convenient and appropriate for maintaining an academic or technical blog, which is precisely my case. The contents mainly include: </p>
+        <h2 id="abstract">Abstract</h2>
+<p>This article is about my experiences on building an independent blog using Hexo framework on Github. GitHub Pages is designed to host your personal, organization, or project pages directly from a GitHub repository. It is really convenient and appropriate for maintaining an academic or technical blog, which is precisely my case. The contents mainly include:</p>
 <blockquote>
 <ul>
-<li>how to install Hexo  </li>
+<li>how to install Hexo<br>
+</li>
 <li>how to configure its themes</li>
-<li>how to deploy it on Github and redirect your own website </li>
+<li>how to deploy it on Github and redirect your own website</li>
 <li>how to create pages and post articles</li>
 </ul>
 </blockquote>
 <p>Note that most pictures in this post come from Reference. Really appreciate their help.</p>
-<h2 id="0-First-things-first"><a href="#0-First-things-first" class="headerlink" title="0. First things first"></a>0. First things first</h2><p>Firstly, make sure node.js and npm are fully installed on your computer and their directories are added to the system path. To check this, a simple way is to type the following commands in the <strong>cmd</strong> or <strong>shell</strong>. Otherwise, go to <a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a> and install it.</p>
+<h2 id="first-things-first">0. First things first</h2>
+<p>Firstly, make sure node.js and npm are fully installed on your computer and their directories are added to the system path. To check this, a simple way is to type the following commands in the <strong>cmd</strong> or <strong>shell</strong>. Otherwise, go to https://nodejs.org/en/ and install it.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">$ npm -v</span><br></pre></td></tr></table></figure>
-<p>Secondly, Git is needed to install Hexo. Most of Github users would be familiar with this tool. Otherwise, you might want to see the introduction and download it at <a href="https://git-scm.com/" target="_blank" rel="noopener">https://git-scm.com/</a> :</p>
+<p>Secondly, Git is needed to install Hexo. Most of Github users would be familiar with this tool. Otherwise, you might want to see the introduction and download it at https://git-scm.com/ :</p>
 <blockquote>
 <p>Git is a <a href="https://git-scm.com/about/free-and-open-source" target="_blank" rel="noopener">free and open source</a> distributed version control system designed to handle everything from small to very large projects with speed and efficiency.</p>
 <p>Git is <a href="https://git-scm.com/doc" target="_blank" rel="noopener">easy to learn</a> and has a <a href="https://git-scm.com/about/small-and-fast" target="_blank" rel="noopener">tiny footprint with lightning fast performance</a>. It outclasses SCM tools like Subversion, CVS, Perforce, and ClearCase with features like <a href="https://git-scm.com/about/branching-and-merging" target="_blank" rel="noopener">cheap local branching</a>, convenient <a href="https://git-scm.com/about/staging-area" target="_blank" rel="noopener">staging areas</a>, and <a href="https://git-scm.com/about/distributed" target="_blank" rel="noopener">multiple workflows</a>.</p>
 </blockquote>
-<h2 id="1-Configure-Github"><a href="#1-Configure-Github" class="headerlink" title="1. Configure Github"></a>1. Configure Github</h2><h3 id="1-1-Create-a-new-repository"><a href="#1-1-Create-a-new-repository" class="headerlink" title="1.1 Create a new repository"></a>1.1 Create a new repository</h3><p>Github账号注册就不说了，登陆过后点击new repository，Repository name填写自己的名称 + .github.io，<br>例如（test.github.io，test就是你的github账号的名称）。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/594366-67df63114cbc9a70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="img"></p>
+<h2 id="configure-github">1. Configure Github</h2>
+<h3 id="create-a-new-repository">1.1 Create a new repository</h3>
+<p>Github账号注册就不说了，登陆过后点击new repository，Repository name填写自己的名称 + .github.io， 例如（test.github.io，test就是你的github账号的名称）。</p>
+<div class="figure">
+<img src="http://upload-images.jianshu.io/upload_images/594366-67df63114cbc9a70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="img">
+<p class="caption">img</p>
+</div>
 <p>创建仓库截图</p>
 <p>然后直接点Create repository就可以了。</p>
-<h3 id="1-2-Configuring-Github-SSH-keys"><a href="#1-2-Configuring-Github-SSH-keys" class="headerlink" title="1.2 Configuring Github SSH keys"></a>1.2 Configuring Github SSH keys</h3><p>首先在桌面空白处鼠标右键选择Git Bash Here</p>
+<h3 id="configuring-github-ssh-keys">1.2 Configuring Github SSH keys</h3>
+<p>首先在桌面空白处鼠标右键选择Git Bash Here</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;your&apos;s emaill address&quot;</span><br></pre></td></tr></table></figure>
-<p>引号里面的内容输入你的邮箱地址，然后回车，会提示你文件保存的路径，这时候按回车键确认<br>然后会提示你输入密码，输入即可（输入密码是看不到的），然后会确认输入一次，就可以在刚刚的路径看到生成了两个文件，一个是id_rsa，另一个是id_rsa.pub，用notepadd++打开id_rsa.pub然后选中里面的全部内容，复制下来。</p>
-<p>登录github，点击头像可以看到setting选项，点击进入<br>然后可以看到左边有一个SSH and GPG keys选项<br>点击就可以看到以下界面，点击New SSH</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/594366-a871d25a8f778075.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="img"></p>
-<p>这里的Title随便填写，主要是为了方便管理密钥<br>然后把刚刚拷贝的内容粘贴到Key里面去<br>然后点击Add SSH key<br>到此，Github上面的SSH配置就算完成了</p>
-<h3 id="1-3-Create-a-local-repository-and-sychronize-with-Github"><a href="#1-3-Create-a-local-repository-and-sychronize-with-Github" class="headerlink" title="1.3 Create a local repository and sychronize with Github"></a>1.3 Create a local repository and sychronize with Github</h3><p>This step is a standard operation to create a project on Github. Some of the process may be skipped according to your personal preferences.</p>
-<p>首先是在本地的任意一个分区创建一个任意的文件夹，路径中最好不要用中文吧，反正你懂的<br>然后进入到刚刚创建的文件夹，右键，然后点击Git Bash Here</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/594366-87ac8a03c2a8b51e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/319" alt="img"></p>
+<p>引号里面的内容输入你的邮箱地址，然后回车，会提示你文件保存的路径，这时候按回车键确认 然后会提示你输入密码，输入即可（输入密码是看不到的），然后会确认输入一次，就可以在刚刚的路径看到生成了两个文件，一个是id_rsa，另一个是id_rsa.pub，用notepadd++打开id_rsa.pub然后选中里面的全部内容，复制下来。</p>
+<p>登录github，点击头像可以看到setting选项，点击进入 然后可以看到左边有一个SSH and GPG keys选项 点击就可以看到以下界面，点击New SSH</p>
+<div class="figure">
+<img src="http://upload-images.jianshu.io/upload_images/594366-a871d25a8f778075.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="img">
+<p class="caption">img</p>
+</div>
+<p>这里的Title随便填写，主要是为了方便管理密钥 然后把刚刚拷贝的内容粘贴到Key里面去 然后点击Add SSH key 到此，Github上面的SSH配置就算完成了</p>
+<h3 id="create-a-local-repository-and-sychronize-with-github">1.3 Create a local repository and sychronize with Github</h3>
+<p>This step is a standard operation to create a project on Github. Some of the process may be skipped according to your personal preferences.</p>
+<p>首先是在本地的任意一个分区创建一个任意的文件夹，路径中最好不要用中文吧，反正你懂的 然后进入到刚刚创建的文件夹，右键，然后点击Git Bash Here</p>
+<div class="figure">
+<img src="http://upload-images.jianshu.io/upload_images/594366-87ac8a03c2a8b51e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/319" alt="img">
+<p class="caption">img</p>
+</div>
 <p>打开Git Bash</p>
 <p>依次输入以下命令（前面的$符号就不要复制了哈）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line">$ git config --global user.name &quot;Your&apos;s name&quot;</span><br><span class="line">$ git config --global user.email &quot;Your&apos;s email address&quot;</span><br></pre></td></tr></table></figure>
-<p>其中的Your’s name替换成你的名称，Your’s email address替换成你的邮件地址即可<br>然后再当前的文件夹下面新建一个README.md文件，然后右键用notepad++打开，随便写入一点内容，做一次简单的提交，输入以下命令<br>其中的yourname是github账号的名称，每个人是不一样的</p>
+<p>其中的Your's name替换成你的名称，Your's email address替换成你的邮件地址即可 然后再当前的文件夹下面新建一个README.md文件，然后右键用notepad++打开，随便写入一点内容，做一次简单的提交，输入以下命令 其中的yourname是github账号的名称，每个人是不一样的</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git add README.md</span><br><span class="line">$ git commit -m &quot;first commit&quot;</span><br><span class="line">$ git remote add origin git@github.com:yourname/yourname.github.io.git</span><br><span class="line">$ git push -u origin master</span><br></pre></td></tr></table></figure>
 <p>这时候进入到github应该就可以看到仓库下面有一个刚刚提交的README.md的文档了。</p>
-<h2 id="2-Install-Hexo"><a href="#2-Install-Hexo" class="headerlink" title="2. Install Hexo"></a>2. Install Hexo</h2><p>在桌面空白处右键打开Git Bash Here<br>输入以下命令</p>
+<h2 id="install-hexo">2. Install Hexo</h2>
+<p>在桌面空白处右键打开Git Bash Here 输入以下命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>敲完回车可能没有任何提示，请一定要耐心等待<br>安装成功后，可以输入以下命令测试以下Hexo是否安装成功</p>
+<p>敲完回车可能没有任何提示，请一定要耐心等待 安装成功后，可以输入以下命令测试以下Hexo是否安装成功</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo version</span><br></pre></td></tr></table></figure>
 <p>如果能看到hexo的版本号信息，就表示安装成功了</p>
 <p>新建完成后，指定文件夹的目录如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── .deploy         #需要部署的文件</span><br><span class="line">├── node_modules    #Hexo插件</span><br><span class="line">├── public          #生成的静态网页文件</span><br><span class="line">├── scaffolds       #模板</span><br><span class="line">├── source          #博客正文和其他源文件，404、favicon、CNAME 都应该放在这里</span><br><span class="line">| ├── _drafts       #草稿</span><br><span class="line">| └── _posts        #文章</span><br><span class="line">├── themes          #主题</span><br><span class="line">├── _config.yml     #全局配置文件</span><br><span class="line">└── package.json    #npm 依赖等</span><br></pre></td></tr></table></figure>
-<p>接下来，进入到我们刚刚创建的文件夹，右键打开Git Bash Here<br>然后依次输入以下命令:</p>
+<p>接下来，进入到我们刚刚创建的文件夹，右键打开Git Bash Here 然后依次输入以下命令:</p>
 <p>初始化hexo</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
 <p>npm安装package.json中的依赖包</p>
@@ -466,7 +483,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
 <p>这时候在浏览器输入<a href="https://link.jianshu.com?t=http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 就可以看到hexo已经成功生成了博客，当然这只是我们本地可以看到的</p>
 <p><a href="https://syd192.github.io/photo/3.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/3.png" alt="博客主页"></a></p>
-<h2 id="3-Deploy-your-blog-online"><a href="#3-Deploy-your-blog-online" class="headerlink" title="3. Deploy your blog online"></a>3. Deploy your blog online</h2><h3 id="3-1-Deploy-to-Github"><a href="#3-1-Deploy-to-Github" class="headerlink" title="3.1 Deploy to Github"></a>3.1 Deploy to Github</h3><p>找到我们刚刚创建的文件夹，在里面找到_config.yml文件，用notepad++打开，直接拖到最后，可以看到</p>
+<h2 id="deploy-your-blog-online">3. Deploy your blog online</h2>
+<h3 id="deploy-to-github">3.1 Deploy to Github</h3>
+<p>找到我们刚刚创建的文件夹，在里面找到_config.yml文件，用notepad++打开，直接拖到最后，可以看到</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type:</span><br></pre></td></tr></table></figure>
 <p>改成以下，特别注意，在：的后面是有一个空格的，千万要小心，不然后出错的，其中yourname即在github上面的用户名</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:  </span><br><span class="line">  type: git</span><br><span class="line">  repository: http://github.com/yourname/yourname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
@@ -476,300 +495,296 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR Deployer not found: git</span><br></pre></td></tr></table></figure>
 <p>尝试输入以下命令，然后重新执行刚刚的两条命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>这时候如果弹出一个对话框，输入在guthub上面的用户名和密码即可<br>这时候我们就可以在浏览器输入<a href="https://link.jianshu.com?t=http://yourname.github.io" target="_blank" rel="noopener">http://yourname.github.io</a>（yourname替换成github上的名称）就可以看到博客已经搭建成功了。</p>
-<h3 id="3-2-Using-your-own-domain"><a href="#3-2-Using-your-own-domain" class="headerlink" title="3.2 Using your own domain"></a>3.2 Using your own domain</h3><p>See my last post on domain name and DNS configuration. Here we only talk about how to configure your Github to show your own domain name.</p>
-<p>One simple way is to change/add a CNAME file to your repository containing solely the domain name (no “http://“ or “https://“ ). Another way is to use Github settings of your blog project.</p>
-<p>However, there is still a minor but annoying problem. Every time you use the “hexo deploy” command, the CNAME file disappears even if you have saved it in your local directory. I believe it is a little bug. To solve this,  we can install a plugin.</p>
+<p>这时候如果弹出一个对话框，输入在guthub上面的用户名和密码即可 这时候我们就可以在浏览器输入<a href="https://link.jianshu.com?t=http://yourname.github.io" target="_blank" rel="noopener">http://yourname.github.io</a>（yourname替换成github上的名称）就可以看到博客已经搭建成功了。</p>
+<h3 id="using-your-own-domain">3.2 Using your own domain</h3>
+<p>See my last post on domain name and DNS configuration. Here we only talk about how to configure your Github to show your own domain name.</p>
+<p>One simple way is to change/add a CNAME file to your repository containing solely the domain name (no &quot;http://&quot; or &quot;https://&quot; ). Another way is to use Github settings of your blog project.</p>
+<p>However, there is still a minor but annoying problem. Every time you use the &quot;hexo deploy&quot; command, the CNAME file disappears even if you have saved it in your local directory. I believe it is a little bug. To solve this, we can install a plugin.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-cname --save1</span><br></pre></td></tr></table></figure>
 <p>之后在_config.yml中添加一条</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plugins:</span><br><span class="line">- hexo-generator-cname12</span><br></pre></td></tr></table></figure>
 <p>并修改 _config.yml</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">url: http://www.lovebxm.com</span><br><span class="line">root: /</span><br><span class="line">permalink: :year/:month/:day/:title/</span><br><span class="line">permalink_defaults:</span><br></pre></td></tr></table></figure>
 <p>需要注意的是：如果是在github上建立的CNAME文件，需要先clone到本地，然后安装插件，在deploy上去即可。CNAME只允许一个域名地址。</p>
-<h2 id="4-Configure-your-Hexo-blog"><a href="#4-Configure-your-Hexo-blog" class="headerlink" title="4. Configure your Hexo blog"></a>4. Configure your Hexo blog</h2><h3 id="4-1-Official-help"><a href="#4-1-Official-help" class="headerlink" title="4.1 Official help"></a>4.1 Official help</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo help</span><br></pre></td></tr></table></figure>
-<h3 id="4-2-Global-configuration"><a href="#4-2-Global-configuration" class="headerlink" title="4.2 Global configuration"></a>4.2 Global configuration</h3><p>对本地blog目录下的<code>_config.yml</code>进行修改配置即可。</p>
-<h4 id="Website"><a href="#Website" class="headerlink" title="Website"></a>Website</h4><div class="table-container">
+<h2 id="configure-your-hexo-blog">4. Configure your Hexo blog</h2>
+<h3 id="official-help">4.1 Official help</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo help</span><br></pre></td></tr></table></figure>
+<h3 id="global-configuration">4.2 Global configuration</h3>
+<p>对本地blog目录下的<code>_config.yml</code>进行修改配置即可。</p>
+<h4 id="website">Website</h4>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>参数</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td><code>title</code></td>
 <td>网站标题</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>subtitle</code></td>
 <td>网站副标题</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>description</code></td>
 <td>网站描述</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>author</code></td>
 <td>您的名字</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>language</code></td>
 <td>网站使用的语言</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>timezone</code></td>
 <td>网站时区。Hexo 默认使用您电脑的时区。<a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="noopener">时区列表</a>。比如说：<code>America/New_York</code>,<code>Japan</code>, 和 <code>UTC</code> 。</td>
 </tr>
 </tbody>
 </table>
-</div>
-<h4 id="Address"><a href="#Address" class="headerlink" title="Address"></a>Address</h4><div class="table-container">
+<h4 id="address">Address</h4>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>参数</th>
 <th>描述</th>
 <th>默认值</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td><code>url</code></td>
 <td>网址</td>
 <td></td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>root</code></td>
 <td>网站根目录</td>
 <td></td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>permalink</code></td>
 <td>文章的 <a href="https://xuanwo.org/2015/03/26/hexo-intor/permalinks.html" target="_blank" rel="noopener">永久链接</a> 格式</td>
 <td><code>:year/:month/:day/:title/</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>permalink_default</code></td>
 <td>永久链接中各部分的默认值</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-</div>
-<h4 id="Directory"><a href="#Directory" class="headerlink" title="Directory"></a>Directory</h4><div class="table-container">
+<h4 id="directory">Directory</h4>
 <table>
+<colgroup>
+<col width="16%">
+<col width="66%">
+<col width="17%">
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>参数</th>
 <th>描述</th>
 <th>默认值</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td><code>source_dir</code></td>
 <td>资源文件夹，这个文件夹用来存放内容。</td>
 <td><code>source</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>public_dir</code></td>
 <td>公共文件夹，这个文件夹用于存放生成的站点文件。</td>
 <td><code>public</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>tag_dir</code></td>
 <td>标签文件夹</td>
 <td><code>tags</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>archive_dir</code></td>
 <td>归档文件夹</td>
 <td><code>archives</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>category_dir</code></td>
 <td>分类文件夹</td>
 <td><code>categories</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>code_dir</code></td>
 <td>Include code 文件夹</td>
-<td>`downloads/code</td>
-</tr>
-<tr>
-<td><code>i18n_dir</code></td>
-<td>国际化（i18n）文件夹</td>
-<td><code>:lang</code></td>
-</tr>
-<tr>
-<td><code>skip_render</code></td>
-<td>跳过指定文件的渲染，您可使用 <a href="https://github.com/isaacs/node-glob" target="_blank" rel="noopener">glob 表达式</a>来匹配路径。</td>
+<td><code>downloads/code | |</code>i18n_dir<code>| 国际化（i18n）文件夹                                         |</code>:lang<code>| |</code>skip_render`</td>
 </tr>
 </tbody>
 </table>
-</div>
-<h4 id="Posts"><a href="#Posts" class="headerlink" title="Posts"></a>Posts</h4><div class="table-container">
+<h4 id="posts">Posts</h4>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>参数</th>
 <th>描述</th>
 <th>默认值</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td><code>new_post_name</code></td>
 <td>新文章的文件名称</td>
 <td>:title.md</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>default_layout</code></td>
 <td>预设布局</td>
 <td>post</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>auto_spacing</code></td>
 <td>在中文和英文之间加入空格</td>
 <td>false</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>titlecase</code></td>
 <td>把标题转换为 title case</td>
 <td>false</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>external_link</code></td>
 <td>在新标签中打开链接</td>
 <td>true</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>filename_case</code></td>
 <td>把文件名称转换为 (1) 小写或 (2) 大写</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>render_drafts</code></td>
 <td>显示草稿</td>
 <td>false</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>post_asset_folder</code></td>
 <td>启动 <a href="https://xuanwo.org/2015/03/26/hexo-intor/asset-folders.html" target="_blank" rel="noopener">Asset 文件夹</a></td>
 <td>false</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>relative_link</code></td>
 <td>把链接改为与根目录的相对位址</td>
 <td>false</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>future</code></td>
 <td>显示未来的文章</td>
 <td>true</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>highlight</code></td>
 <td>代码块的设置</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-</div>
-<h4 id="Tags-amp-categories"><a href="#Tags-amp-categories" class="headerlink" title="Tags &amp; categories"></a>Tags &amp; categories</h4><div class="table-container">
+<h4 id="tags-categories">Tags &amp; categories</h4>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>参数</th>
 <th>描述</th>
 <th>默认值</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td><code>default_category</code></td>
 <td>默认分类</td>
 <td><code>uncategorized</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>category_map</code></td>
 <td>分类别名</td>
 <td></td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>tag_map</code></td>
 <td>标签别名</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-</div>
-<h4 id="Date-and-time-format"><a href="#Date-and-time-format" class="headerlink" title="Date and time format"></a>Date and time format</h4><p>Hexo 使用 <a href="http://momentjs.com/" target="_blank" rel="noopener">Moment.js</a> 来解析和显示时间。</p>
-<div class="table-container">
+<h4 id="date-and-time-format">Date and time format</h4>
+<p>Hexo 使用 <a href="http://momentjs.com/" target="_blank" rel="noopener">Moment.js</a> 来解析和显示时间。</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>参数</th>
 <th>描述</th>
 <th>默认值</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td><code>date_format</code></td>
 <td>日期格式</td>
 <td><code>MMM D YYYY</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>time_format</code></td>
 <td>时间格式</td>
 <td><code>H:mm:ss</code></td>
 </tr>
 </tbody>
 </table>
-</div>
-<h4 id="Pages"><a href="#Pages" class="headerlink" title="Pages"></a>Pages</h4><div class="table-container">
+<h4 id="pages">Pages</h4>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>参数</th>
 <th>描述</th>
 <th>默认值</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td><code>per_page</code></td>
 <td>每页显示的文章量 (0 = 关闭分页功能)</td>
 <td><code>10</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>pagination_dir</code></td>
 <td>分页目录</td>
 <td><code>page</code></td>
 </tr>
 </tbody>
 </table>
-</div>
-<h4 id="Additions"><a href="#Additions" class="headerlink" title="Additions"></a>Additions</h4><div class="table-container">
+<h4 id="additions">Additions</h4>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>参数</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td><code>theme</code></td>
 <td>当前主题名称。值为<code>false</code>时禁用主题</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>deploy</code></td>
 <td>部署部分的设置</td>
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="4-3-Theme-configuration-NexT"><a href="#4-3-Theme-configuration-NexT" class="headerlink" title="4.3 Theme configuration-NexT"></a>4.3 Theme configuration-NexT</h3><p>For convenience, I just copied and revised most of the contents from: <a href="https://syd192.github.io/2016/11/15/hexo-learn/" target="_blank" rel="noopener">https://syd192.github.io/2016/11/15/hexo-learn/</a> . Thanks a lot. Note that every one of the word “本站点” refers to the site mentioned above.</p>
+<h3 id="theme-configuration-next">4.3 Theme configuration-NexT</h3>
+<p>For convenience, I just copied and revised most of the contents from: https://syd192.github.io/2016/11/15/hexo-learn/ . Thanks a lot. Note that every one of the word &quot;本站点&quot; refers to the site mentioned above.</p>
 <p>本站点采用的Hexo主题是<a href="https://github.com/iissnan/hexo-theme-next/" target="_blank" rel="noopener">Next主题</a>，使用该主题的原因是：该博客整体布局效果个人很喜欢，而且配套的文档资料非常好，文档资料可直接参考<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">官网链接</a>。ps：建议下载主题的稳定版本，可以避免很多没必要的麻烦。</p>
 <p>本文主要介绍以下内容：</p>
 <blockquote>
@@ -780,7 +795,8 @@
 <li>在next主题中引入第三方服务，如评论功能，分享功能，站点内容搜索功能和数据统计分析功能。</li>
 </ul>
 </blockquote>
-<h4 id="使用Next主题"><a href="#使用Next主题" class="headerlink" title="使用Next主题"></a>使用Next主题</h4><ul>
+<h4 id="使用next主题">使用Next主题</h4>
+<ul>
 <li>在<a href="https://github.com/iissnan/hexo-theme-next/releases" target="_blank" rel="noopener">这里</a>Downloads Next主题代码</li>
 <li>将下载的代码放在<code>myBlog/next</code>目录下</li>
 <li>设置站点<code>myBlog/_config.yml</code>的theme字段值为next</li>
@@ -790,132 +806,141 @@
 </ul>
 <p>注：此时登录网站，发现是空白的，打开控制台，提示很多vendors目录下的文件404，解决办法是将next主题下即<code>myBlog/themes/next/source</code>下的vendors目录名改为lib，并修改<code>myBlog/themes/next/_config.yml</code>的<code>_internal: vendors</code>改为<code>_internal: lib</code>。</p>
 <p>另外，TKL主题也是不错的</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/SuperKieran/TKL.git theme/TKL</span><br></pre></td></tr></table></figure>
-<h4 id="主题风格设定"><a href="#主题风格设定" class="headerlink" title="主题风格设定"></a>主题风格设定</h4><p>通过修改next主题下的<code>_config.yml</code>的scheme字段，配置不同的风格。</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/SuperKieran/TKL.git theme/TKL</span><br></pre></td></tr></table></figure></p>
+<h4 id="主题风格设定">主题风格设定</h4>
+<p>通过修改next主题下的<code>_config.yml</code>的scheme字段，配置不同的风格。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Schemes</span><br><span class="line">scheme: Muse</span><br><span class="line">#scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br></pre></td></tr></table></figure>
-<h4 id="添加网页背景"><a href="#添加网页背景" class="headerlink" title="添加网页背景"></a>添加网页背景</h4><ol>
-<li><p>将背景图<code>background.jpg</code>放到<code>myBlog\themes\next\source\images</code>文件夹下</p>
-</li>
-<li><p>在<code>myBlog\themes\next\source\css\_custom\custom.syl</code>文件中添加下面代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body &#123; </span><br><span class="line">    background:url(/images/background.jpg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<h4 id="添加网页背景">添加网页背景</h4>
+<ol style="list-style-type: decimal">
+<li><p>将背景图<code>background.jpg</code>放到<code>myBlog\themes\next\source\images</code>文件夹下</p></li>
+<li><p>在<code>myBlog\themes\next\source\css\_custom\custom.syl</code>文件中添加下面代码：</p></li>
 </ol>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body &#123; </span><br><span class="line">    background:url(/images/background.jpg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>注：</p>
-<p> 在上面代码中添加<code>background-repeat: no-repeat;</code>来避免图片浮动。</p>
-<h4 id="标题栏-header-inner添加背景"><a href="#标题栏-header-inner添加背景" class="headerlink" title="标题栏 .header-inner添加背景"></a>标题栏 .header-inner添加背景</h4><ol>
-<li><p>将背景图<code>header.jpg</code>放到<code>myBlog\themes\next\source\images</code>文件夹下</p>
-</li>
-<li><p>在<code>myBlog\themes\next\source\css\_common\components\header\header.syl</code>文件中添加下面代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.header &#123; </span><br><span class="line">    background-image: url(/images/header.jpg);</span><br><span class="line">    background-size: 100% 100%;</span><br><span class="line"> &#125;</span><br><span class="line"> .header-inner &#123; </span><br><span class="line">    position: relative; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-</li>
+<p>在上面代码中添加<code>background-repeat: no-repeat;</code>来避免图片浮动。</p>
+<h4 id="标题栏-.header-inner添加背景">标题栏 .header-inner添加背景</h4>
+<ol style="list-style-type: decimal">
+<li><p>将背景图<code>header.jpg</code>放到<code>myBlog\themes\next\source\images</code>文件夹下</p></li>
+<li><p>在<code>myBlog\themes\next\source\css\_common\components\header\header.syl</code>文件中添加下面代码：</p></li>
 </ol>
-<h4 id="菜单设置"><a href="#菜单设置" class="headerlink" title="菜单设置"></a>菜单设置</h4><p>通过修改next主题下的<code>_config.yml</code>的menu字段，选定显示的菜单项。</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.header &#123; </span><br><span class="line">    background-image: url(/images/header.jpg);</span><br><span class="line">    background-size: 100% 100%;</span><br><span class="line"> &#125;</span><br><span class="line"> .header-inner &#123; </span><br><span class="line">    position: relative; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="菜单设置">菜单设置</h4>
+<p>通过修改next主题下的<code>_config.yml</code>的menu字段，选定显示的菜单项。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /</span><br><span class="line">  categories: /categories</span><br><span class="line">  about: /about</span><br><span class="line">  archives: /archives</span><br><span class="line">  tags: /tags</span><br><span class="line">  #commonweal: /404.html</span><br></pre></td></tr></table></figure>
-<p>其中，home代表主页，categories代表分类页，about代表关于页面，archives代表归档页，commonweal代表404页面（page not found时候显示的页面）。<br>菜单项文本修改是在对next主题下的language文件夹下的文件进行修改，若当前语言是简体中文，直接修改<code>language/zh-Hans.yml</code>里的对应字段即可。<br>本站点显示主页，分类页，关于页面和归档页。</p>
-<h4 id="头像设置"><a href="#头像设置" class="headerlink" title="头像设置"></a>头像设置</h4><p>在主题下的<code>source/images/</code>下放置头像文件<code>avatar.gif</code>即可。</p>
-<h4 id="设置文章代码主题"><a href="#设置文章代码主题" class="headerlink" title="设置文章代码主题"></a>设置文章代码主题</h4><p>Next主题总共支持5种主题，默认主题是白色的normal。通过修改next主题下的<code>_config.yml</code>的highlight字段，来设置代码主题。<br>本站点使用的是night主题。即令highlight为night。</p>
-<h4 id="添加标签页面"><a href="#添加标签页面" class="headerlink" title="添加标签页面"></a>添加标签页面</h4><p>前面通过修改next主题下的<code>_config.yml</code>文件中的menu选项，可以在主页面的菜单栏添加标签选项，但是此时点击标签，跳转的页面会显示page not found。<br>添加标签页面的具体方法是：</p>
+<p>其中，home代表主页，categories代表分类页，about代表关于页面，archives代表归档页，commonweal代表404页面（page not found时候显示的页面）。 菜单项文本修改是在对next主题下的language文件夹下的文件进行修改，若当前语言是简体中文，直接修改<code>language/zh-Hans.yml</code>里的对应字段即可。 本站点显示主页，分类页，关于页面和归档页。</p>
+<h4 id="头像设置">头像设置</h4>
+<p>在主题下的<code>source/images/</code>下放置头像文件<code>avatar.gif</code>即可。</p>
+<h4 id="设置文章代码主题">设置文章代码主题</h4>
+<p>Next主题总共支持5种主题，默认主题是白色的normal。通过修改next主题下的<code>_config.yml</code>的highlight字段，来设置代码主题。 本站点使用的是night主题。即令highlight为night。</p>
+<h4 id="添加标签页面">添加标签页面</h4>
+<p>前面通过修改next主题下的<code>_config.yml</code>文件中的menu选项，可以在主页面的菜单栏添加标签选项，但是此时点击标签，跳转的页面会显示page not found。 添加标签页面的具体方法是：</p>
 <ul>
-<li><p>新建页面</p>
-<p>输入如下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
-</li>
+<li>新建页面</li>
 </ul>
+<p>输入如下命令：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure></p>
 <p>输入命令后，在<code>myBlog/source</code>下会新生成一个新的文件夹<code>tags</code>，在该文件夹下会有一个<code>index.md</code>文件。</p>
 <ul>
-<li><p>设置页面类型<br>在上步新生成的<code>myBlog/source/tags/index.md</code>中添加<code>type: &quot;tags&quot;</code>，<code>index.md</code>文件内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2016-11-15 19:10:05</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>设置具体文章的tags<br>当要为某一篇文章添加标签，只需在<code>myBlog/source/_post</code>目录下的具体文章的tags中添加标签即可，如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 基于Hexo和Github搭建博客</span><br><span class="line">date: 2016-11-09</span><br><span class="line">tags: [npm, hexo, github]</span><br><span class="line">categories: 搭建博客</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-</li>
+<li>设置页面类型 在上步新生成的<code>myBlog/source/tags/index.md</code>中添加<code>type: &quot;tags&quot;</code>，<code>index.md</code>文件内容如下：</li>
 </ul>
-<h4 id="添加分类页面"><a href="#添加分类页面" class="headerlink" title="添加分类页面"></a>添加分类页面</h4><p>步骤与添加标签页面类似，具体如下：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2016-11-15 19:10:05</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li><p>新建页面</p>
-<p>输入如下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
-</li>
+<li>设置具体文章的tags 当要为某一篇文章添加标签，只需在<code>myBlog/source/_post</code>目录下的具体文章的tags中添加标签即可，如：</li>
 </ul>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 基于Hexo和Github搭建博客</span><br><span class="line">date: 2016-11-09</span><br><span class="line">tags: [npm, hexo, github]</span><br><span class="line">categories: 搭建博客</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
+<h4 id="添加分类页面">添加分类页面</h4>
+<p>步骤与添加标签页面类似，具体如下：</p>
+<ul>
+<li>新建页面</li>
+</ul>
+<p>输入如下命令：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure></p>
 <p>输入命令后，在<code>myBlog/source</code>下会新生成一个新的文件夹<code>categories</code>，在该文件夹下会有一个<code>index.md</code>文件。</p>
 <ul>
-<li><p>设置页面类型<br>在上步新生成的<code>myBlog/source/categories/index.md</code>中添加<code>type: &quot;categories&quot;</code>，<code>index.md</code>文件内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2016-11-15 19:11:13</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>设置具体文章的categories<br>当要为某一篇文章添加分类，只需在<code>myBlog/source/_post</code>目录下的具体文章的categories中添加分类即可，如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 基于Hexo和Github搭建博客</span><br><span class="line">date: 2016-11-09</span><br><span class="line">tags: [npm, hexo, github]</span><br><span class="line">categories: 搭建博客</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-</li>
+<li>设置页面类型 在上步新生成的<code>myBlog/source/categories/index.md</code>中添加<code>type: &quot;categories&quot;</code>，<code>index.md</code>文件内容如下：</li>
 </ul>
-<h4 id="添加关于我页面"><a href="#添加关于我页面" class="headerlink" title="添加关于我页面"></a>添加关于我页面</h4><p>步骤与添加标签页面类似，具体如下：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2016-11-15 19:11:13</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li><p>新建页面</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page about</span><br></pre></td></tr></table></figure>
-</li>
+<li>设置具体文章的categories 当要为某一篇文章添加分类，只需在<code>myBlog/source/_post</code>目录下的具体文章的categories中添加分类即可，如：</li>
 </ul>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 基于Hexo和Github搭建博客</span><br><span class="line">date: 2016-11-09</span><br><span class="line">tags: [npm, hexo, github]</span><br><span class="line">categories: 搭建博客</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
+<h4 id="添加关于我页面">添加关于我页面</h4>
+<p>步骤与添加标签页面类似，具体如下：</p>
+<ul>
+<li>新建页面</li>
+</ul>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page about</span><br></pre></td></tr></table></figure></p>
 <p>输入命令后，在<code>myBlog/source</code>下会新生成一个新的文件夹<code>about</code>，在该文件夹下会有一个<code>index.md</code>文件。</p>
 <ul>
-<li><p>修改</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">about/index.md</span><br></pre></td></tr></table></figure>
-<p>本站点index.md如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: about</span><br><span class="line">date: 2016-11-15 19:08:50</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">## 关于我</span><br><span class="line"></span><br><span class="line">一只学习前端的小菜鸟，欢迎分享知识。</span><br><span class="line"></span><br><span class="line">From XDU</span><br><span class="line"></span><br><span class="line">QQ：847909475</span><br><span class="line">Email: 847909475@qq.com</span><br></pre></td></tr></table></figure>
-<p>效果如下：<br><a href="https://syd192.github.io/photo/20161115/11.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/20161115/11.png" alt="img"></a></p>
-</li>
+<li>修改</li>
 </ul>
-<h4 id="加入评论功能"><a href="#加入评论功能" class="headerlink" title="加入评论功能"></a>加入评论功能</h4><p>Well, for comment function, I prefer <a href="https://valine.js.org/#/?id=valine" target="_blank" rel="noopener">Valine</a>. </p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">about/index.md</span><br></pre></td></tr></table></figure></p>
+<p>本站点index.md如下：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: about</span><br><span class="line">date: 2016-11-15 19:08:50</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">## 关于我</span><br><span class="line"></span><br><span class="line">一只学习前端的小菜鸟，欢迎分享知识。</span><br><span class="line"></span><br><span class="line">From XDU</span><br><span class="line"></span><br><span class="line">QQ：847909475</span><br><span class="line">Email: 847909475@qq.com</span><br></pre></td></tr></table></figure></p>
+<p>效果如下： <a href="https://syd192.github.io/photo/20161115/11.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/20161115/11.png" alt="img"></a></p>
+<h4 id="加入评论功能">加入评论功能</h4>
+<p>Well, for comment function, I prefer <a href="https://valine.js.org/#/?id=valine" target="_blank" rel="noopener">Valine</a>.</p>
 <blockquote>
 <p>Valine 是一款基于<a href="http://leancloud.cn/" target="_blank" rel="noopener">Leancloud</a>的快速、简洁且高效的无后端评论系统。</p>
 </blockquote>
 <p>You can simply visit that website and follow the tutorials there.</p>
-<h4 id="加入站点内容搜索功能"><a href="#加入站点内容搜索功能" class="headerlink" title="加入站点内容搜索功能"></a>加入站点内容搜索功能</h4><p>本站点使用的是Local Search。加入站点内容搜索功能步骤如下：</p>
+<h4 id="加入站点内容搜索功能">加入站点内容搜索功能</h4>
+<p>本站点使用的是Local Search。加入站点内容搜索功能步骤如下：</p>
 <ul>
-<li><p>安装hexo-generator-searchdb</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
-</li>
+<li>安装hexo-generator-searchdb</li>
 </ul>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure></p>
 <p>注意：安装时应在站点根目录下，即myBlog目录下</p>
 <ul>
-<li><p>添加search字段</p>
+<li>添加search字段</li>
+</ul>
 <p>在站点</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myBlog/_config.yml</span><br></pre></td></tr></table></figure>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myBlog/_config.yml</span><br></pre></td></tr></table></figure></p>
 <p>中添加search字段，如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>效果如下：<br><a href="https://syd192.github.io/photo/20161115/7.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/20161115/7.png" alt="img"></a></p>
-<h4 id="加入数据统计与分析功能"><a href="#加入数据统计与分析功能" class="headerlink" title="加入数据统计与分析功能"></a>加入数据统计与分析功能</h4><p>本站点使用的是<a href="http://tongji.baidu.com/" target="_blank" rel="noopener">百度统计</a>。加入数据统计与分析功能步骤如下：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure></p>
+<p>效果如下： <a href="https://syd192.github.io/photo/20161115/7.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/20161115/7.png" alt="img"></a></p>
+<h4 id="加入数据统计与分析功能">加入数据统计与分析功能</h4>
+<p>本站点使用的是<a href="http://tongji.baidu.com/" target="_blank" rel="noopener">百度统计</a>。加入数据统计与分析功能步骤如下：</p>
 <ul>
-<li>注册站长账号并登陆<br>在<a href="http://tongji.baidu.com/web/register" target="_blank" rel="noopener">这里</a>注册站长账号，并填写信息，网站域名和网站首页以下图为例来填写，注册完成后并登陆。<br><a href="https://syd192.github.io/photo/20161115/8.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/20161115/8.png" alt="img"></a></li>
-<li>在跳转的页面中会显示下图，复制hm.js后的id值<br><a href="https://syd192.github.io/photo/20161115/9.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/20161115/9.png" alt="img"></a></li>
-<li>添加baidu_analytics字段<br>在站点<code>myBlog/_config.yml</code>中添加search字段，值为上步复制的id值<br>至此，该功能已成功加入，大约过20min后在<a href="http://tongji.baidu.com/" target="_blank" rel="noopener">百度统计</a>上可以看到站点的访问情况，如下图：<br><a href="https://syd192.github.io/photo/20161115/10.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/20161115/10.png" alt="img"></a></li>
+<li>注册站长账号并登陆 在<a href="http://tongji.baidu.com/web/register" target="_blank" rel="noopener">这里</a>注册站长账号，并填写信息，网站域名和网站首页以下图为例来填写，注册完成后并登陆。 <a href="https://syd192.github.io/photo/20161115/8.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/20161115/8.png" alt="img"></a></li>
+<li>在跳转的页面中会显示下图，复制hm.js后的id值 <a href="https://syd192.github.io/photo/20161115/9.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/20161115/9.png" alt="img"></a></li>
+<li>添加baidu_analytics字段 在站点<code>myBlog/_config.yml</code>中添加search字段，值为上步复制的id值 至此，该功能已成功加入，大约过20min后在<a href="http://tongji.baidu.com/" target="_blank" rel="noopener">百度统计</a>上可以看到站点的访问情况，如下图： <a href="https://syd192.github.io/photo/20161115/10.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/20161115/10.png" alt="img"></a></li>
 </ul>
-<h2 id=""><a href="#" class="headerlink" title=" "></a> </h2><p>默认主题是landscape，如果不太喜欢，可以访问<a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="noopener">这里</a>获取更多的主题。本人选择主题是TKL，具体切换方法如下：</p>
-<ol>
-<li>配置根目录下的_config.yml文件<br><a href="https://syd192.github.io/photo/13.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/13.png" alt="img"></a><br>然后，<code>hexo g</code>，再<code>hexo d</code>，即可正常访问。<br>注：图片url填写，图片文件夹img应放在source文件目录下，url直接写为/img/图片.png即可。</li>
+<h2 id="section"></h2>
+<p>默认主题是landscape，如果不太喜欢，可以访问<a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="noopener">这里</a>获取更多的主题。本人选择主题是TKL，具体切换方法如下：</p>
+<ol start="2" style="list-style-type: decimal">
+<li>配置根目录下的_config.yml文件 <a href="https://syd192.github.io/photo/13.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/13.png" alt="img"></a> 然后，<code>hexo g</code>，再<code>hexo d</code>，即可正常访问。 注：图片url填写，图片文件夹img应放在source文件目录下，url直接写为/img/图片.png即可。</li>
 </ol>
-<h2 id="5-Write-on-your-blog"><a href="#5-Write-on-your-blog" class="headerlink" title="5. Write on your blog"></a>5. Write on your blog</h2><h3 id="5-1-New-posts"><a href="#5-1-New-posts" class="headerlink" title="5.1 New posts"></a>5.1 New posts</h3><ol>
-<li><p>新建博客</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new post &quot;newBlog&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在根目录下source文件夹下找到对应的<code>newBlog.md</code>文件，按照markdown规则，编写博客。<br>在该<code>newBlog.md</code>文件的头部，可以对该博客进行配置，如博客标题title，博客创建时间date，所属分类categories，标签tags<br>然后，<code>hexo clean</code>，再<code>hexo g &amp;&amp; hexo d</code>，即可正常访问。</p>
-</li>
+<h2 id="write-on-your-blog">5. Write on your blog</h2>
+<h3 id="new-posts">5.1 New posts</h3>
+<ol style="list-style-type: decimal">
+<li>新建博客</li>
 </ol>
-<p>最后来张成果图，继续加油咯~~~~<br><a href="https://syd192.github.io/photo/14.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/14.png" alt="img"></a></p>
-<p>若要在多台电脑上写文章，参考文章<a href="http://mungo.space/2015/10/14/create-hexo-on-github-4/" target="_blank" rel="noopener">在Github上面搭建Hexo博客（四）:使用不同电脑维护 </a>中的步骤即可。</p>
-<h3 id="5-2-MathJax-supports"><a href="#5-2-MathJax-supports" class="headerlink" title="5.2 MathJax supports"></a>5.2 MathJax supports</h3><p>To fully support MathJax (LaTeX format) in your Hexo blog, you can simply use the following commands:</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new post &quot;newBlog&quot;</span><br></pre></td></tr></table></figure></p>
+<ol start="2" style="list-style-type: decimal">
+<li>在根目录下source文件夹下找到对应的<code>newBlog.md</code>文件，按照markdown规则，编写博客。 在该<code>newBlog.md</code>文件的头部，可以对该博客进行配置，如博客标题title，博客创建时间date，所属分类categories，标签tags 然后，<code>hexo clean</code>，再<code>hexo g &amp;&amp; hexo d</code>，即可正常访问。</li>
+</ol>
+<p>最后来张成果图，继续加油咯~<sub>~</sub> <a href="https://syd192.github.io/photo/14.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/14.png" alt="img"></a></p>
+<p>若要在多台电脑上写文章，参考文章<a href="http://mungo.space/2015/10/14/create-hexo-on-github-4/" target="_blank" rel="noopener">在Github上面搭建Hexo博客（四）:使用不同电脑维护</a>中的步骤即可。</p>
+<h3 id="mathjax-supports">5.2 MathJax supports</h3>
+<p>To fully support MathJax (LaTeX format) in your Hexo blog, you can simply use the following commands:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo-renderer-marked --save</span><br><span class="line">$ npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure>
 <p>The first command is used to uninstall Hexo’s default Markdown renderer, the second one, install new Markdown renderer which can support MathJax fully. After installation, you should regenerate your blog to see the changes.</p>
-<p>To see why this is needed and how it works, visit <a href="http://2wildkids.com/2016/10/06/%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86Hexo%E5%92%8CMathJax%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/" target="_blank" rel="noopener">http://2wildkids.com/2016/10/06/%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86Hexo%E5%92%8CMathJax%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/</a> for more information.</p>
-<h2 id="6-Summary"><a href="#6-Summary" class="headerlink" title="6. Summary"></a>6. Summary</h2><p>As usual, I don’t want to write a summary.</p>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="https://syd192.github.io/2016/11/09/%E6%90%AD%E5%BB%BAhexo/" target="_blank" rel="noopener">https://syd192.github.io/2016/11/09/%E6%90%AD%E5%BB%BAhexo/</a></p>
-<p><a href="https://syd192.github.io/2016/11/15/hexo-learn/" target="_blank" rel="noopener">https://syd192.github.io/2016/11/15/hexo-learn/</a></p>
-<p><a href="https://www.jianshu.com/p/956c44c87fb1" target="_blank" rel="noopener">https://www.jianshu.com/p/956c44c87fb1</a></p>
-<p><a href="http://blog.csdn.net/qq80583600/article/details/72828063" target="_blank" rel="noopener">http://blog.csdn.net/qq80583600/article/details/72828063</a></p>
-<p><a href="http://2wildkids.com/2016/10/06/%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86Hexo%E5%92%8CMathJax%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/" target="_blank" rel="noopener">http://2wildkids.com/2016/10/06/%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86Hexo%E5%92%8CMathJax%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/</a></p>
-<h2 id="See-also"><a href="#See-also" class="headerlink" title="See also"></a>See also</h2><p><a href="https://xuanwo.org/2015/03/26/hexo-intor/" target="_blank" rel="noopener">https://xuanwo.org/2015/03/26/hexo-intor/</a></p>
-<p><a href="http://www.cnblogs.com/liulangmao/p/4323064.html" target="_blank" rel="noopener">http://www.cnblogs.com/liulangmao/p/4323064.html</a></p>
-<p><a href="http://col.dog/2015/11/12/hello-world/" target="_blank" rel="noopener">http://col.dog/2015/11/12/hello-world/</a></p>
-<p><a href="http://aword.net/hexo+next-modify-record/" target="_blank" rel="noopener">http://aword.net/hexo+next-modify-record/</a></p>
-<p><a href="http://blog.shijinrong.cn/" target="_blank" rel="noopener">http://blog.shijinrong.cn/</a></p>
+<p>To see why this is needed and how it works, visit http://2wildkids.com/2016/10/06/%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86Hexo%E5%92%8CMathJax%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/ for more information.</p>
+<h2 id="summary">6. Summary</h2>
+<p>As usual, I don't want to write a summary.</p>
+<h2 id="references">References</h2>
+<p>https://syd192.github.io/2016/11/09/%E6%90%AD%E5%BB%BAhexo/</p>
+<p>https://syd192.github.io/2016/11/15/hexo-learn/</p>
+<p>https://www.jianshu.com/p/956c44c87fb1</p>
+<p>http://blog.csdn.net/qq80583600/article/details/72828063</p>
+<p>http://2wildkids.com/2016/10/06/%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86Hexo%E5%92%8CMathJax%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/</p>
+<h2 id="see-also">See also</h2>
+<p>https://xuanwo.org/2015/03/26/hexo-intor/</p>
+<p>http://www.cnblogs.com/liulangmao/p/4323064.html</p>
+<p>http://col.dog/2015/11/12/hello-world/</p>
+<p>http://aword.net/hexo+next-modify-record/</p>
+<p>http://blog.shijinrong.cn/</p>
 
       
     </div>
@@ -933,9 +958,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/blog/" rel="tag"># blog</a>
-          
             <a href="/tags/Internet/" rel="tag"># Internet</a>
+          
+            <a href="/tags/blog/" rel="tag"># blog</a>
           
             <a href="/tags/Hexo/" rel="tag"># Hexo</a>
           
@@ -1113,7 +1138,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract"><span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0-First-things-first"><span class="nav-text">0. First things first</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Configure-Github"><span class="nav-text">1. Configure Github</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-Create-a-new-repository"><span class="nav-text">1.1 Create a new repository</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-Configuring-Github-SSH-keys"><span class="nav-text">1.2 Configuring Github SSH keys</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-Create-a-local-repository-and-sychronize-with-Github"><span class="nav-text">1.3 Create a local repository and sychronize with Github</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Install-Hexo"><span class="nav-text">2. Install Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Deploy-your-blog-online"><span class="nav-text">3. Deploy your blog online</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-Deploy-to-Github"><span class="nav-text">3.1 Deploy to Github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-Using-your-own-domain"><span class="nav-text">3.2 Using your own domain</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Configure-your-Hexo-blog"><span class="nav-text">4. Configure your Hexo blog</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-Official-help"><span class="nav-text">4.1 Official help</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-Global-configuration"><span class="nav-text">4.2 Global configuration</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Website"><span class="nav-text">Website</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Address"><span class="nav-text">Address</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Directory"><span class="nav-text">Directory</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Posts"><span class="nav-text">Posts</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tags-amp-categories"><span class="nav-text">Tags &amp; categories</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Date-and-time-format"><span class="nav-text">Date and time format</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Pages"><span class="nav-text">Pages</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Additions"><span class="nav-text">Additions</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-Theme-configuration-NexT"><span class="nav-text">4.3 Theme configuration-NexT</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用Next主题"><span class="nav-text">使用Next主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#主题风格设定"><span class="nav-text">主题风格设定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加网页背景"><span class="nav-text">添加网页背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标题栏-header-inner添加背景"><span class="nav-text">标题栏 .header-inner添加背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#菜单设置"><span class="nav-text">菜单设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#头像设置"><span class="nav-text">头像设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置文章代码主题"><span class="nav-text">设置文章代码主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加标签页面"><span class="nav-text">添加标签页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加分类页面"><span class="nav-text">添加分类页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加关于我页面"><span class="nav-text">添加关于我页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#加入评论功能"><span class="nav-text">加入评论功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#加入站点内容搜索功能"><span class="nav-text">加入站点内容搜索功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#加入数据统计与分析功能"><span class="nav-text">加入数据统计与分析功能</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-text"> </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Write-on-your-blog"><span class="nav-text">5. Write on your blog</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-New-posts"><span class="nav-text">5.1 New posts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-MathJax-supports"><span class="nav-text">5.2 MathJax supports</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Summary"><span class="nav-text">6. Summary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-text">References</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#See-also"><span class="nav-text">See also</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#abstract"><span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#first-things-first"><span class="nav-text">0. First things first</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#configure-github"><span class="nav-text">1. Configure Github</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#create-a-new-repository"><span class="nav-text">1.1 Create a new repository</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#configuring-github-ssh-keys"><span class="nav-text">1.2 Configuring Github SSH keys</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#create-a-local-repository-and-sychronize-with-github"><span class="nav-text">1.3 Create a local repository and sychronize with Github</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#install-hexo"><span class="nav-text">2. Install Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#deploy-your-blog-online"><span class="nav-text">3. Deploy your blog online</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#deploy-to-github"><span class="nav-text">3.1 Deploy to Github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#using-your-own-domain"><span class="nav-text">3.2 Using your own domain</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#configure-your-hexo-blog"><span class="nav-text">4. Configure your Hexo blog</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#official-help"><span class="nav-text">4.1 Official help</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#global-configuration"><span class="nav-text">4.2 Global configuration</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#website"><span class="nav-text">Website</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#address"><span class="nav-text">Address</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#directory"><span class="nav-text">Directory</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#posts"><span class="nav-text">Posts</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tags-categories"><span class="nav-text">Tags &amp; categories</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#date-and-time-format"><span class="nav-text">Date and time format</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pages"><span class="nav-text">Pages</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#additions"><span class="nav-text">Additions</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#theme-configuration-next"><span class="nav-text">4.3 Theme configuration-NexT</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用next主题"><span class="nav-text">使用Next主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#主题风格设定"><span class="nav-text">主题风格设定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加网页背景"><span class="nav-text">添加网页背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标题栏-.header-inner添加背景"><span class="nav-text">标题栏 .header-inner添加背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#菜单设置"><span class="nav-text">菜单设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#头像设置"><span class="nav-text">头像设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置文章代码主题"><span class="nav-text">设置文章代码主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加标签页面"><span class="nav-text">添加标签页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加分类页面"><span class="nav-text">添加分类页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加关于我页面"><span class="nav-text">添加关于我页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#加入评论功能"><span class="nav-text">加入评论功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#加入站点内容搜索功能"><span class="nav-text">加入站点内容搜索功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#加入数据统计与分析功能"><span class="nav-text">加入数据统计与分析功能</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section"><span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#write-on-your-blog"><span class="nav-text">5. Write on your blog</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#new-posts"><span class="nav-text">5.1 New posts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mathjax-supports"><span class="nav-text">5.2 MathJax supports</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#summary"><span class="nav-text">6. Summary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#references"><span class="nav-text">References</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#see-also"><span class="nav-text">See also</span></a></li></ol></div>
             
 
           </div>
