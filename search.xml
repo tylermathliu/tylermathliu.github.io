@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Lie group and Lie algebra (reproduced)]]></title>
+    <title><![CDATA[Lie group and Lie algebra [reproduced]]]></title>
     <url>%2F2018%2F03%2F05%2FLie-group-and-Lie-algebra-reproduced%2F</url>
     <content type="text"><![CDATA[李群和李代数，是微分几何和代数交叉的精彩领域，似乎在量子力学、计算机视觉等领域有着比较丰富的应用。本文的目的是简单地介绍李群和李代数的最基本概念和应用，我们不追求数学的精确性和严格性，首先我们将主要围绕在典型群的周围来领略旖旎的风光以及一些应用。 首先是一些基本概念：代数方面你只需要知道什么是群就行了，至于几何，你至少要了解直到指数映射。 概念的罗列 这一节可能比较枯燥，不过你也可以先跳过，一遍看第二节的例子，一边在回顾这一节。 一个群\(G\)，如果它同时是一个光滑流形，则称其为李群（Lie group）。 事实上，只要群\(G\)的乘法和逆运算都是光滑映射，则\(G\)成为一个李群。 记1为群\(G\)的单位元，将1处的切空间\(\mathrm{T}_{1}G\)称为李代数（Lie Algebra），记作\(\mathfrak{g}\)（哥特字体）或者\(\mathrm{Lie}(G)\)。 我们知道在黎曼几何中，指数映射是从切空间到流形上的映射，\(\mathrm{exp}_{p}(v)\)指从\(p\)点出发沿切向量为\(v\)的测地线行走\(|v|\)的长度到达的点， 接下来我们将把指数映射推广到李群之上。在李群中，指数映射被限制在单位元1上，即指数映射\(\mathrm{exp}(x)\)为\(\mathfrak{g}\rightarrow G\)的映射。 显然\(\mathrm{exp}(0)=1\) 对于\(x,y\in\mathfrak{g}\)，\(x,y\)足够小的时候，\(\exp(x)\exp(y)\)应该很接近\(1\in G\)。因此我们可以定义： \[\exp(x)\exp(y)=\exp(\mu(x,y))\] 其中 \(\mu:\mathfrak{g}\times\mathfrak{g}\rightarrow\mathfrak{g}\) 为定义在\((0,0)\)附近的光滑映射。 \(\mu\)可以展开泰勒级数： \[\mu(x,y)=x+y+\lambda(x,y)+\cdots\] \(\cdots\)表示高阶项。 其中\(\lambda(x,y)\)是反对称（扭对称）的双线性映射。 再定义\([x,y]=2\lambda(x,y)\)，这个称为李括号。 下面我们给出一个性质： \[\exp(x)\exp(y)\exp(-x)\exp(-y)=\exp([x,y]+\cdots)\] 这个性质是针对一般的李群而言的，接下来我们将看到，在实际应用所接触到的实用李群中，这个性质起着非常关键的作用。 典型群的例子 现在，把我们的目光将主要集中在一般线性群(\(\mathrm{GL}_{n}(\mathbb{R})\))的子群上。 一般线性群是所有\(n\times n\)的非奇异矩阵以乘法为群运算构成的。显然矩阵乘法和逆都是光滑的， 因此\(\mathrm{GL{n}}\)是一个李群，它的李代数\(\mathrm{Lie}(\mathrm{GL}{n})\)定义为单位矩阵的切空间。它的一些子群称为典型群。 典型群包括正交群（\(\mathrm{O(n)}\)），酉群（\(\mathrm{U(n)}\)），辛群(\(\mathrm{Sp(n)}\))。典型群都是子群。 一般线性群的李代数为所有的n阶矩阵。指数映射在典型群下有着一些很好的特性，即 \[\exp(x)=\sum_{k=0}^{\infty}\frac{x^{k}}{k!}\] 为矩阵指数。 同时若\(xy=yx\) 则 \(\exp(x)\exp(y)=\exp(x+y)\) 注意到这个性质的条件在一般的李代数中是没有定义的，因为李代数中没有定义乘法，而在典型群中，由于李代数是矩阵集合，因此该式具有了意义。 现在我们将典型群中指数映射的重要性质不加证明地写下： \[\exp(x)=\sum_{k=0}^{\infty}\frac{x^{k}}{k!}\] \[xy=yx\Rightarrow\exp(x)\exp(y)=\exp(x+y)\] \[\exp(x^{T})=(\exp(x))^{T}\] 我们先来看正交群\(\mathrm{O(n)}\)。显然\(\mathrm{O(n)}={X|XX^{\mathrm{T}}=I,X\in\mathbb{R}^{n\times n}}\)，令\(x\in\mathrm{Lie(O(n))}\),则 \[\exp(x)=X\] \[\exp(x^{T})=X^{T}\] 因此 \[\exp(x+x^{T})=XX^{T}=I\] 所以 \[x+x^{T}=0\] 所以正交群的李代数是所有反对称矩阵构成的空间。 考察二维正交群的子群特殊正交群（\(\mathrm{SO(2)}\)），也称为二维旋转群，它的李代数只有一个基， \[G_{1}=\begin{bmatrix}0\ -1\\1 \ \ \ \ \ 0\end{bmatrix}\] 对于\(\mathrm{alg}(\theta)=\theta G_{1}\in Lie(SO(2))\)，（\(\mathrm{alg}(\theta)\)表示以\(\theta\)为系数对基进行线性组合得到的向量），指数映射为， \[\exp(\mathrm{alg}(\theta))=\exp(\begin{bmatrix}0 \ -\theta\\\theta \ \ \ \ \ 0\end{bmatrix})=\begin{bmatrix}\cos\theta \ -\sin\theta\\sin\theta \ \ \ \ \ \cos\theta\end{bmatrix}\] 下面我们先来看一个在计算机视觉中可能的应用： 定义对数映射\(\log(X)=x\)为指数映射的逆，利用指数映射和对数映射，我们可以对变换进行插值。假如\(X,Y\in G\)为两个变换，我们想要对它们进行插值\(f(X,Y,t):G\times G\times[0,1]\rightarrow G\)。我们可以沿着两个变换间的测地线进行插值： \[\begin{aligned}f(X,Y,t) \ ; =\exp(t\cdot\log(Y\cdot X^{-1}))\cdot X\end{aligned}\] 注意到 \[\begin{aligned}f(X,Y,0) \; =X\\f(X,Y,1) \; =Y\end{aligned}\] 接下来，我们来看\(\mathrm{SE(2)}\)，即平面刚性变换群，显然一个刚性变换由一个旋转和一个平移组成。因此 \[\begin{bmatrix}\mathbb{R} \ \ \ \mathrm{t}\\\ 0 \ \ \ 1\end{bmatrix}\in\mathrm{SE(2)\subset\mathbb{R}^{3\times3}}\] 其中\(\mathbb{R}\in\mathrm{SO(2)},t\in\mathbb{R}^{2}\)。 因此它的李代数由三个generators生成： \[G{1}=\begin{bmatrix}0 -1 \; 0\\1 \ \ \ 0 \ \ \ 0\\0 \ \ \ 0\ \ \ 0\end{bmatrix},\ G{2}=\begin{bmatrix}0 \;\ 0 \;\ 1\\0 \;\ 0 \;\ 0\\0 \;\ 0 \;\ 0\end{bmatrix},\ G_{3}=\begin{bmatrix}0 \;\ 0 \;\ 0\\0 \ \; 0 \;\ 1\\0 \ \; 0 \;\ 0\end{bmatrix}\] 指数映射 \[\exp(\mathrm{alg}(v(\theta,x,y)))=\exp(\begin{bmatrix}0 \; -\theta \; x\\\theta\ \ \ \; 0 \ \; y\\0 \ \ \ \; 0 \; \ 0\end{bmatrix})\] 转自 http://xuehy.github.io/blog/2014/05/02/2014-05-02-lie1/]]></content>
       <categories>
@@ -66,8 +66,8 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>blog</tag>
         <tag>Internet</tag>
+        <tag>blog</tag>
         <tag>Hexo</tag>
       </tags>
   </entry>
@@ -79,10 +79,10 @@
         <category>Network</category>
       </categories>
       <tags>
+        <tag>Internet</tag>
         <tag>DNS</tag>
         <tag>WordPress</tag>
         <tag>blog</tag>
-        <tag>Internet</tag>
       </tags>
   </entry>
   <entry>
@@ -93,9 +93,9 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>Internet</tag>
         <tag>VPN</tag>
         <tag>VPS</tag>
+        <tag>Internet</tag>
       </tags>
   </entry>
   <entry>
