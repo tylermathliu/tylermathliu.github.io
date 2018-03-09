@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="analysis,linear space,math," />
+  <meta name="keywords" content="math,analysis,linear space," />
 
 
 
@@ -84,14 +84,14 @@
 
 
 <meta name="description" content="弱版本  欧式空间中的运动（保距变换）一定是仿射变换  证明：设\(E\)是欧式空间，\(f:E\to E\)是保距变换，设\(g(x)=f(x)-f(0)\), 只需证\(g\)是线性. 由于\(f\)是保距，于是有事实：   \(|g(x)-g(y)|=|x-y|&amp;quot;\)  特别的， \(|g(x)|=|x|\)   欧式空间的平行四边形公式：\[|x+y|^2">
-<meta name="keywords" content="analysis,linear space,math">
+<meta name="keywords" content="math,analysis,linear space">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mazur-Ulam theorem">
 <meta property="og:url" content="http://liutianle.top/2018/03/09/Mazur-Ulam-theorem/index.html">
 <meta property="og:site_name" content="Felictopia">
 <meta property="og:description" content="弱版本  欧式空间中的运动（保距变换）一定是仿射变换  证明：设\(E\)是欧式空间，\(f:E\to E\)是保距变换，设\(g(x)=f(x)-f(0)\), 只需证\(g\)是线性. 由于\(f\)是保距，于是有事实：   \(|g(x)-g(y)|=|x-y|&amp;quot;\)  特别的， \(|g(x)|=|x|\)   欧式空间的平行四边形公式：\[|x+y|^2">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-03-09T12:47:01.467Z">
+<meta property="og:updated_time" content="2018-03-09T13:30:34.011Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mazur-Ulam theorem">
 <meta name="twitter:description" content="弱版本  欧式空间中的运动（保距变换）一定是仿射变换  证明：设\(E\)是欧式空间，\(f:E\to E\)是保距变换，设\(g(x)=f(x)-f(0)\), 只需证\(g\)是线性. 由于\(f\)是保距，于是有事实：   \(|g(x)-g(y)|=|x-y|&amp;quot;\)  特别的， \(|g(x)|=|x|\)   欧式空间的平行四边形公式：\[|x+y|^2">
@@ -443,14 +443,17 @@
 <li>特别的， <span class="math inline">\(|g(x)|=|x|\)</span></li>
 </ol>
 </blockquote>
-<p>欧式空间的平行四边形公式：<span class="math display">\[|x+y|^2+|x-y|^2=2(|x|^2+|y|^2)\]</span> 我们需要证明两点： &gt; 1. <span class="math inline">\(g(x+y)=g(x)+g(y)\)</span><br>
+<p>欧式空间的平行四边形公式：<span class="math display">\[|x+y|^2+|x-y|^2=2(|x|^2+|y|^2)\]</span> 我们需要证明两点：<br>
+&gt; 1. <span class="math inline">\(g(x+y)=g(x)+g(y)\)</span><br>
 &gt; 2. <span class="math inline">\(g(\lambda x)=\lambda g(x)\)</span></p>
 <p>第一点，考虑式子<span class="math display">\[I=2|g(x+y)-g(x)-g(y)|^2+|g(x+y)+g(x)-g(y)|^2+|g(x+y)-g(x)+g(y)|^2\]</span><br>
 一方面，把后两项用平行四边形公式加起来，再利用事实1,2，得到<span class="math display">\[I=2|g(x+y)-g(x)-g(y)|^2+4(|x|^2+|y|^2)\]</span><br>
 另一方面， 把一二项、一三项用平行四边形公式加起来，利用事实1,2，得到<span class="math display">\[I=4(|x|^2+|y|^2)\]</span><br>
 于是我们看出<span class="math inline">\(2|g(x+y)-g(x)-g(y)|^2=0\)</span>, 这证明了第一点； 作为第一点的推论，我们得到，<span class="math inline">\(g\)</span>保持内积；作为推论，我们容易得到第二点. <span class="math inline">\(\Box\)</span></p>
-<p>## Mazur-Ulam定理<br>
-&gt; 赋范线性空间中的保距双射是仿射变换</p>
+<h2 id="mazur-ulam定理">Mazur-Ulam定理</h2>
+<blockquote>
+<p>赋范线性空间中的保距双射是仿射变换</p>
+</blockquote>
 <p>设<span class="math inline">\(E\)</span>，<span class="math inline">\(F\)</span>是实赋范线性空间，<span class="math inline">\(f:E\to F\)</span>是一个保距. 于是<span class="math inline">\(f\)</span>是一个仿射变换，当且仅当<span class="math display">\[f(tx+(1-t)y)=tf(x)+(1-t)f(y),\forall t\in [0,1], x,y\in E\]</span>, 当且仅当<span class="math display">\[f(\frac{x+y}{2})=\frac{f(x)+f(y)}{2}, \forall x,y\in E\]</span><br>
 一般情形下，<span class="math inline">\(f\)</span>未必是个仿射变换. 但是在下面两种情形下，<span class="math inline">\(f\)</span>必然是个仿射变换</p>
 <blockquote>
@@ -489,11 +492,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/math/" rel="tag"># math</a>
+          
             <a href="/tags/analysis/" rel="tag"># analysis</a>
           
             <a href="/tags/linear-space/" rel="tag"># linear space</a>
-          
-            <a href="/tags/math/" rel="tag"># math</a>
           
         </div>
       
@@ -665,7 +668,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#弱版本"><span class="nav-text">弱版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ref"><span class="nav-text">Ref</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#弱版本"><span class="nav-text">弱版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mazur-ulam定理"><span class="nav-text">Mazur-Ulam定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ref"><span class="nav-text">Ref</span></a></li></ol></div>
             
 
           </div>
@@ -1207,6 +1210,26 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
