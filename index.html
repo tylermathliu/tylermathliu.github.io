@@ -297,6 +297,229 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liutianle.top/2018/03/09/Mazur-Ulam-theorem/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tyler LIU">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Felictopia">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/09/Mazur-Ulam-theorem/" itemprop="url">Mazur-Ulam theorem</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-09T19:03:52+08:00">
+                2018-03-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mathematics/" itemprop="url" rel="index">
+                    <span itemprop="name">Mathematics</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/09/Mazur-Ulam-theorem/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/09/Mazur-Ulam-theorem/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1,173
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="弱版本">弱版本</h2>
+<blockquote>
+<p>欧式空间中的运动（保距变换）一定是仿射变换</p>
+</blockquote>
+<p>证明：设<span class="math inline">\(E\)</span>是欧式空间，<span class="math inline">\(f:E\to E\)</span>是保距变换，设<span class="math inline">\(g(x)=f(x)-f(0)\)</span>, 只需证<span class="math inline">\(g\)</span>是线性. 由于<span class="math inline">\(f\)</span>是保距，于是有事实：</p>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(|g(x)-g(y)|=|x-y|&quot;\)</span><br>
+</li>
+<li>特别的， <span class="math inline">\(|g(x)|=|x|\)</span></li>
+</ol>
+</blockquote>
+<p>欧式空间的平行四边形公式：<span class="math display">\[|x+y|^2+|x-y|^2=2(|x|^2+|y|^2)\]</span> 我们需要证明两点： &gt; 1. <span class="math inline">\(g(x+y)=g(x)+g(y)\)</span><br>
+&gt; 2. <span class="math inline">\(g(\lambda x)=\lambda g(x)\)</span></p>
+<p>第一点，考虑式子<span class="math display">\[I=2|g(x+y)-g(x)-g(y)|^2+|g(x+y)+g(x)-g(y)|^2+|g(x+y)-g(x)+g(y)|^2\]</span><br>
+一方面，把后两项用平行四边形公式加起来，再利用事实1,2，得到<span class="math display">\[I=2|g(x+y)-g(x)-g(y)|^2+4(|x|^2+|y|^2)\]</span><br>
+另一方面， 把一二项、一三项用平行四边形公式加起来，利用事实1,2，得到<span class="math display">\[I=4(|x|^2+|y|^2)\]</span><br>
+于是我们看出<span class="math inline">\(2|g(x+y)-g(x)-g(y)|^2=0\)</span>, 这证明了第一点； 作为第一点的推论，我们得到，<span class="math inline">\(g\)</span>保持内积；作为推论，我们容易得到第二点. <span class="math inline">\(\Box\)</span></p>
+<p>## Mazur-Ulam定理<br>
+&gt; 赋范线性空间中的保距双射是仿射变换</p>
+<p>设<span class="math inline">\(E\)</span>，<span class="math inline">\(F\)</span>是实赋范线性空间，<span class="math inline">\(f:E\to F\)</span>是一个保距. 于是<span class="math inline">\(f\)</span>是一个仿射变换，当且仅当<span class="math display">\[f(tx+(1-t)y)=tf(x)+(1-t)f(y),\forall t\in [0,1], x,y\in E\]</span>, 当且仅当<span class="math display">\[f(\frac{x+y}{2})=\frac{f(x)+f(y)}{2}, \forall x,y\in E\]</span><br>
+一般情形下，<span class="math inline">\(f\)</span>未必是个仿射变换. 但是在下面两种情形下，<span class="math inline">\(f\)</span>必然是个仿射变换</p>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li>若<span class="math inline">\(F\)</span>是严格凸空间，那么<span class="math inline">\(f\)</span>是仿射变换.<br>
+这是因为<span class="math inline">\(f(\frac{x+y}{2})\)</span>是距离，<span class="math inline">\(f(x)\)</span>, <span class="math inline">\(f(y)\)</span>均为<span class="math inline">\(|\frac{x-y}{2}|\)</span>的点（因为f是保距）； 而在F中分别以<span class="math inline">\(f(x)\)</span>,<span class="math inline">\(f(y)\)</span>为球心，<span class="math inline">\(|\frac{x-y}{2}|\)</span>为半径的球相交于唯一一个点<span class="math inline">\(\frac{f(x)+f(y)}{2}\)</span>. 从而<span class="math display">\[f(\frac{x+y}{2})=\frac{f(x)+f(y)}{2}, \forall x,y\in E\]</span> 由于欧式空间自然是严格凸的（平行四边形公式），所以欧式空间是它的一个特例.<br>
+</li>
+<li>若<span class="math inline">\(f\)</span>是个满射（从而是双射），那么<span class="math inline">\(f\)</span>是仿射变换（Mazur-Ulam定理）</li>
+</ol>
+</blockquote>
+<p>在着手证明Mazur-Ulam定理之前，说一下证明大概想要是干什么的应该是有益的.<br>
+&gt;设<span class="math inline">\(g\)</span>是一个赋范线性空间E的保距自双射，如果<span class="math inline">\(g\)</span>保持某两个点不动，那么g也一定保持这两个点的中点不动 (*)</p>
+<p>事实上，<span class="math display">\[f(\frac{x+y}{2})=\frac{f(x)+f(y)}{2}, \forall x,y\in E​\]</span>是在说，描述仿射变换的一个方式是，仿射变换把线段的中点映成线段的中点. 于是证明的思路是：在<span class="math inline">\(E\)</span>中以线段<span class="math inline">\(\overline{xy}​\)</span>的中点<span class="math inline">\(z​\)</span>（即<span class="math inline">\(z=\frac{x+y}{2}​\)</span>）为中心进行反射，记这个反射为<span class="math inline">\(\psi​\)</span>，那么<span class="math inline">\(x​\)</span>和<span class="math inline">\(y​\)</span>恰好把自己映成对方. 同样地，在<span class="math inline">\(F\)</span>中以<span class="math inline">\(\overline{f(x)f(y)}​\)</span>的中点为中心反射，记为<span class="math inline">\(\psi&#39;​\)</span>. 设<span class="math inline">\(h=\psi f^{-1} \psi&#39; f​\)</span>, 那么<span class="math inline">\(h\)</span>是一个保持<span class="math inline">\(x​\)</span>，<span class="math inline">\(y​\)</span>不动的保距自双射，从而由记住的那句话，<span class="math inline">\(hz=z​\)</span>, 从而<span class="math inline">\(\psi&#39; f z=fz​\)</span>. 由于<span class="math inline">\(\psi&#39;​\)</span>是反射，故<span class="math inline">\(\psi&#39;​\)</span>有唯一不动点<span class="math inline">\(\frac{f(x)+f(y)}{2}​\)</span>, 从而<span class="math inline">\(f(z)=\frac{f(x)+f(y)}{2}​\)</span>,这即说明了f是仿射变换.</p>
+<p>我们下面证明Mazur-Ulam定理：</p>
+<p>设<span class="math inline">\(E\)</span>为线性赋范空间，定义<span class="math inline">\(E\)</span>中关于点<span class="math inline">\(z\in E\)</span>反射为<span class="math inline">\(\psi x:=2z-x\)</span>,由定义立得，<span class="math inline">\(\psi\)</span>是个对合，且对任意<span class="math inline">\(x\in E\)</span>成立等式<span class="math display">\[|\psi x-z|=|x-z|, |\psi x-x|=2|x-z|\]</span>设<span class="math inline">\(a\)</span>,<span class="math inline">\(b\)</span>是<span class="math inline">\(E\)</span>中两点，设<span class="math inline">\(z=\frac{a+b}{2}\)</span>, 设<span class="math inline">\(W\)</span>是所有保持<span class="math inline">\(a\)</span>，<span class="math inline">\(b\)</span>不动的<span class="math inline">\(E\)</span>的保距自双射构成的群，设<span class="math display">\[\lambda:=\sup \{|gz-z|:g\in W\}\]</span>.设<span class="math inline">\(g\in W\)</span>, 由于<span class="math display">\[|gz-a|=|gz-ga|=|z-a|\]</span>, 故<span class="math display">\[|gz-z|\leq |gz-a|+|a-z|=2|a-z|\]</span>. 故<span class="math display">\[\lambda &lt; \infty\]</span>.</p>
+<p>设<span class="math inline">\(\psi\)</span>是<span class="math inline">\(E\)</span>中以<span class="math inline">\(z\)</span>为中心的反射，若<span class="math inline">\(g\in W\)</span>，那么<span class="math display">\[g*:=\psi g^{-1}\psi g\in W\]</span>. 从而反复利用关于反射的两个等式得到<span class="math display">\[2|gz-z|=|\psi gz- gz|=|g^{-1}\psi gz-z|=|\psi g^{-1}\psi gz-z|=|g*z-z|\leq \lambda\]</span></p>
+<p>从而<span class="math inline">\(2\lambda \leq \lambda\)</span>，即<span class="math inline">\(\lambda=0\)</span>. 我们证明了(*)的那个结论.</p>
+<p>设<span class="math inline">\(F\)</span>是线性赋范空间，设<span class="math inline">\(f:E\to F\)</span>是保距，设<span class="math inline">\(z&#39;:=\frac{f(a)+f(b)}{2}\)</span>, 设<span class="math inline">\(\psi&#39;\)</span>F中以<span class="math inline">\(z&#39;\)</span> 为中心的反射，那么<span class="math inline">\(h=\psi f^{-1} \psi&#39; f\in W\)</span>, 故<span class="math inline">\(hz=z\)</span>, 或者说，<span class="math inline">\(\psi&#39; fz=fz\)</span> 但<span class="math inline">\(z&#39;\)</span>是<span class="math inline">\(\psi&#39;\)</span>唯一的不动点，故<span class="math inline">\(fz=z&#39;\)</span>. <span class="math inline">\(\Box\)</span></p>
+<h2 id="ref">Ref</h2>
+<p><a href="http://www.helsinki.fi/~jvaisala/mazurulam.pdf" class="uri" target="_blank" rel="noopener">http://www.helsinki.fi/~jvaisala/mazurulam.pdf</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/24978670" class="uri" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/24978670</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://liutianle.top/2018/03/05/Lie-group-and-Lie-algebra-reproduced/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -3400,7 +3623,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -3422,7 +3645,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
