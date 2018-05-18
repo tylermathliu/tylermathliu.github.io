@@ -4,9 +4,9 @@
     <title><![CDATA[Mid-term project of AT]]></title>
     <url>%2F2018%2F05%2F10%2FMid-term-project-of-AT%2F</url>
     <content type="text"><![CDATA[Mid-term project of Algebraic Topology (Si LI) class, 2018 spring, by Tyler LIU: Morse Theory with Examples in Geometric Topology]]></content>
-      <tags>
-        <tag>Mathematics</tag>
-      </tags>
+      <categories>
+        <category>Mathematics</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[Mazur-Ulam theorem]]></title>
@@ -89,9 +89,9 @@
         <category>Network</category>
       </categories>
       <tags>
+        <tag>Internet</tag>
         <tag>blog</tag>
         <tag>Hexo</tag>
-        <tag>Internet</tag>
       </tags>
   </entry>
   <entry>
@@ -102,10 +102,10 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>blog</tag>
         <tag>Internet</tag>
         <tag>DNS</tag>
         <tag>WordPress</tag>
+        <tag>blog</tag>
       </tags>
   </entry>
   <entry>
@@ -116,9 +116,9 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>Internet</tag>
         <tag>VPN</tag>
         <tag>VPS</tag>
+        <tag>Internet</tag>
       </tags>
   </entry>
   <entry>
