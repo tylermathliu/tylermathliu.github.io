@@ -406,7 +406,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  4,192
+                  4,190
                 </span>
               
 
@@ -466,10 +466,9 @@
 <h2 id="configure-github">1. Configure Github</h2>
 <h3 id="create-a-new-repository">1.1 Create a new repository</h3>
 <p>Github账号注册就不说了，登陆过后点击new repository，Repository name填写自己的名称 + .github.io， 例如（test.github.io，test就是你的github账号的名称）。</p>
-<div class="figure">
-<img src="http://upload-images.jianshu.io/upload_images/594366-67df63114cbc9a70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="img">
-<p class="caption">img</p>
-</div>
+<figure>
+<img src="http://upload-images.jianshu.io/upload_images/594366-67df63114cbc9a70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="img"><figcaption>img</figcaption>
+</figure>
 <p>创建仓库截图</p>
 <p>然后直接点Create repository就可以了。</p>
 <h3 id="configuring-github-ssh-keys">1.2 Configuring Github SSH keys</h3>
@@ -477,22 +476,20 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;your&apos;s emaill address&quot;</span><br></pre></td></tr></table></figure>
 <p>引号里面的内容输入你的邮箱地址，然后回车，会提示你文件保存的路径，这时候按回车键确认 然后会提示你输入密码，输入即可（输入密码是看不到的），然后会确认输入一次，就可以在刚刚的路径看到生成了两个文件，一个是id_rsa，另一个是id_rsa.pub，用notepadd++打开id_rsa.pub然后选中里面的全部内容，复制下来。</p>
 <p>登录github，点击头像可以看到setting选项，点击进入 然后可以看到左边有一个SSH and GPG keys选项 点击就可以看到以下界面，点击New SSH</p>
-<div class="figure">
-<img src="http://upload-images.jianshu.io/upload_images/594366-a871d25a8f778075.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="img">
-<p class="caption">img</p>
-</div>
+<figure>
+<img src="http://upload-images.jianshu.io/upload_images/594366-a871d25a8f778075.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="img"><figcaption>img</figcaption>
+</figure>
 <p>这里的Title随便填写，主要是为了方便管理密钥 然后把刚刚拷贝的内容粘贴到Key里面去 然后点击Add SSH key 到此，Github上面的SSH配置就算完成了</p>
 <h3 id="create-a-local-repository-and-sychronize-with-github">1.3 Create a local repository and sychronize with Github</h3>
 <p>This step is a standard operation to create a project on Github. Some of the process may be skipped according to your personal preferences.</p>
 <p>首先是在本地的任意一个分区创建一个任意的文件夹，路径中最好不要用中文吧，反正你懂的 然后进入到刚刚创建的文件夹，右键，然后点击Git Bash Here</p>
-<div class="figure">
-<img src="http://upload-images.jianshu.io/upload_images/594366-87ac8a03c2a8b51e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/319" alt="img">
-<p class="caption">img</p>
-</div>
+<figure>
+<img src="http://upload-images.jianshu.io/upload_images/594366-87ac8a03c2a8b51e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/319" alt="img"><figcaption>img</figcaption>
+</figure>
 <p>打开Git Bash</p>
 <p>依次输入以下命令（前面的$符号就不要复制了哈）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line">$ git config --global user.name &quot;Your&apos;s name&quot;</span><br><span class="line">$ git config --global user.email &quot;Your&apos;s email address&quot;</span><br></pre></td></tr></table></figure>
-<p>其中的Your's name替换成你的名称，Your's email address替换成你的邮件地址即可 然后再当前的文件夹下面新建一个README.md文件，然后右键用notepad++打开，随便写入一点内容，做一次简单的提交，输入以下命令 其中的yourname是github账号的名称，每个人是不一样的</p>
+<p>其中的Your’s name替换成你的名称，Your’s email address替换成你的邮件地址即可 然后再当前的文件夹下面新建一个README.md文件，然后右键用notepad++打开，随便写入一点内容，做一次简单的提交，输入以下命令 其中的yourname是github账号的名称，每个人是不一样的</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git add README.md</span><br><span class="line">$ git commit -m &quot;first commit&quot;</span><br><span class="line">$ git remote add origin git@github.com:yourname/yourname.github.io.git</span><br><span class="line">$ git push -u origin master</span><br></pre></td></tr></table></figure>
 <p>这时候进入到github应该就可以看到仓库下面有一个刚刚提交的README.md的文档了。</p>
 <h2 id="install-hexo">2. Install Hexo</h2>
@@ -529,8 +526,8 @@
 <p>这时候如果弹出一个对话框，输入在guthub上面的用户名和密码即可 这时候我们就可以在浏览器输入<a href="https://link.jianshu.com?t=http://yourname.github.io" target="_blank" rel="noopener">http://yourname.github.io</a>（yourname替换成github上的名称）就可以看到博客已经搭建成功了。</p>
 <h3 id="using-your-own-domain">3.2 Using your own domain</h3>
 <p>See my last post on domain name and DNS configuration. Here we only talk about how to configure your Github to show your own domain name.</p>
-<p>One simple way is to change/add a CNAME file to your repository containing solely the domain name (no &quot;http://&quot; or &quot;https://&quot; ). Another way is to use Github settings of your blog project.</p>
-<p>However, there is still a minor but annoying problem. Every time you use the &quot;hexo deploy&quot; command, the CNAME file disappears even if you have saved it in your local directory. I believe it is a little bug. To solve this, we can install a plugin.</p>
+<p>One simple way is to change/add a CNAME file to your repository containing solely the domain name (no “http://” or “https://” ). Another way is to use Github settings of your blog project.</p>
+<p>However, there is still a minor but annoying problem. Every time you use the “hexo deploy” command, the CNAME file disappears even if you have saved it in your local directory. I believe it is a little bug. To solve this, we can install a plugin.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-cname --save1</span><br></pre></td></tr></table></figure>
 <p>之后在_config.yml中添加一条</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plugins:</span><br><span class="line">- hexo-generator-cname12</span><br></pre></td></tr></table></figure>
@@ -612,9 +609,9 @@
 <h4 id="directory">Directory</h4>
 <table>
 <colgroup>
-<col width="16%">
-<col width="66%">
-<col width="17%">
+<col style="width: 15%">
+<col style="width: 67%">
+<col style="width: 16%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -815,7 +812,7 @@
 </tbody>
 </table>
 <h3 id="theme-configuration-next">4.3 Theme configuration-NexT</h3>
-<p>For convenience, I just copied and revised most of the contents from: https://syd192.github.io/2016/11/15/hexo-learn/ . Thanks a lot. Note that every one of the word &quot;本站点&quot; refers to the site mentioned above.</p>
+<p>For convenience, I just copied and revised most of the contents from: https://syd192.github.io/2016/11/15/hexo-learn/ . Thanks a lot. Note that every one of the word “本站点” refers to the site mentioned above.</p>
 <p>本站点采用的Hexo主题是<a href="https://github.com/iissnan/hexo-theme-next/" target="_blank" rel="noopener">Next主题</a>，使用该主题的原因是：该博客整体布局效果个人很喜欢，而且配套的文档资料非常好，文档资料可直接参考<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">官网链接</a>。ps：建议下载主题的稳定版本，可以避免很多没必要的麻烦。</p>
 <p>本文主要介绍以下内容：</p>
 <blockquote>
@@ -842,19 +839,19 @@
 <p>通过修改next主题下的<code>_config.yml</code>的scheme字段，配置不同的风格。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Schemes</span><br><span class="line">scheme: Muse</span><br><span class="line">#scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br></pre></td></tr></table></figure>
 <h4 id="添加网页背景">添加网页背景</h4>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li><p>将背景图<code>background.jpg</code>放到<code>myBlog\themes\next\source\images</code>文件夹下</p></li>
-<li><p>在<code>myBlog\themes\next\source\css\_custom\custom.syl</code>文件中添加下面代码：</p></li>
+<li><p>在<code>myBlog\themes\next\source\css\_custom\custom.syl</code>文件中添加下面代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body &#123; </span><br><span class="line">    background:url(/images/background.jpg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ol>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body &#123; </span><br><span class="line">    background:url(/images/background.jpg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>注：</p>
 <p>在上面代码中添加<code>background-repeat: no-repeat;</code>来避免图片浮动。</p>
 <h4 id="标题栏-.header-inner添加背景">标题栏 .header-inner添加背景</h4>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li><p>将背景图<code>header.jpg</code>放到<code>myBlog\themes\next\source\images</code>文件夹下</p></li>
-<li><p>在<code>myBlog\themes\next\source\css\_common\components\header\header.syl</code>文件中添加下面代码：</p></li>
+<li><p>在<code>myBlog\themes\next\source\css\_common\components\header\header.syl</code>文件中添加下面代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.header &#123; </span><br><span class="line">    background-image: url(/images/header.jpg);</span><br><span class="line">    background-size: 100% 100%;</span><br><span class="line"> &#125;</span><br><span class="line"> .header-inner &#123; </span><br><span class="line">    position: relative; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></li>
 </ol>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.header &#123; </span><br><span class="line">    background-image: url(/images/header.jpg);</span><br><span class="line">    background-size: 100% 100%;</span><br><span class="line"> &#125;</span><br><span class="line"> .header-inner &#123; </span><br><span class="line">    position: relative; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
 <h4 id="菜单设置">菜单设置</h4>
 <p>通过修改next主题下的<code>_config.yml</code>的menu字段，选定显示的菜单项。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /</span><br><span class="line">  categories: /categories</span><br><span class="line">  about: /about</span><br><span class="line">  archives: /archives</span><br><span class="line">  tags: /tags</span><br><span class="line">  #commonweal: /404.html</span><br></pre></td></tr></table></figure>
@@ -866,49 +863,45 @@
 <h4 id="添加标签页面">添加标签页面</h4>
 <p>前面通过修改next主题下的<code>_config.yml</code>文件中的menu选项，可以在主页面的菜单栏添加标签选项，但是此时点击标签，跳转的页面会显示page not found。 添加标签页面的具体方法是：</p>
 <ul>
-<li>新建页面</li>
-</ul>
+<li><p>新建页面</p>
 <p>输入如下命令：</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure></li>
+</ul>
 <p>输入命令后，在<code>myBlog/source</code>下会新生成一个新的文件夹<code>tags</code>，在该文件夹下会有一个<code>index.md</code>文件。</p>
 <ul>
-<li>设置页面类型 在上步新生成的<code>myBlog/source/tags/index.md</code>中添加<code>type: &quot;tags&quot;</code>，<code>index.md</code>文件内容如下：</li>
+<li><p>设置页面类型 在上步新生成的<code>myBlog/source/tags/index.md</code>中添加<code>type: &quot;tags&quot;</code>，<code>index.md</code>文件内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2016-11-15 19:10:05</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure></li>
+<li><p>设置具体文章的tags 当要为某一篇文章添加标签，只需在<code>myBlog/source/_post</code>目录下的具体文章的tags中添加标签即可，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 基于Hexo和Github搭建博客</span><br><span class="line">date: 2016-11-09</span><br><span class="line">tags: [npm, hexo, github]</span><br><span class="line">categories: 搭建博客</span><br><span class="line">---</span><br></pre></td></tr></table></figure></li>
 </ul>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2016-11-15 19:10:05</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>设置具体文章的tags 当要为某一篇文章添加标签，只需在<code>myBlog/source/_post</code>目录下的具体文章的tags中添加标签即可，如：</li>
-</ul>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 基于Hexo和Github搭建博客</span><br><span class="line">date: 2016-11-09</span><br><span class="line">tags: [npm, hexo, github]</span><br><span class="line">categories: 搭建博客</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
 <h4 id="添加分类页面">添加分类页面</h4>
 <p>步骤与添加标签页面类似，具体如下：</p>
 <ul>
-<li>新建页面</li>
-</ul>
+<li><p>新建页面</p>
 <p>输入如下命令：</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure></li>
+</ul>
 <p>输入命令后，在<code>myBlog/source</code>下会新生成一个新的文件夹<code>categories</code>，在该文件夹下会有一个<code>index.md</code>文件。</p>
 <ul>
-<li>设置页面类型 在上步新生成的<code>myBlog/source/categories/index.md</code>中添加<code>type: &quot;categories&quot;</code>，<code>index.md</code>文件内容如下：</li>
+<li><p>设置页面类型 在上步新生成的<code>myBlog/source/categories/index.md</code>中添加<code>type: &quot;categories&quot;</code>，<code>index.md</code>文件内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2016-11-15 19:11:13</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure></li>
+<li><p>设置具体文章的categories 当要为某一篇文章添加分类，只需在<code>myBlog/source/_post</code>目录下的具体文章的categories中添加分类即可，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 基于Hexo和Github搭建博客</span><br><span class="line">date: 2016-11-09</span><br><span class="line">tags: [npm, hexo, github]</span><br><span class="line">categories: 搭建博客</span><br><span class="line">---</span><br></pre></td></tr></table></figure></li>
 </ul>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2016-11-15 19:11:13</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>设置具体文章的categories 当要为某一篇文章添加分类，只需在<code>myBlog/source/_post</code>目录下的具体文章的categories中添加分类即可，如：</li>
-</ul>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 基于Hexo和Github搭建博客</span><br><span class="line">date: 2016-11-09</span><br><span class="line">tags: [npm, hexo, github]</span><br><span class="line">categories: 搭建博客</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
 <h4 id="添加关于我页面">添加关于我页面</h4>
 <p>步骤与添加标签页面类似，具体如下：</p>
 <ul>
-<li>新建页面</li>
+<li><p>新建页面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page about</span><br></pre></td></tr></table></figure></li>
 </ul>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page about</span><br></pre></td></tr></table></figure></p>
 <p>输入命令后，在<code>myBlog/source</code>下会新生成一个新的文件夹<code>about</code>，在该文件夹下会有一个<code>index.md</code>文件。</p>
 <ul>
-<li>修改</li>
-</ul>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">about/index.md</span><br></pre></td></tr></table></figure></p>
+<li><p>修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">about/index.md</span><br></pre></td></tr></table></figure>
 <p>本站点index.md如下：</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: about</span><br><span class="line">date: 2016-11-15 19:08:50</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">## 关于我</span><br><span class="line"></span><br><span class="line">一只学习前端的小菜鸟，欢迎分享知识。</span><br><span class="line"></span><br><span class="line">From XDU</span><br><span class="line"></span><br><span class="line">QQ：847909475</span><br><span class="line">Email: 847909475@qq.com</span><br></pre></td></tr></table></figure></p>
-<p>效果如下： <a href="https://syd192.github.io/photo/20161115/11.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/20161115/11.png" alt="img"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: about</span><br><span class="line">date: 2016-11-15 19:08:50</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">## 关于我</span><br><span class="line"></span><br><span class="line">一只学习前端的小菜鸟，欢迎分享知识。</span><br><span class="line"></span><br><span class="line">From XDU</span><br><span class="line"></span><br><span class="line">QQ：847909475</span><br><span class="line">Email: 847909475@qq.com</span><br></pre></td></tr></table></figure>
+<p>效果如下： <a href="https://syd192.github.io/photo/20161115/11.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/20161115/11.png" alt="img"></a></p></li>
+</ul>
 <h4 id="加入评论功能">加入评论功能</h4>
 <p>Well, for comment function, I prefer <a href="https://valine.js.org/#/?id=valine" target="_blank" rel="noopener">Valine</a>.</p>
 <blockquote>
@@ -918,17 +911,17 @@
 <h4 id="加入站点内容搜索功能">加入站点内容搜索功能</h4>
 <p>本站点使用的是Local Search。加入站点内容搜索功能步骤如下：</p>
 <ul>
-<li>安装hexo-generator-searchdb</li>
+<li><p>安装hexo-generator-searchdb</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure></li>
 </ul>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure></p>
 <p>注意：安装时应在站点根目录下，即myBlog目录下</p>
 <ul>
-<li>添加search字段</li>
-</ul>
+<li><p>添加search字段</p>
 <p>在站点</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myBlog/_config.yml</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myBlog/_config.yml</span><br></pre></td></tr></table></figure>
 <p>中添加search字段，如下：</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure></li>
+</ul>
 <p>效果如下： <a href="https://syd192.github.io/photo/20161115/7.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/20161115/7.png" alt="img"></a></p>
 <h4 id="加入数据统计与分析功能">加入数据统计与分析功能</h4>
 <p>本站点使用的是<a href="http://tongji.baidu.com/" target="_blank" rel="noopener">百度统计</a>。加入数据统计与分析功能步骤如下：</p>
@@ -938,21 +931,19 @@
 <li>添加baidu_analytics字段 在站点<code>myBlog/_config.yml</code>中添加search字段，值为上步复制的id值 至此，该功能已成功加入，大约过20min后在<a href="http://tongji.baidu.com/" target="_blank" rel="noopener">百度统计</a>上可以看到站点的访问情况，如下图： <a href="https://syd192.github.io/photo/20161115/10.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/20161115/10.png" alt="img"></a></li>
 </ul>
 <p>默认主题是landscape，如果不太喜欢，可以访问<a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="noopener">这里</a>获取更多的主题。本人选择主题是TKL，具体切换方法如下：</p>
-<ol start="2" style="list-style-type: decimal">
+<ol start="2" type="1">
 <li>配置根目录下的_config.yml文件 <a href="https://syd192.github.io/photo/13.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/13.png" alt="img"></a> 然后，<code>hexo g</code>，再<code>hexo d</code>，即可正常访问。 注：图片url填写，图片文件夹img应放在source文件目录下，url直接写为/img/图片.png即可。</li>
 </ol>
 <h4 id="other-configurations">Other configurations</h4>
 <p>https://www.jianshu.com/p/3ff20be8574c</p>
 <h2 id="write-on-your-blog">5. Write on your blog</h2>
 <h3 id="new-posts">5.1 New posts</h3>
-<ol style="list-style-type: decimal">
-<li>新建博客</li>
+<ol type="1">
+<li><p>新建博客</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new post &quot;newBlog&quot;</span><br></pre></td></tr></table></figure></li>
+<li><p>在根目录下source文件夹下找到对应的<code>newBlog.md</code>文件，按照markdown规则，编写博客。 在该<code>newBlog.md</code>文件的头部，可以对该博客进行配置，如博客标题title，博客创建时间date，所属分类categories，标签tags 然后，<code>hexo clean</code>，再<code>hexo g &amp;&amp; hexo d</code>，即可正常访问。</p></li>
 </ol>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new post &quot;newBlog&quot;</span><br></pre></td></tr></table></figure></p>
-<ol start="2" style="list-style-type: decimal">
-<li>在根目录下source文件夹下找到对应的<code>newBlog.md</code>文件，按照markdown规则，编写博客。 在该<code>newBlog.md</code>文件的头部，可以对该博客进行配置，如博客标题title，博客创建时间date，所属分类categories，标签tags 然后，<code>hexo clean</code>，再<code>hexo g &amp;&amp; hexo d</code>，即可正常访问。</li>
-</ol>
-<p>最后来张成果图，继续加油咯~<sub>~</sub> <a href="https://syd192.github.io/photo/14.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/14.png" alt="img"></a></p>
+<p>最后来张成果图，继续加油咯~~~~ <a href="https://syd192.github.io/photo/14.png" target="_blank" rel="noopener"><img src="https://syd192.github.io/photo/14.png" alt="img"></a></p>
 <p>若要在多台电脑上写文章，参考文章<a href="http://mungo.space/2015/10/14/create-hexo-on-github-4/" target="_blank" rel="noopener">在Github上面搭建Hexo博客（四）:使用不同电脑维护</a>中的步骤即可。</p>
 <h3 id="mathjax-supports">5.2 MathJax supports</h3>
 <p>To fully support MathJax (LaTeX format) in your Hexo blog, you can simply use the following commands:</p>
@@ -960,7 +951,7 @@
 <p>The first command is used to uninstall Hexo’s default Markdown renderer, the second one, install new Markdown renderer which can support MathJax fully. After installation, you should regenerate your blog to see the changes.</p>
 <p>To see why this is needed and how it works, visit http://2wildkids.com/2016/10/06/%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86Hexo%E5%92%8CMathJax%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/ for more information.</p>
 <h2 id="summary">6. Summary</h2>
-<p>As usual, I don't want to write a summary.</p>
+<p>As usual, I don’t want to write a summary.</p>
 <h2 id="references">References</h2>
 <p>https://syd192.github.io/2016/11/09/%E6%90%AD%E5%BB%BAhexo/</p>
 <p>https://syd192.github.io/2016/11/15/hexo-learn/</p>
