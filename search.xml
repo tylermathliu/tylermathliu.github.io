@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Some Old Course Notes]]></title>
+    <title><![CDATA[Some old course notes]]></title>
     <url>%2F2018%2F05%2F19%2FSome-Old-Course-Notes%2F</url>
-    <content type="text"><![CDATA[Here are some old course reviewing notes that I recently put in order: 2016 fall: * Physics II * Linear algebra I * Mathematical analysis I 2017 fall: * Topology * ODE * Mathematical analysis III * Abstract algebra]]></content>
+    <content type="text"><![CDATA[Here are some old course reviewing notes that I recently put in order: 2016 fall: Physics II Linear algebra I Mathematical analysis I 2017 fall: Topology ODE Mathematical analysis III Abstract algebra]]></content>
       <categories>
         <category>Mathematics</category>
       </categories>
@@ -40,8 +40,8 @@
         <category>Mathematics</category>
       </categories>
       <tags>
-        <tag>math</tag>
         <tag>algebra</tag>
+        <tag>math</tag>
       </tags>
   </entry>
   <entry>
@@ -114,9 +114,9 @@
       </categories>
       <tags>
         <tag>Internet</tag>
+        <tag>blog</tag>
         <tag>DNS</tag>
         <tag>WordPress</tag>
-        <tag>blog</tag>
       </tags>
   </entry>
   <entry>
