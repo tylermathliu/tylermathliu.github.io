@@ -297,6 +297,203 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liutianle.top/2018/05/20/The-cohomology-ring-of-the-n-torus-reproduced/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tyler LIU">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Felictopia">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/20/The-cohomology-ring-of-the-n-torus-reproduced/" itemprop="url">The cohomology ring of the n-torus [reproduced]</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-20T10:53:27+08:00">
+                2018-05-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mathematics/" itemprop="url" rel="index">
+                    <span itemprop="name">Mathematics</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/20/The-cohomology-ring-of-the-n-torus-reproduced/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/20/The-cohomology-ring-of-the-n-torus-reproduced/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  3,138
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  20
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>The goal of this post is to compute the cohomology of the <span class="math inline">\(n\)</span>-torus $ X = (S<sup>1)</sup>n ^n/ ^n$ in as many ways as I can think of. Below, if no coefficient ring is specified then the coefficient ring is $ $ by default. At the end we will interpret this computation in terms of cohomology operations.</p>
+<h2 id="method-1-mayer-vietoris"><strong>Method 1: Mayer-Vietoris</strong></h2>
+<p>For this particular method write <span class="math inline">\(X ^n = (S ^1) ^n\)</span>. We can compute the cohomology of <span class="math inline">\(X ^n\)</span> inductively by regarding it as the union of two copies of <span class="math inline">\(I \times X ^{n-1}\)</span> with intersection <span class="math inline">\(X ^{n-1} \sqcup X ^{n-1}\)</span> and using <a href="http://en.wikipedia.org/wiki/Mayer%E2%80%93Vietoris_%20sequence" target="_blank" rel="noopener">Mayer-Vietoris</a>.</p>
+<p>The cohomological version of Mayer-Vietoris is a long exact sequence of the form<br>
+<span class="math display">\[
+\cdots   \to H ^k(X ^n)   \xrightarrow{a _k} H ^k(X ^{n-1})   \oplus H ^k(X ^{n-1})   \xrightarrow{b _k} \ H ^k(X ^{n-1}   \sqcup X ^{n-1})   \  \   \xrightarrow{d _k} H ^{k+1}(X ^n) \   \to   \cdots
+\]</span></p>
+<p>The maps <span class="math inline">\(a _k\)</span> are induced by pulling back along the inclusion <span class="math inline">\((I \times \ X ^{n-1}) \sqcup (I \times X ^{n-1}) \to S ^1 \times X ^{n-1}\)</span>, whereas the maps <span class="math inline">\(b _k\)</span> are induced by the difference between the pullbacks along the inclusions $ { 0 } X ^{n-1} { 1 }  X ^{n-1} I X ^{n-1}$. Because these maps are homotopic to the identity map <span class="math inline">\(X ^{n-1} \to X ^{n-1}\)</span>, we can think of <span class="math inline">\(b _k\)</span> as being given by<br>
+<span class="math display">\[
+a   \oplus b   \mapsto (a-b)   \oplus (b-a)
+\]</span> where <span class="math inline">\(a, b \in H ^k(X ^{n-1})\)</span>, and we can think of <span class="math inline">\(a _k\)</span> as being given by two copies of a single map <span class="math inline">\(H ^k(X ^n) \to H ^k(X ^{n-1})\)</span>, which we’ll denote by <span class="math inline">\(a _k ^\prime\)</span>.</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/20/The-cohomology-ring-of-the-n-torus-reproduced/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://liutianle.top/2018/05/19/Some-Old-Course-Notes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1977,213 +2174,6 @@ I=4(|x|^2+|y|^2)
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liutianle.top/2018/02/27/Building-an-independent-blog-(WordPress-+-VPS)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tyler LIU">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Felictopia">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/27/Building-an-independent-blog-(WordPress-+-VPS)/" itemprop="url">Building an independent blog (WordPress + VPS)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-27T00:11:55+08:00">
-                2018-02-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Network/" itemprop="url" rel="index">
-                    <span itemprop="name">Network</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/02/27/Building-an-independent-blog-(WordPress-+-VPS)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/02/27/Building-an-independent-blog-(WordPress-+-VPS)/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  7,868
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  29
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="domain-name-dns">1. Domain name &amp; DNS</h2>
-<h3 id="choosing-domain-sellers">1.1 Choosing domain sellers</h3>
-<p>Need to consider:</p>
-<blockquote>
-<ul>
-<li>Pricing, of course</li>
-<li>Top-level domain names</li>
-<li>Whether the second-level domain you want is available</li>
-<li>Method of payment</li>
-<li>Whether you need to 实名认证/备案 and whether 实名认证/备案 is possible and convenient</li>
-</ul>
-</blockquote>
-<p>We list some recommended domain sellers:</p>
-<blockquote>
-<ul>
-<li>万网: 目前最便宜，需要身份证照片实名认证</li>
-<li>GoDaddy: relatively inexpensive, can use Alipay, some popular top domains including <em>.top</em> are not available</li>
-<li>Name.com: cannot use Alipay, only Paypal</li>
-<li>Dynadot: not so cheap</li>
-</ul>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/27/Building-an-independent-blog-(WordPress-+-VPS)/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2238,7 +2228,7 @@ I=4(|x|^2+|y|^2)
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2260,7 +2250,7 @@ I=4(|x|^2+|y|^2)
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
