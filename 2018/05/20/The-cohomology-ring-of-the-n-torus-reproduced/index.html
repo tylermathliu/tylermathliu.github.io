@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="The goal of this post is to compute the cohomology of the \(n\)-torus $ X = (S1)n ^n/ ^n$ in as many ways as I can think of. Below, if no coefficient ring is specified then the coefficient ring is $ $">
+<meta name="description" content="The goal of this post is to compute the cohomology of the \(n\)-torus $ X = (S1)n ^n/ {^n} $ in as many ways as I can think of. Below, if no coefficient ring is specified then the coefficient ring is">
 <meta name="keywords" content="topology">
 <meta property="og:type" content="article">
 <meta property="og:title" content="The cohomology ring of the n-torus [reproduced]">
 <meta property="og:url" content="http://liutianle.top/2018/05/20/The-cohomology-ring-of-the-n-torus-reproduced/index.html">
 <meta property="og:site_name" content="Felictopia">
-<meta property="og:description" content="The goal of this post is to compute the cohomology of the \(n\)-torus $ X = (S1)n ^n/ ^n$ in as many ways as I can think of. Below, if no coefficient ring is specified then the coefficient ring is $ $">
+<meta property="og:description" content="The goal of this post is to compute the cohomology of the \(n\)-torus $ X = (S1)n ^n/ {^n} $ in as many ways as I can think of. Below, if no coefficient ring is specified then the coefficient ring is">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-05-20T03:37:47.718Z">
+<meta property="og:updated_time" content="2018-05-20T03:54:53.500Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="The cohomology ring of the n-torus [reproduced]">
-<meta name="twitter:description" content="The goal of this post is to compute the cohomology of the \(n\)-torus $ X = (S1)n ^n/ ^n$ in as many ways as I can think of. Below, if no coefficient ring is specified then the coefficient ring is $ $">
+<meta name="twitter:description" content="The goal of this post is to compute the cohomology of the \(n\)-torus $ X = (S1)n ^n/ {^n} $ in as many ways as I can think of. Below, if no coefficient ring is specified then the coefficient ring is">
 
 
 
@@ -394,7 +394,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  3,138
+                  3,150
                 </span>
               
 
@@ -431,14 +431,19 @@
       
 
       
-        <p>The goal of this post is to compute the cohomology of the <span class="math inline">\(n\)</span>-torus $ X = (S<sup>1)</sup>n ^n/ ^n$ in as many ways as I can think of. Below, if no coefficient ring is specified then the coefficient ring is $ $ by default. At the end we will interpret this computation in terms of cohomology operations.</p>
+        <p>The goal of this post is to compute the cohomology of the <span class="math inline">\(n\)</span>-torus $ X = (S<sup>1)</sup>n ^n/ {^n} $ in as many ways as I can think of.</p>
+<p>Below, if no coefficient ring is specified then the coefficient ring is $ $ by default. At the end we will interpret this computation in terms of cohomology operations.</p>
 <h2 id="method-1-mayer-vietoris"><strong>Method 1: Mayer-Vietoris</strong></h2>
 <p>For this particular method write <span class="math inline">\(X ^n = (S ^1) ^n\)</span>. We can compute the cohomology of <span class="math inline">\(X ^n\)</span> inductively by regarding it as the union of two copies of <span class="math inline">\(I \times X ^{n-1}\)</span> with intersection <span class="math inline">\(X ^{n-1} \sqcup X ^{n-1}\)</span> and using <a href="http://en.wikipedia.org/wiki/Mayer%E2%80%93Vietoris_%20sequence" target="_blank" rel="noopener">Mayer-Vietoris</a>.</p>
 <p>The cohomological version of Mayer-Vietoris is a long exact sequence of the form<br>
 <span class="math display">\[
 \cdots   \to H ^k(X ^n)   \xrightarrow{a _k} H ^k(X ^{n-1})   \oplus H ^k(X ^{n-1})   \xrightarrow{b _k} \ H ^k(X ^{n-1}   \sqcup X ^{n-1})   \  \   \xrightarrow{d _k} H ^{k+1}(X ^n) \   \to   \cdots
 \]</span></p>
-<p>The maps <span class="math inline">\(a _k\)</span> are induced by pulling back along the inclusion <span class="math inline">\((I \times \ X ^{n-1}) \sqcup (I \times X ^{n-1}) \to S ^1 \times X ^{n-1}\)</span>, whereas the maps <span class="math inline">\(b _k\)</span> are induced by the difference between the pullbacks along the inclusions $ { 0 } X ^{n-1} { 1 }  X ^{n-1} I X ^{n-1}$. Because these maps are homotopic to the identity map <span class="math inline">\(X ^{n-1} \to X ^{n-1}\)</span>, we can think of <span class="math inline">\(b _k\)</span> as being given by<br>
+<p>The maps <span class="math inline">\(a _k\)</span> are induced by pulling back along the inclusion <span class="math display">\[
+(I   \times \ X ^{n-1})   \sqcup (I   \times X ^{n-1})   \to S ^1   \times X ^{n-1}
+\]</span> whereas the maps <span class="math inline">\(b _k\)</span> are induced by the difference between the pullbacks along the inclusions <span class="math display">\[
+\{ 0 \}   \times X ^{n-1}   \sqcup   \{ 1   \}   \times \ X ^{n-1}   \to I   \times X ^{n-1}
+\]</span> Because these maps are homotopic to the identity map <span class="math inline">\(X ^{n-1} \to X ^{n-1}\)</span>, we can think of <span class="math inline">\(b _k\)</span> as being given by<br>
 <span class="math display">\[
 a   \oplus b   \mapsto (a-b)   \oplus (b-a)
 \]</span> where <span class="math inline">\(a, b \in H ^k(X ^{n-1})\)</span>, and we can think of <span class="math inline">\(a _k\)</span> as being given by two copies of a single map <span class="math inline">\(H ^k(X ^n) \to H ^k(X ^{n-1})\)</span>, which we’ll denote by <span class="math inline">\(a _k ^\prime\)</span>.</p>
@@ -506,10 +511,10 @@ d(e _k ^{  \alpha}) =   \sum _{  \beta}   \deg(  \chi ^{  \alpha   \beta} _k) e 
 <p>In this particular case all of the boundary maps in the cellular complex are trivial, so the homology <span class="math inline">\(H _{ \bullet}(X)\)</span> is free abelian on cells. To see this, note that if $ ^{ } _k$ is not surjective, then it necessarily has degree <span class="math inline">\(0\)</span> since it is null-homotopic, so we reduce to the surjective case. In this case the <span class="math inline">\(k-1\)</span>-cell <span class="math inline">\(e _{k-1} ^{ \beta}\)</span> must be a face of the <span class="math inline">\(k\)</span>-cell <span class="math inline">\(e _k ^{ \alpha}\)</span>, and since we’ve collapsed everything else we can reduce to the case that <span class="math inline">\(k = n\)</span>, so that <span class="math inline">\(e _n ^{ \alpha}\)</span> is the top-dimensional cell. At this point we will cheat a little: if $ ( ^{ } _k) 0$ in this case, then we would have <span class="math inline">\(H _n(X) \cong 0\)</span>, but <span class="math inline">\(X\)</span> is a compact orientable manifold and therefore must satisfy <span class="math inline">\(H _n(X) \cong \mathbb{Z}\)</span>.</p>
 <p>In particular, the cell decomposition we gave above is minimal: it is not possible to give a cell decomposition with fewer cells.</p>
 <p>In addition, by Poincaré duality the cohomology <span class="math inline">\(H ^{ \bullet}(X)\)</span> can also be thought of as free abelian on cells, and moreover we can describe the cup product in terms of transverse intersections of submanifolds representing homology classes. We can do this by explicitly intersecting the cells above, but the following description is perhaps more elegant:</p>
-<p>If we think of <span class="math inline">\(X\)</span> as $  ^n/  ^n$, then a subspace <span class="math inline">\(V \subseteq \mathbb{R} ^n\)</span> represents a homology class if it is translation-invariant (given by the pushforward of a <a href="http://en.wikipedia.org/wiki/Fundamental_class" target="_blank" rel="noopener">fundamental class</a>). The images of two such subspaces <span class="math inline">\(V, W\)</span> intersect transversely if <span class="math inline">\(V + W = \mathbb{R} ^n\)</span>, and then their intersection <span class="math inline">\(V \cap W\)</span> represents a homology class which Poincaré dualizes to the cup product of the Poincaré duals of <span class="math inline">\(V, W\)</span>. In particular, note that the short exact sequence<br>
+<p>If we think of <span class="math inline">\(X\)</span> as $  ^n/ { ^n}$, then a subspace <span class="math inline">\(V \subseteq \mathbb{R} ^n\)</span> represents a homology class if it is translation-invariant (given by the pushforward of a <a href="http://en.wikipedia.org/wiki/Fundamental_class" target="_blank" rel="noopener">fundamental class</a>). The images of two such subspaces <span class="math inline">\(V, W\)</span> intersect transversely if <span class="math inline">\(V + W = \mathbb{R} ^n\)</span>, and then their intersection <span class="math inline">\(V \cap W\)</span> represents a homology class which Poincaré dualizes to the cup product of the Poincaré duals of <span class="math inline">\(V, W\)</span>. In particular, note that the short exact sequence<br>
 <span class="math display">\[
 0   \to V   \cap W   \to V   \oplus W   \to  \mathbb{R} ^n   \to 0
-\]</span> implies that $ (V W) = V + W - n$. Its Poincaré dual is therefore a class in <span class="math inline">\(H ^{(n - \dim V) + (n - \dim W)}(X)\)</span>, which has the correct degree.</p>
+\]</span> implies that <span class="math display">\[  \dim (V   \cap W) =   \dim V +   \dim W - n\]</span>. Its Poincaré dual is therefore a class in <span class="math inline">\(H ^{(n - \dim V) + (n - \dim W)}(X)\)</span>, which has the correct degree.</p>
 <h2 id="method-the-lefschetz-fixed-point-theorem"><strong>Method ???: the Lefschetz fixed point theorem</strong></h2>
 <p>This method is not numbered because the argument is incomplete. Consider the map<br>
 <span class="math display">\[
@@ -521,8 +526,9 @@ f : X   \ni (z _1,  ... z _n)   \to \ (z _1 ^{m _1},  ..., z _n ^{m _n})   \in X
 \prod _{i=1} ^n (1 - m _i) =   \sum _{i=0} ^n   \text{tr}(H ^{  \ast}(f) : H ^{  \ast}(X,   \mathbb{Q}) \   \to H ^{  \ast}(X,   \mathbb{Q}))
 \]</span></p>
 <p>Knowing what we already know about the cohomology, it is tempting to identify a monomial on the LHS with a cohomology class on the RHS on which <span class="math inline">\(H ^{ \ast}(f)\)</span> acts by multiplication by that monomial. We can do this as follows.</p>
-<p>For any subset <span class="math inline">\(I \subseteq \{ 1, 2, ... n \}\)</span> of indices we have a projection map $ _I : X (S <em>1) ^I$. Since <span class="math inline">\((S _1) ^I\)</span> is a compact orientable manifold, it has a fundamental class generating its top cohomology. The map <span class="math inline">\(f\)</span> induces a map on <span class="math inline">\((S _1) ^I\)</span> such that any point has $ </em>{i I} m <em>i$ preimages, hence <span class="math inline">\(f\)</span> has <a href="http://en.wikipedia.org/wiki/Degree_of_a_continuous_mapping" target="_blank" rel="noopener">degree</a> $ </em>{i I} (m <em>i - 1)$ as a map on <span class="math inline">\((S _1) ^I\)</span>, so acts on the fundamental class by multiplication by $ </em>{i   I} m _i$.</p>
-<p>This action induces an action on the pullback of the fundamental class of <span class="math inline">\((S _1) ^I\)</span> to <span class="math inline">\(X\)</span> which is also by multiplication by $ _{i I} m _i$. As the <span class="math inline">\(m _i\)</span> vary this argument shows that the cohomology classes arising in this way are all linearly independent, hence all contribute to the RHS of the Lefschetz fixed point theorem. The sum of the corresponding contributions <span class="math inline">\((-1) ^{ |I |} \prod _{i \in I} m _i\)</span> to the RHS exhaust all terms on the LHS, so if there is any more cohomology to be found then it isn’t being detected by <span class="math inline">\(f\)</span>.</p>
+<p>For any subset <span class="math inline">\(I \subseteq \{ 1, 2, ... n \}\)</span> of indices we have a projection map <span class="math display">\[  \pi _I : X   \rightarrow (S _1) ^I\]</span>. Since <span class="math inline">\((S _1) ^I\)</span> is a compact orientable manifold, it has a fundamental class generating its top cohomology. The map <span class="math inline">\(f\)</span> induces a map on <span class="math inline">\((S _1) ^I\)</span> such that any point has $ _{i I} m <em>i$ preimages, hence <span class="math inline">\(f\)</span> has <a href="http://en.wikipedia.org/wiki/Degree_of_a_continuous_mapping" target="_blank" rel="noopener">degree</a> $ </em>{i I} (m <em>i - 1)$ as a map on <span class="math inline">\((S _1) ^I\)</span>, so acts on the fundamental class by multiplication by $ </em>{i   I} m _i$.</p>
+<p>This action induces an action on the pullback of the fundamental class of <span class="math inline">\((S _1) ^I\)</span> to <span class="math inline">\(X\)</span> which is also by multiplication by $ _{i I} m _i$.</p>
+<p>As the <span class="math inline">\(m _i\)</span> vary this argument shows that the cohomology classes arising in this way are all linearly independent, hence all contribute to the RHS of the Lefschetz fixed point theorem. The sum of the corresponding contributions <span class="math inline">\((-1) ^{ |I |} \prod _{i \in I} m _i\)</span> to the RHS exhaust all terms on the LHS, so if there is any more cohomology to be found then it isn’t being detected by <span class="math inline">\(f\)</span>.</p>
 <h2 id="method-morse-theory"><strong>Method ???: Morse theory</strong></h2>
 <p>There is a convenient choice of <a href="http://en.wikipedia.org/wiki/Morse_theory" target="_blank" rel="noopener">Morse function</a> on <span class="math inline">\(X\)</span> given by  <span class="math display">\[
 f : X   \ni (e ^{i   \theta _1},  ..., e ^{i   \theta _n})   \mapsto   \cos   \theta _1 +  ... +   \cos   \theta _n   \in   \mathbb{R}

@@ -392,7 +392,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  3,138
+                  3,150
                 </span>
               
 
@@ -430,14 +430,19 @@
 
       
         
-          <p>The goal of this post is to compute the cohomology of the <span class="math inline">\(n\)</span>-torus $ X = (S<sup>1)</sup>n ^n/ ^n$ in as many ways as I can think of. Below, if no coefficient ring is specified then the coefficient ring is $ $ by default. At the end we will interpret this computation in terms of cohomology operations.</p>
+          <p>The goal of this post is to compute the cohomology of the <span class="math inline">\(n\)</span>-torus $ X = (S<sup>1)</sup>n ^n/ {^n} $ in as many ways as I can think of.</p>
+<p>Below, if no coefficient ring is specified then the coefficient ring is $ $ by default. At the end we will interpret this computation in terms of cohomology operations.</p>
 <h2 id="method-1-mayer-vietoris"><strong>Method 1: Mayer-Vietoris</strong></h2>
 <p>For this particular method write <span class="math inline">\(X ^n = (S ^1) ^n\)</span>. We can compute the cohomology of <span class="math inline">\(X ^n\)</span> inductively by regarding it as the union of two copies of <span class="math inline">\(I \times X ^{n-1}\)</span> with intersection <span class="math inline">\(X ^{n-1} \sqcup X ^{n-1}\)</span> and using <a href="http://en.wikipedia.org/wiki/Mayer%E2%80%93Vietoris_%20sequence" target="_blank" rel="noopener">Mayer-Vietoris</a>.</p>
 <p>The cohomological version of Mayer-Vietoris is a long exact sequence of the form<br>
 <span class="math display">\[
 \cdots   \to H ^k(X ^n)   \xrightarrow{a _k} H ^k(X ^{n-1})   \oplus H ^k(X ^{n-1})   \xrightarrow{b _k} \ H ^k(X ^{n-1}   \sqcup X ^{n-1})   \  \   \xrightarrow{d _k} H ^{k+1}(X ^n) \   \to   \cdots
 \]</span></p>
-<p>The maps <span class="math inline">\(a _k\)</span> are induced by pulling back along the inclusion <span class="math inline">\((I \times \ X ^{n-1}) \sqcup (I \times X ^{n-1}) \to S ^1 \times X ^{n-1}\)</span>, whereas the maps <span class="math inline">\(b _k\)</span> are induced by the difference between the pullbacks along the inclusions $ { 0 } X ^{n-1} { 1 }  X ^{n-1} I X ^{n-1}$. Because these maps are homotopic to the identity map <span class="math inline">\(X ^{n-1} \to X ^{n-1}\)</span>, we can think of <span class="math inline">\(b _k\)</span> as being given by<br>
+<p>The maps <span class="math inline">\(a _k\)</span> are induced by pulling back along the inclusion <span class="math display">\[
+(I   \times \ X ^{n-1})   \sqcup (I   \times X ^{n-1})   \to S ^1   \times X ^{n-1}
+\]</span> whereas the maps <span class="math inline">\(b _k\)</span> are induced by the difference between the pullbacks along the inclusions <span class="math display">\[
+\{ 0 \}   \times X ^{n-1}   \sqcup   \{ 1   \}   \times \ X ^{n-1}   \to I   \times X ^{n-1}
+\]</span> Because these maps are homotopic to the identity map <span class="math inline">\(X ^{n-1} \to X ^{n-1}\)</span>, we can think of <span class="math inline">\(b _k\)</span> as being given by<br>
 <span class="math display">\[
 a   \oplus b   \mapsto (a-b)   \oplus (b-a)
 \]</span> where <span class="math inline">\(a, b \in H ^k(X ^{n-1})\)</span>, and we can think of <span class="math inline">\(a _k\)</span> as being given by two copies of a single map <span class="math inline">\(H ^k(X ^n) \to H ^k(X ^{n-1})\)</span>, which we’ll denote by <span class="math inline">\(a _k ^\prime\)</span>.</p>
