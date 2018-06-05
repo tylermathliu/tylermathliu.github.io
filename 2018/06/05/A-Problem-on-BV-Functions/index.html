@@ -91,7 +91,7 @@
 <meta property="og:site_name" content="Felictopia">
 <meta property="og:description" content="The problem is the following (Problem 6/Chapter 3 from S&amp;amp;S’s Real Analysis). Suppose \(F\) is a bounded measurable function on \(\mathbb{R}\). If \(F\) satisfies either one of the two following c">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-06-05T12:07:22.011Z">
+<meta property="og:updated_time" content="2018-06-05T12:13:45.929Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="A Problem on BV Functions">
 <meta name="twitter:description" content="The problem is the following (Problem 6/Chapter 3 from S&amp;amp;S’s Real Analysis). Suppose \(F\) is a bounded measurable function on \(\mathbb{R}\). If \(F\) satisfies either one of the two following c">
@@ -434,7 +434,7 @@
         <p>The problem is the following (Problem 6/Chapter 3 from S&amp;S’s <em>Real Analysis</em>).</p>
 <p>Suppose <span class="math inline">\(F\)</span> is a bounded measurable function on <span class="math inline">\(\mathbb{R}\)</span>. If <span class="math inline">\(F\)</span> satisfies either one of the two following conditions:</p>
 <ol type="a">
-<li><p><span class="math inline">\(\int_{\mathbb{R}}{|F(x+h)-F(x)|dx} \leq A|h|​\)</span>, for some constant <span class="math inline">\(A​\)</span> and all <span class="math inline">\(h\in \mathbb{R}​\)</span>;</p></li>
+<li><p><span class="math inline">\(\int_{\mathbb{R}}{|F(x+h)-F(x)|dx} \leq A|h|\)</span>, for some constant <span class="math inline">\(A\)</span> and all <span class="math inline">\(h\in \mathbb{R}\)</span>;</p></li>
 <li><p><span class="math inline">\(|\int_{\mathbb{R}}{F(x)\phi (x) dx}| \leq A\)</span>, where <span class="math inline">\(\phi\)</span> ranges over all <span class="math inline">\(C^{1}\)</span> functions of bounded support with <span class="math inline">\(\sup_{x \in \mathbb{R}}{|\phi (x)|} \leq 1\)</span>;</p></li>
 </ol>
 <p>then <span class="math inline">\(F\)</span> can be modified on a set of measure zero as to become a function of bounded variation on <span class="math inline">\(\mathbb{R}\)</span>.</p>
@@ -466,27 +466,20 @@ K_n(z+h)-K_n(z) = \sum_{j=1}^d h^j\frac{\partial K_n}{\partial x_j} (\theta_j(z)
 \]</span></p>
 <p>for all <span class="math inline">\(z\in\mathbb{R}^d\)</span> and <span class="math inline">\(n\in\mathbb{N}\)</span>.</p>
 <p>Then</p>
-<p>$$ <span class="math display">\[\begin{align}
+<p><span class="math display">\[
+\begin{align}
  | F\ast K_{n_i}(x+h)-F\ast K_{n_i}(x)|  &amp; =
-
 |  \int F(t)K_{n_i}(x+h-t)\textrm{d}t - \int F(t)K_{n_i}(x-t)\textrm{d}t | \\
-
 &amp; = |  \int F(t)[K_{n_i}(x+h-t)-K_{n_i}(x-t)]\textrm{d}t  |\\
-
 &amp; =  |\int F(t)\sum_{j=1}^d h^j\frac{\partial K_{n_i}}{\partial x_j} (\theta_j(x-t)) \textrm{d}t| \\
-
 &amp; =  \sum_{j=1}^d |h^j\int F(t)\frac{\partial K_{n_i}}{\partial x_j} (\theta_j(x-t)) \textrm{d}t|  \\
-
 &amp; \leq \sum_{j=1}^d | h^j| |  \int F(t)\frac{\partial K_{n_i}}{\partial x_j} (\theta_j(x-t)) \textrm{d}t | \\
-
 &amp; \leq | h|\sum_{j=1}^d  | \int F(t)\frac{\partial K_{n_i}
 }{\partial x_j} (\theta_j(x-t)) \textrm{d}t | \\
-
 &amp; \leq  |h|\sum_{j=1}^d A\\
-
 &amp; =  |h|Ad,
-
-\end{align}\]</span> $$</p>
+\end{align}
+\]</span></p>
 <p>i.e. <span class="math display">\[ |F\ast K_{n_i}(x+h)-F\ast K_{n_i}(x) |\leq  |h|Ad\quad \forall i\in\mathbb{N}.\]</span></p>
 <p>Therefore, by letting <span class="math inline">\(i\to\infty\)</span>, <span class="math display">\[|F(x+h)-F(x)|\leq  |h|M,\]</span> for some constant <span class="math inline">\(M\)</span>.</p>
 <p>Now consider the case when <span class="math inline">\(F\)</span> is just a bounded function.</p>
@@ -559,8 +552,8 @@ K_n(z+h)-K_n(z) = \sum_{j=1}^d h^j\frac{\partial K_n}{\partial x_j} (\theta_j(z)
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/20/The-cohomology-ring-of-the-n-torus-reproduced/" rel="next" title="The cohomology ring of the n-torus [reproduced]">
-                <i class="fa fa-chevron-left"></i> The cohomology ring of the n-torus [reproduced]
+              <a href="/2018/05/20/The-cohomology-ring-of-the-n-torus-reproduced/" rel="next" title="The cohomology ring of the n-torus">
+                <i class="fa fa-chevron-left"></i> The cohomology ring of the n-torus
               </a>
             
           </div>
