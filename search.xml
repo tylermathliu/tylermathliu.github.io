@@ -123,8 +123,8 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>Internet</tag>
         <tag>blog</tag>
+        <tag>Internet</tag>
         <tag>Hexo</tag>
       </tags>
   </entry>
@@ -136,10 +136,10 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>Internet</tag>
         <tag>DNS</tag>
         <tag>WordPress</tag>
         <tag>blog</tag>
+        <tag>Internet</tag>
       </tags>
   </entry>
   <entry>
@@ -150,9 +150,9 @@
         <category>Network</category>
       </categories>
       <tags>
+        <tag>Internet</tag>
         <tag>VPN</tag>
         <tag>VPS</tag>
-        <tag>Internet</tag>
       </tags>
   </entry>
   <entry>

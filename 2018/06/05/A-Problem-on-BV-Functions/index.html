@@ -91,7 +91,7 @@
 <meta property="og:site_name" content="Felictopia">
 <meta property="og:description" content="The problem is the following (Problem 6/Chapter 3 from S&amp;amp;S’s Real Analysis). Suppose \(F\) is a bounded measurable function on \(\mathbb{R}\). If \(F\) satisfies either one of the two following c">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-06-05T11:58:05.371Z">
+<meta property="og:updated_time" content="2018-06-05T12:01:31.116Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="A Problem on BV Functions">
 <meta name="twitter:description" content="The problem is the following (Problem 6/Chapter 3 from S&amp;amp;S’s Real Analysis). Suppose \(F\) is a bounded measurable function on \(\mathbb{R}\). If \(F\) satisfies either one of the two following c">
@@ -441,6 +441,7 @@
 <p>Moreover, on <span class="math inline">\(\mathbb{R}^{d}\)</span> we have the following assertion. Suppose that <span class="math inline">\(F\)</span> is a bounded measurable function on <span class="math inline">\(\mathbb{R}^{d}\)</span>. Then, the following two conditions on <span class="math inline">\(F\)</span> are equivalent:</p>
 <p>(a’) <span class="math inline">\(\int_{\mathbb{R}^d}{|F(x+h)-F(x)|dx} \leq A|h|\)</span>, for some constant <span class="math inline">\(A\)</span> and all <span class="math inline">\(h\in \mathbb{R}^d\)</span>;</p>
 <p>(b’) <span class="math inline">\(|\int_{\mathbb{R}^d}{F(x)\frac{\partial {\phi}}{\partial{x_{j}}} dx}| \leq A\)</span>, for all <span class="math inline">\(j=1,\ldots, d\)</span>, for all <span class="math inline">\(\phi \in C^{1}\)</span> of bounded support with <span class="math inline">\(\sup_{x \in \mathbb{R}^d}{|\phi(x)|} \leq 1\)</span>.</p>
+<a id="more"></a>
 <p>It is easy to prove that if <span class="math inline">\(F\)</span> is a BV function then (a)/(a’) and (b)/(b’) hold. However, the other directions are not so obvious.</p>
 <p><strong>Proof</strong> of <span class="math inline">\((b&#39;) \implies (a&#39;)\)</span>.</p>
 <p>Denote <span class="math inline">\(x\in\mathbb{R}\)</span> by <span class="math inline">\(x=(x^1,x^2,\ldots,x^d)\)</span>. Let <span class="math display">\[\Phi= \{\phi\in C^1:\phi \text{ has bounded support and } \sup_{x\in\mathbb{R}^d}|\phi(x)|\leq 1 \}.\]</span></p>
@@ -1246,6 +1247,26 @@ K_n(z+h)-K_n(z) = \sum_{j=1}^d h^j\frac{\partial K_n}{\partial x_j} (\theta_j(z)
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
